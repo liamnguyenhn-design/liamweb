@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Compass, Network, Layers } from "lucide-react";
 import Reveal, { RevealGroup, RevealItem } from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
@@ -15,16 +16,36 @@ export default function Summary() {
   return (
     <section id="about" className="relative py-28 md:py-36">
       <div className="mx-auto max-w-7xl px-6 md:px-10">
-        <Reveal>
-          <SectionHeading label={t.label} heading={t.heading} />
-          <div className="mt-6 max-w-2xl space-y-4">
-            {t.body.map((paragraph, i) => (
-              <p key={i} className="text-base leading-relaxed text-ink-dim md:text-lg">
-                {paragraph}
-              </p>
-            ))}
-          </div>
-        </Reveal>
+        <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-[1.2fr_0.8fr]">
+          <Reveal>
+            <SectionHeading label={t.label} heading={t.heading} />
+            <div className="mt-6 max-w-2xl space-y-4">
+              {t.body.map((paragraph, i) => (
+                <p key={i} className="text-base leading-relaxed text-ink-dim md:text-lg">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+          </Reveal>
+
+          <Reveal delay={0.1} className="mx-auto w-full max-w-sm lg:mx-0">
+            <div className="relative aspect-[4/5] w-full">
+              <div className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-violet-500/40 via-magenta/25 to-gold/25 blur-2xl" />
+              <div className="relative h-full w-full rounded-[1.75rem] bg-gradient-to-br from-violet-400/70 via-magenta/70 to-gold/70 p-[2px]">
+                <div className="relative h-full w-full overflow-hidden rounded-[calc(1.75rem-2px)]">
+                  <Image
+                    src="/images/about-accent.jpg"
+                    alt="Hoàng Nguyễn cùng cộng đồng Creators"
+                    fill
+                    sizes="(min-width: 1024px) 384px, 90vw"
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-bg/70 to-transparent" />
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        </div>
 
         <RevealGroup className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-3">
           {t.highlights.map((h, i) => {

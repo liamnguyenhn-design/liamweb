@@ -13,7 +13,7 @@ type Status = "idle" | "sending" | "success" | "error";
 const socials = [
   { icon: LinkedInIcon, href: "#", label: "LinkedIn" },
   { icon: InstagramIcon, href: "#", label: "Instagram" },
-  { icon: FacebookIcon, href: "#", label: "Facebook" },
+  { icon: FacebookIcon, href: "https://www.facebook.com/liamnguyen.hn/", label: "Facebook" },
 ];
 
 export default function Contact() {

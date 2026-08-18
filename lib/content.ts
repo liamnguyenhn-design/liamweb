@@ -154,6 +154,14 @@ export const content: Record<"vi" | "en", LangContent> = {
           src: "/images/moments/award-event.jpg",
           caption: "Vinh danh tại các diễn đàn KOL & chuyển đổi số",
         },
+        {
+          src: "/images/moments/ballroom.jpg",
+          caption: "Không gian Hội nghị KOL — Ra mắt CLB Niềm tin số Thủ đô",
+        },
+        {
+          src: "/images/moments/trophy.jpg",
+          caption: "Cùng đối tác tại Hội nghị KOL, phối hợp tổ chức cùng VCCorp",
+        },
       ],
     },
     timeline: {
@@ -481,6 +489,14 @@ export const content: Record<"vi" | "en", LangContent> = {
         {
           src: "/images/moments/award-event.jpg",
           caption: "Recognized at national KOL & digital-transformation forums",
+        },
+        {
+          src: "/images/moments/ballroom.jpg",
+          caption: "The venue for the KOL Conference — launch of the Hanoi Digital Trust Club",
+        },
+        {
+          src: "/images/moments/trophy.jpg",
+          caption: "With partners at the KOL Conference, co-organized with VCCorp",
         },
       ],
     },

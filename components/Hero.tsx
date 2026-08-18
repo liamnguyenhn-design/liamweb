@@ -102,11 +102,11 @@ export default function Hero() {
                 fill
                 priority
                 sizes="(min-width: 1024px) 384px, 90vw"
-                className="object-cover brightness-105 contrast-105 saturate-[1.15]"
+                className="object-cover brightness-110 contrast-110 saturate-[1.2]"
               />
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_38%,transparent_32%,rgba(91,47,179,0.5)_78%,rgba(21,10,46,0.72)_100%)]" />
-              <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-bg/75 to-transparent" />
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_18%,rgba(232,193,101,0.3),transparent_40%)] mix-blend-screen" />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_35%,transparent_55%,rgba(21,10,46,0.4)_100%)]" />
+              <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-bg/55 to-transparent" />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_82%_15%,rgba(232,193,101,0.22),transparent_35%)] mix-blend-screen" />
             </div>
           </div>
 
