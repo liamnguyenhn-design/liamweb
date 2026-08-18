@@ -192,10 +192,6 @@ export const content: Record<"vi" | "en", LangContent> = {
           caption: "Hội nghị KOL — Ra mắt CLB Niềm tin số Thủ đô, phối hợp Công an TP Hà Nội & VCCorp",
         },
         {
-          src: "/images/moments/kol-event.jpg",
-          caption: "Diễn đàn \"Kỷ nguyên vươn mình của dân tộc\"",
-        },
-        {
           src: "/images/moments/award-event.jpg",
           caption: "Vinh danh tại các diễn đàn KOL & chuyển đổi số",
         },
@@ -592,10 +588,6 @@ export const content: Record<"vi" | "en", LangContent> = {
         {
           src: "/images/moments/candid.jpg",
           caption: "KOL Conference — launch of the Hanoi Digital Trust Club, with Hanoi Police & VCCorp",
-        },
-        {
-          src: "/images/moments/kol-event.jpg",
-          caption: "\"The Nation's Rising Era\" forum",
         },
         {
           src: "/images/moments/award-event.jpg",

@@ -29,13 +29,13 @@ export default function Summary() {
           </Reveal>
 
           <Reveal delay={0.1} className="mx-auto w-full max-w-sm lg:mx-0">
-            <div className="relative aspect-[4/5] w-full">
+            <div className="relative aspect-[1110/1200] w-full">
               <div className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-violet-500/40 via-magenta/25 to-gold/25 blur-2xl" />
               <div className="relative h-full w-full rounded-[1.75rem] bg-gradient-to-br from-violet-400/70 via-magenta/70 to-gold/70 p-[2px]">
                 <div className="relative h-full w-full overflow-hidden rounded-[calc(1.75rem-2px)]">
                   <Image
                     src="/images/about-accent.jpg"
-                    alt="Hoàng Nguyễn trình bày chiến lược nội dung"
+                    alt="Hoàng Nguyễn tại sự kiện Kỷ nguyên vươn mình của dân tộc"
                     fill
                     sizes="(min-width: 1024px) 384px, 90vw"
                     className="object-cover"
