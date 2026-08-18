@@ -71,6 +71,7 @@ export type LangContent = {
     label: string;
     heading: string;
     sub: string;
+    viewAll: string;
     items: { src: string; caption: string }[];
   };
   timeline: { label: string; heading: string; sub: string; items: TimelineItem[] };
@@ -114,7 +115,7 @@ export const content: Record<"vi" | "en", LangContent> = {
       roleLine1: "Kiến tạo hệ sinh thái nội dung",
       roleLine2: "từ con số 0 đến hàng tỷ lượt xem.",
       pitch:
-        "Chuyên gia tư vấn chiến lược nội dung số & kiến tạo mạng lưới Creators, với 12 năm xây dựng và mở rộng các hệ sinh thái sáng tạo — từ đội hình Highnoy Parkour tiên phong, trực tiếp dẫn dắt anh em nghệ sĩ bước lên sân khấu trong các chiến dịch của Techcombank, Nike, Samsung, đến vai trò định hướng nội dung cho hơn 100 nhà sáng tạo và nghệ sĩ tại METUB.",
+        "Chuyên gia tư vấn chiến lược nội dung số & kiến tạo mạng lưới Creators, với 12 năm xây dựng và mở rộng các hệ sinh thái sáng tạo — từ vai trò thành viên dẫn dắt đội hình Highnoy Parkour tiên phong, đồng hành cùng Vingroup, Techcombank, Tiger Beer, Nike, Canifa lan tỏa chiến dịch qua những màn trình diễn trên các sân khấu lớn, đến vai trò định hướng nội dung cho hơn 100 nhà sáng tạo và nghệ sĩ tại METUB.",
       ctaPrimary: "Xem dự án tiêu biểu",
       ctaSecondary: "Trao đổi hợp tác",
       credential: "Director of Communications & Partnerships",
@@ -180,6 +181,7 @@ export const content: Record<"vi" | "en", LangContent> = {
       label: "Khoảnh khắc",
       heading: "Những dấu ấn ngoài đời thực",
       sub: "Từ trụ sở các nền tảng toàn cầu đến các diễn đàn KOL và chuyển đổi số trong nước.",
+      viewAll: "Xem tất cả",
       items: [
         {
           src: "/images/moments/google.jpg",
@@ -204,10 +206,6 @@ export const content: Record<"vi" | "en", LangContent> = {
         {
           src: "/images/moments/trophy.jpg",
           caption: "Cùng đối tác tại Hội nghị KOL, phối hợp tổ chức cùng VCCorp",
-        },
-        {
-          src: "/images/moments/consulting-1.jpg",
-          caption: "Trực tiếp tham mưu định hướng nội dung cho đội ngũ Thăng Long Cars",
         },
         {
           src: "/images/moments/consulting-2.jpg",
@@ -519,7 +517,7 @@ export const content: Record<"vi" | "en", LangContent> = {
       roleLine1: "Building content ecosystems",
       roleLine2: "from zero to billions of views.",
       pitch:
-        "A content strategy consultant and creator-network architect with 12 years spent building and scaling digital ecosystems — from leading the pioneering Highnoy Parkour team through live performances in campaigns for Techcombank, Nike, and Samsung, to directing content strategy for 100+ creators and artists at METUB.",
+        "A content strategy consultant and creator-network architect with 12 years spent building and scaling digital ecosystems — as a leading member of the pioneering Highnoy Parkour team, partnering with Vingroup, Techcombank, Tiger Beer, Nike, and Canifa to spread their campaigns through live performances on major stages, to directing content strategy for 100+ creators and artists at METUB.",
       ctaPrimary: "View selected work",
       ctaSecondary: "Start a conversation",
       credential: "Director of Communications & Partnerships",
@@ -585,6 +583,7 @@ export const content: Record<"vi" | "en", LangContent> = {
       label: "Moments",
       heading: "Marks made in the real world",
       sub: "From global platform headquarters to national KOL and digital-transformation forums.",
+      viewAll: "View all",
       items: [
         {
           src: "/images/moments/google.jpg",
@@ -609,10 +608,6 @@ export const content: Record<"vi" | "en", LangContent> = {
         {
           src: "/images/moments/trophy.jpg",
           caption: "With partners at the KOL Conference, co-organized with VCCorp",
-        },
-        {
-          src: "/images/moments/consulting-1.jpg",
-          caption: "Advising the Thăng Long Cars team on content direction",
         },
         {
           src: "/images/moments/consulting-2.jpg",

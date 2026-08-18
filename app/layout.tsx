@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Bricolage_Grotesque, Manrope } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/lib/language-context";
+import { ThemeProvider } from "@/lib/theme-context";
 import SmoothScroll from "@/components/SmoothScroll";
 import CustomCursor from "@/components/CustomCursor";
 
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
     template: "%s — Hoàng Nguyễn (Liam)",
   },
   description:
-    "Chuyên gia tư vấn chiến lược nội dung số và phát triển mạng lưới Creators. 11 năm kiến tạo hệ sinh thái từ 0 — Challenge Me, Highnoy, METUB — cùng các thương hiệu Techcombank, Nike, Redbull, Vingroup, Samsung.",
+    "Chuyên gia tư vấn chiến lược nội dung số và phát triển mạng lưới Creators. 12 năm kiến tạo hệ sinh thái từ 0 — Challenge Me, Highnoy, METUB — cùng các thương hiệu Techcombank, Nike, Redbull, Vingroup, Samsung.",
   keywords: [
     "Hoang Nguyen",
     "Liam Nguyen",
@@ -40,7 +41,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Hoàng Nguyễn (Liam) — Content Strategy & Creator Network Consultant",
     description:
-      "11 năm kiến tạo hệ sinh thái nội dung số từ 0 — Challenge Me, Highnoy, METUB — cùng Techcombank, Nike, Redbull, Vingroup, Samsung.",
+      "12 năm kiến tạo hệ sinh thái nội dung số từ 0 — Challenge Me, Highnoy, METUB — cùng Techcombank, Nike, Redbull, Vingroup, Samsung.",
     url: siteUrl,
     siteName: "Hoàng Nguyễn (Liam)",
     locale: "vi_VN",
@@ -62,11 +63,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${bricolage.variable} ${manrope.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-bg text-ink grain selection:bg-violet-500">
-        <LanguageProvider>
-          <SmoothScroll />
-          <CustomCursor />
-          {children}
-        </LanguageProvider>
+        <ThemeProvider>
+          <LanguageProvider>
+            <SmoothScroll />
+            <CustomCursor />
+            {children}
+          </LanguageProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

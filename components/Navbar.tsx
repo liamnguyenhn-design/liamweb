@@ -2,12 +2,14 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 import { useLanguage } from "@/lib/language-context";
+import { useTheme } from "@/lib/theme-context";
 import { content } from "@/lib/content";
 
 export default function Navbar() {
   const { lang, toggle } = useLanguage();
+  const { theme, toggle: toggleTheme } = useTheme();
   const t = content[lang];
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
@@ -50,7 +52,14 @@ export default function Navbar() {
           ))}
         </div>
 
-        <div className="hidden items-center gap-4 md:flex">
+        <div className="hidden items-center gap-3 md:flex">
+          <button
+            onClick={toggleTheme}
+            className="flex h-8 w-8 items-center justify-center rounded-full border border-violet-700/60 text-ink-dim transition-colors hover:border-violet-400 hover:text-ink"
+            aria-label="Toggle light/dark mode"
+          >
+            {theme === "dark" ? <Sun size={15} /> : <Moon size={15} />}
+          </button>
           <button
             onClick={toggle}
             className="rounded-full border border-violet-700/60 px-3 py-1.5 text-xs font-semibold tracking-wide text-ink-dim transition-colors hover:border-violet-400 hover:text-ink"
@@ -96,6 +105,13 @@ export default function Navbar() {
                 </a>
               ))}
               <div className="mt-3 flex items-center gap-3">
+                <button
+                  onClick={toggleTheme}
+                  className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-violet-700/60 text-ink-dim"
+                  aria-label="Toggle light/dark mode"
+                >
+                  {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
+                </button>
                 <button
                   onClick={toggle}
                   className="rounded-full border border-violet-700/60 px-3 py-1.5 text-xs font-semibold text-ink-dim"

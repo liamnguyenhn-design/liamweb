@@ -56,6 +56,30 @@
   --gold-dim: #a5854a;
 }
 
+:root[data-theme="light"] {
+  --ink: #180f2e;
+  --ink-dim: #4a4265;
+  --ink-faint: #857d99;
+
+  --bg: #faf8fc;
+  --bg-elevated: #f2ecf9;
+  --bg-card: #ffffff;
+
+  --violet-50: #2a1750;
+  --violet-200: #6d28d9;
+  --violet-300: #7c3aed;
+  --violet-400: #6d28d9;
+  --violet-500: #8b5cf6;
+  --violet-600: #7440e0;
+  --violet-700: #5b2fb3;
+  --violet-900: #e4d9fb;
+  --violet-950: #ede4fc;
+
+  --magenta: #b3169d;
+  --gold: #a9740a;
+  --gold-dim: #8a6420;
+}
+
 * {
   border-color: var(--violet-900);
 }
@@ -120,6 +144,12 @@ body {
   backdrop-filter: blur(18px);
 }
 
+:root[data-theme="light"] .glass-card {
+  background: linear-gradient(160deg, rgba(139, 92, 246, 0.05), rgba(139, 92, 246, 0.015));
+  border: 1px solid rgba(124, 58, 237, 0.16);
+  box-shadow: 0 1px 2px rgba(24, 15, 46, 0.04);
+}
+
 .hairline {
   background: linear-gradient(90deg, transparent, rgba(196, 168, 255, 0.35), transparent);
   height: 1px;
@@ -128,6 +158,14 @@ body {
 .hairline-v {
   background: linear-gradient(180deg, transparent, rgba(196, 168, 255, 0.35), transparent);
   width: 1px;
+}
+
+:root[data-theme="light"] .hairline {
+  background: linear-gradient(90deg, transparent, rgba(124, 58, 237, 0.3), transparent);
+}
+
+:root[data-theme="light"] .hairline-v {
+  background: linear-gradient(180deg, transparent, rgba(124, 58, 237, 0.3), transparent);
 }
 
 .aurora {
@@ -164,9 +202,18 @@ body {
   opacity: 0.25;
 }
 
+:root[data-theme="light"] .aurora::before,
+:root[data-theme="light"] .aurora::after {
+  opacity: 0.14;
+}
+
 .dot-grid {
   background-image: radial-gradient(rgba(196, 168, 255, 0.25) 1px, transparent 1px);
   background-size: 26px 26px;
+}
+
+:root[data-theme="light"] .dot-grid {
+  background-image: radial-gradient(rgba(124, 58, 237, 0.2) 1px, transparent 1px);
 }
 
 @keyframes marquee {

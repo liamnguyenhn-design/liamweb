@@ -104,7 +104,7 @@ export default function Hero() {
                 sizes="(min-width: 1024px) 384px, 90vw"
                 className="object-cover"
               />
-              <div className="absolute inset-x-0 bottom-0 h-14 bg-gradient-to-t from-bg/45 to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 h-14 bg-gradient-to-t from-black/45 to-transparent" />
             </div>
           </div>
         </motion.div>

@@ -35,12 +35,12 @@ export default function Summary() {
                 <div className="relative h-full w-full overflow-hidden rounded-[calc(1.75rem-2px)]">
                   <Image
                     src="/images/about-accent.jpg"
-                    alt="Hoàng Nguyễn cùng cộng đồng Creators"
+                    alt="Hoàng Nguyễn trình bày chiến lược nội dung"
                     fill
                     sizes="(min-width: 1024px) 384px, 90vw"
                     className="object-cover"
                   />
-                  <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-bg/70 to-transparent" />
+                  <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/50 to-transparent" />
                 </div>
               </div>
             </div>
