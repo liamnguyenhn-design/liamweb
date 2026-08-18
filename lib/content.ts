@@ -1,12 +1,15 @@
 export type CaseStudy = {
   id: string;
   brand: string;
+  logo?: string;
   title: string;
   tag: string;
   year: string;
   description: string;
   metric: string;
 };
+
+export type BrandLogo = { name: string; logo: string };
 
 export type TimelineItem = {
   period: string;
@@ -57,7 +60,7 @@ export type LangContent = {
   timeline: { label: string; heading: string; sub: string; items: TimelineItem[] };
   awards: { label: string; heading: string; sub: string; items: Award[] };
   portfolio: { label: string; heading: string; sub: string; items: CaseStudy[]; viewCase: string; brandsLabel: string };
-  brands: string[];
+  brands: BrandLogo[];
   contact: {
     label: string;
     heading: string;
@@ -304,6 +307,7 @@ export const content: Record<"vi" | "en", LangContent> = {
         {
           id: "techcombank",
           brand: "Techcombank",
+          logo: "/logos/techcombank.png",
           title: "Tài sản thị giác cho chiến dịch trọng điểm",
           tag: "Đa nền tảng · Brand Partnership",
           year: "2023",
@@ -314,6 +318,7 @@ export const content: Record<"vi" | "en", LangContent> = {
         {
           id: "nike",
           brand: "Nike",
+          logo: "/logos/nike.svg",
           title: "Đối tác Trình diễn Tiêu điểm",
           tag: "Kích hoạt Thương hiệu · Sự kiện",
           year: "2019–2022",
@@ -324,6 +329,7 @@ export const content: Record<"vi" | "en", LangContent> = {
         {
           id: "samsung",
           brand: "Samsung",
+          logo: "/logos/samsung.svg",
           title: "Galaxy Note — Chiến dịch quay 100% bằng điện thoại",
           tag: "Sáng tạo Nội dung · Đạt giải",
           year: "2018",
@@ -334,6 +340,7 @@ export const content: Record<"vi" | "en", LangContent> = {
         {
           id: "mentos",
           brand: "Mentos",
+          logo: "/logos/mentos.svg",
           title: "\"Phá Băng Khoảng Cách\"",
           tag: "Quy hoạch Nội dung · Toàn quốc",
           year: "2017",
@@ -364,18 +371,19 @@ export const content: Record<"vi" | "en", LangContent> = {
       ],
     },
     brands: [
-      "Techcombank",
-      "Nike",
-      "Samsung",
-      "Redbull",
-      "Vingroup",
-      "Mentos",
-      "Tiger Beer",
-      "TH True Milk",
-      "Biti's",
-      "AMD",
-      "Google · YouTube",
-      "VTV3",
+      { name: "Techcombank", logo: "/logos/techcombank.png" },
+      { name: "Nike", logo: "/logos/nike.svg" },
+      { name: "Samsung", logo: "/logos/samsung.svg" },
+      { name: "Redbull", logo: "/logos/redbull.svg" },
+      { name: "Vingroup", logo: "/logos/vingroup.svg" },
+      { name: "Mentos", logo: "/logos/mentos.svg" },
+      { name: "Tiger Beer", logo: "/logos/tiger-beer.png" },
+      { name: "TH True Milk", logo: "/logos/th-true-milk.svg" },
+      { name: "Biti's", logo: "/logos/bitis.svg" },
+      { name: "AMD", logo: "/logos/amd.svg" },
+      { name: "Google", logo: "/logos/google.svg" },
+      { name: "YouTube", logo: "/logos/youtube.svg" },
+      { name: "VTV3", logo: "/logos/vtv3.svg" },
     ],
     contact: {
       label: "Liên hệ",
@@ -619,6 +627,7 @@ export const content: Record<"vi" | "en", LangContent> = {
         {
           id: "techcombank",
           brand: "Techcombank",
+          logo: "/logos/techcombank.png",
           title: "Visual Asset for a Flagship Campaign",
           tag: "Cross-platform · Brand Partnership",
           year: "2023",
@@ -629,6 +638,7 @@ export const content: Record<"vi" | "en", LangContent> = {
         {
           id: "nike",
           brand: "Nike",
+          logo: "/logos/nike.svg",
           title: "Key Performance Partner",
           tag: "Brand Activation · Live Event",
           year: "2019–2022",
@@ -639,6 +649,7 @@ export const content: Record<"vi" | "en", LangContent> = {
         {
           id: "samsung",
           brand: "Samsung",
+          logo: "/logos/samsung.svg",
           title: "Galaxy Note — Shot 100% on Mobile",
           tag: "Content Creative · Award-winning",
           year: "2018",
@@ -649,6 +660,7 @@ export const content: Record<"vi" | "en", LangContent> = {
         {
           id: "mentos",
           brand: "Mentos",
+          logo: "/logos/mentos.svg",
           title: "\"Breaking the Distance\"",
           tag: "Content Planning · National",
           year: "2017",
@@ -679,18 +691,19 @@ export const content: Record<"vi" | "en", LangContent> = {
       ],
     },
     brands: [
-      "Techcombank",
-      "Nike",
-      "Samsung",
-      "Redbull",
-      "Vingroup",
-      "Mentos",
-      "Tiger Beer",
-      "TH True Milk",
-      "Biti's",
-      "AMD",
-      "Google · YouTube",
-      "VTV3",
+      { name: "Techcombank", logo: "/logos/techcombank.png" },
+      { name: "Nike", logo: "/logos/nike.svg" },
+      { name: "Samsung", logo: "/logos/samsung.svg" },
+      { name: "Redbull", logo: "/logos/redbull.svg" },
+      { name: "Vingroup", logo: "/logos/vingroup.svg" },
+      { name: "Mentos", logo: "/logos/mentos.svg" },
+      { name: "Tiger Beer", logo: "/logos/tiger-beer.png" },
+      { name: "TH True Milk", logo: "/logos/th-true-milk.svg" },
+      { name: "Biti's", logo: "/logos/bitis.svg" },
+      { name: "AMD", logo: "/logos/amd.svg" },
+      { name: "Google", logo: "/logos/google.svg" },
+      { name: "YouTube", logo: "/logos/youtube.svg" },
+      { name: "VTV3", logo: "/logos/vtv3.svg" },
     ],
     contact: {
       label: "Contact",

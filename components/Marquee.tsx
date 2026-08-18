@@ -1,15 +1,27 @@
-export default function Marquee({ items }: { items: string[] }) {
+import Image from "next/image";
+import type { BrandLogo } from "@/lib/content";
+
+export default function Marquee({ items }: { items: BrandLogo[] }) {
   const doubled = [...items, ...items];
   return (
     <div className="no-scrollbar relative overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_10%,black_90%,transparent)]">
-      <div className="animate-marquee flex w-max gap-12 py-2">
+      <div className="animate-marquee flex w-max items-center gap-6 py-2">
         {doubled.map((item, i) => (
-          <span
-            key={item + i}
-            className="font-display shrink-0 text-2xl font-semibold tracking-tight text-ink-faint transition-colors hover:text-violet-300 sm:text-3xl"
+          <div
+            key={item.name + i}
+            title={item.name}
+            className="flex h-16 w-32 shrink-0 items-center justify-center rounded-xl bg-white/95 px-4 py-3 shadow-sm transition-transform hover:scale-105 sm:h-20 sm:w-40"
           >
-            {item}
-          </span>
+            <div className="relative h-full w-full">
+              <Image
+                src={item.logo}
+                alt={item.name}
+                fill
+                sizes="160px"
+                className="object-contain"
+              />
+            </div>
+          </div>
         ))}
       </div>
     </div>

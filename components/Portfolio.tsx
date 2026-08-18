@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUpRight, X } from "lucide-react";
 import Reveal, { RevealGroup, RevealItem } from "@/components/Reveal";
@@ -43,6 +44,13 @@ export default function Portfolio() {
                   <span className="absolute right-4 top-4 rounded-full bg-black/25 px-3 py-1 text-xs font-semibold text-white backdrop-blur">
                     {item.year}
                   </span>
+                  {item.logo ? (
+                    <span className="absolute left-5 top-4 flex h-11 w-20 items-center justify-center rounded-lg bg-white/95 px-2.5 py-1.5 shadow-md">
+                      <span className="relative h-full w-full">
+                        <Image src={item.logo} alt={item.brand} fill sizes="80px" className="object-contain" />
+                      </span>
+                    </span>
+                  ) : null}
                   <span className="font-display absolute bottom-4 left-5 text-2xl font-bold text-white/95 drop-shadow">
                     {item.brand}
                   </span>
@@ -103,6 +111,13 @@ export default function Portfolio() {
               >
                 <X size={16} />
               </button>
+              {active.logo ? (
+                <span className="mb-4 flex h-12 w-24 items-center justify-center rounded-lg bg-white/95 px-3 py-2 shadow-md">
+                  <span className="relative h-full w-full">
+                    <Image src={active.logo} alt={active.brand} fill sizes="96px" className="object-contain" />
+                  </span>
+                </span>
+              ) : null}
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-violet-300">
                 {active.tag}
               </p>
