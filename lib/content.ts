@@ -95,14 +95,14 @@ export const content: Record<"vi" | "en", LangContent> = {
       roleLine1: "Kiến tạo hệ sinh thái nội dung",
       roleLine2: "từ con số 0 đến hàng tỷ lượt xem.",
       pitch:
-        "Chuyên gia tư vấn chiến lược nội dung số & phát triển mạng lưới Creators, với 11 năm trực tiếp xây dựng, thương mại hóa và mở rộng các hệ sinh thái sáng tạo — từ cộng đồng Parkour lớn nhất Việt Nam đến các chiến dịch triệu đô cho Techcombank, Nike, Samsung.",
+        "Chuyên gia tư vấn chiến lược nội dung số & kiến tạo mạng lưới Creators, với 12 năm trực tiếp xây dựng, thương mại hóa và mở rộng các hệ sinh thái sáng tạo — từ cộng đồng Parkour lớn nhất Việt Nam đến vai trò định hướng phát triển nội dung đa kênh cho các thương hiệu hàng đầu như Techcombank, Nike, Samsung.",
       ctaPrimary: "Xem dự án tiêu biểu",
       ctaSecondary: "Trao đổi hợp tác",
       credential: "Director of Communications & Partnerships",
       scrollHint: "Cuộn để khám phá",
     },
     stats: [
-      { value: "11+", label: "Năm kinh nghiệm điều hành" },
+      { value: "12+", label: "Năm kinh nghiệm điều hành" },
       { value: "3M+", label: "Followers đa nền tảng" },
       { value: "2B+", label: "Lượt xem tích lũy" },
       { value: "105B+", label: "VNĐ doanh thu phòng vé / 10 ngày" },
@@ -111,7 +111,7 @@ export const content: Record<"vi" | "en", LangContent> = {
     summary: {
       label: "Về tôi",
       heading: "Người biến sự am hiểu công chúng thành đòn bẩy vĩ mô cho thương hiệu",
-      body: "Tôi là chuyên gia điều hành chiến lược với 11 năm kinh nghiệm kiến tạo và mở rộng các hệ sinh thái số — sở hữu năng lực thực chiến phát triển những tổ hợp quy tụ cộng đồng từ con số 0. Nền tảng lãnh đạo của tôi là ứng dụng khoa học, công nghệ và chuyển đổi số để biến tốc độ thực thi của khối tư nhân thành những giá trị di sản bền vững.",
+      body: "Tôi là chuyên gia điều hành chiến lược với 12 năm kinh nghiệm kiến tạo và mở rộng các hệ sinh thái số — sở hữu năng lực thực chiến phát triển những tổ hợp quy tụ cộng đồng từ con số 0, đồng thời định hướng chiến lược phát triển nội dung đa kênh cho các thương hiệu hàng đầu. Nền tảng lãnh đạo của tôi là ứng dụng khoa học, công nghệ và chuyển đổi số để biến tốc độ thực thi của khối tư nhân thành những giá trị di sản bền vững.",
       highlights: [
         {
           title: "Zero-to-One",
@@ -152,7 +152,7 @@ export const content: Record<"vi" | "en", LangContent> = {
     },
     timeline: {
       label: "Hành trình sự nghiệp",
-      heading: "11 năm, ba hệ sinh thái, một mạch tăng trưởng liên tục",
+      heading: "12 năm, ba hệ sinh thái, một mạch tăng trưởng liên tục",
       sub: "Từ người sáng lập một cộng đồng thể thao đường phố đến vị trí điều hành chiến lược truyền thông cho các dự án trăm tỷ.",
       items: [
         {
@@ -415,14 +415,14 @@ export const content: Record<"vi" | "en", LangContent> = {
       roleLine1: "Building content ecosystems",
       roleLine2: "from zero to billions of views.",
       pitch:
-        "A content strategy consultant and creator-network builder with 11 years spent founding, monetizing, and scaling digital ecosystems — from Vietnam's largest street-sports community to million-dollar campaigns for Techcombank, Nike, and Samsung.",
+        "A content strategy consultant and creator-network architect with 12 years spent founding, monetizing, and scaling digital ecosystems — from Vietnam's largest street-sports community to directing multi-channel content strategy for leading brands like Techcombank, Nike, and Samsung.",
       ctaPrimary: "View selected work",
       ctaSecondary: "Start a conversation",
       credential: "Director of Communications & Partnerships",
       scrollHint: "Scroll to explore",
     },
     stats: [
-      { value: "11+", label: "Years in executive strategy" },
+      { value: "12+", label: "Years in executive strategy" },
       { value: "3M+", label: "Cross-platform followers" },
       { value: "2B+", label: "Cumulative views" },
       { value: "$4.2M+", label: "Box office in 10 days" },
@@ -431,7 +431,7 @@ export const content: Record<"vi" | "en", LangContent> = {
     summary: {
       label: "About",
       heading: "Turning audience insight into a strategic lever for brands",
-      body: "I'm an executive strategist with 11 years spent founding and scaling digital ecosystems — building community-first ventures from zero. My leadership is grounded in applying science, technology and digital transformation to turn private-sector execution speed into lasting value.",
+      body: "I'm an executive strategist with 12 years spent founding and scaling digital ecosystems — building community-first ventures from zero and directing multi-channel content strategy for leading brands. My leadership is grounded in applying science, technology and digital transformation to turn private-sector execution speed into lasting value.",
       highlights: [
         {
           title: "Zero-to-One",
@@ -472,7 +472,7 @@ export const content: Record<"vi" | "en", LangContent> = {
     },
     timeline: {
       label: "Career Journey",
-      heading: "11 years, three ecosystems, one continuous growth arc",
+      heading: "12 years, three ecosystems, one continuous growth arc",
       sub: "From founding a street-sports community to leading communications strategy for nine-figure entertainment projects.",
       items: [
         {
