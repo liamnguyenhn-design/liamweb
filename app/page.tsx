@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Stats from "@/components/Stats";
 import Summary from "@/components/Summary";
+import Moments from "@/components/Moments";
 import Timeline from "@/components/Timeline";
 import Awards from "@/components/Awards";
 import Portfolio from "@/components/Portfolio";
@@ -16,6 +17,7 @@ export default function Home() {
         <Hero />
         <Stats />
         <Summary />
+        <Moments />
         <Timeline />
         <Awards />
         <Portfolio />

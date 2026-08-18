@@ -48,6 +48,12 @@ export type LangContent = {
     body: string;
     highlights: { title: string; body: string }[];
   };
+  moments: {
+    label: string;
+    heading: string;
+    sub: string;
+    items: { src: string; caption: string }[];
+  };
   timeline: { label: string; heading: string; sub: string; items: TimelineItem[] };
   awards: { label: string; heading: string; sub: string; items: Award[] };
   portfolio: { label: string; heading: string; sub: string; items: CaseStudy[]; viewCase: string; brandsLabel: string };
@@ -118,6 +124,29 @@ export const content: Record<"vi" | "en", LangContent> = {
         {
           title: "Đa vai trò Điều hành",
           body: "Từ Partner Manager đến Head of Creators, từ đạo diễn hình ảnh đến Giám đốc Truyền thông cho dự án điện ảnh trăm tỷ.",
+        },
+      ],
+    },
+    moments: {
+      label: "Khoảnh khắc",
+      heading: "Những dấu ấn ngoài đời thực",
+      sub: "Từ trụ sở các nền tảng toàn cầu đến các diễn đàn KOL và chuyển đổi số trong nước.",
+      items: [
+        {
+          src: "/images/moments/google.jpg",
+          caption: "Tại trụ sở Google — gắn với hành trình đại diện Việt Nam trong chương trình Google Adventure",
+        },
+        {
+          src: "/images/moments/candid.jpg",
+          caption: "Hội nghị KOL — Ra mắt CLB Niềm tin số Thủ đô, phối hợp Công an TP Hà Nội & VCCorp",
+        },
+        {
+          src: "/images/moments/kol-event.jpg",
+          caption: "Diễn đàn \"Kỷ nguyên vươn mình của dân tộc\"",
+        },
+        {
+          src: "/images/moments/award-event.jpg",
+          caption: "Vinh danh tại các diễn đàn KOL & chuyển đổi số",
         },
       ],
     },
@@ -415,6 +444,29 @@ export const content: Record<"vi" | "en", LangContent> = {
         {
           title: "Cross-functional Leadership",
           body: "From Partner Manager to Head of Creators, from visual director to Communications Director on a nine-figure film release.",
+        },
+      ],
+    },
+    moments: {
+      label: "Moments",
+      heading: "Marks made in the real world",
+      sub: "From global platform headquarters to national KOL and digital-transformation forums.",
+      items: [
+        {
+          src: "/images/moments/google.jpg",
+          caption: "At Google's headquarters — part of representing Vietnam in the Google Adventure program",
+        },
+        {
+          src: "/images/moments/candid.jpg",
+          caption: "KOL Conference — launch of the Hanoi Digital Trust Club, with Hanoi Police & VCCorp",
+        },
+        {
+          src: "/images/moments/kol-event.jpg",
+          caption: "\"The Nation's Rising Era\" forum",
+        },
+        {
+          src: "/images/moments/award-event.jpg",
+          caption: "Recognized at national KOL & digital-transformation forums",
         },
       ],
     },
