@@ -94,7 +94,7 @@ export default function Hero() {
           className="relative mx-auto aspect-[4/5] w-full max-w-sm"
         >
           <div className="animate-float absolute -inset-4 rounded-[2.5rem] bg-gradient-to-br from-violet-500/70 via-magenta/50 to-gold/50 blur-3xl" />
-          <div className="relative h-full w-full rounded-[2rem] bg-gradient-to-br from-violet-300 via-magenta to-gold p-[3px] shadow-[0_0_60px_rgba(226,84,201,0.35)]">
+          <div className="animate-float-soft relative h-full w-full rounded-[2rem] bg-gradient-to-br from-violet-300 via-magenta to-gold p-[3px] shadow-[0_0_60px_rgba(226,84,201,0.35)]">
             <div className="relative h-full w-full overflow-hidden rounded-[calc(2rem-3px)] bg-bg">
               <Image
                 src="/images/portrait.jpg"
@@ -109,26 +109,6 @@ export default function Hero() {
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_82%_15%,rgba(232,193,101,0.22),transparent_35%)] mix-blend-screen" />
             </div>
           </div>
-
-          <motion.div
-            initial={{ opacity: 0, x: -12 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.7 }}
-            className="glass-card animate-float absolute -left-8 top-8 rounded-2xl px-4 py-3 [animation-delay:1s]"
-          >
-            <p className="font-display text-2xl font-bold text-gradient-violet">4.6M</p>
-            <p className="text-[10px] uppercase tracking-[0.15em] text-ink-faint">YouTube subs</p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 12 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.85 }}
-            className="glass-card animate-float absolute -right-6 bottom-16 rounded-2xl px-4 py-3 [animation-delay:2.2s]"
-          >
-            <p className="font-display text-2xl font-bold text-gradient-violet">105B+</p>
-            <p className="text-[10px] uppercase tracking-[0.15em] text-ink-faint">VNĐ box office</p>
-          </motion.div>
         </motion.div>
       </div>
 

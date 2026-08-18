@@ -98,7 +98,7 @@ export const content: Record<"vi" | "en", LangContent> = {
       roleLine1: "Kiến tạo hệ sinh thái nội dung",
       roleLine2: "từ con số 0 đến hàng tỷ lượt xem.",
       pitch:
-        "Chuyên gia tư vấn chiến lược nội dung số & kiến tạo mạng lưới Creators, với 12 năm trực tiếp xây dựng, thương mại hóa và mở rộng các hệ sinh thái sáng tạo — từ cộng đồng Parkour lớn nhất Việt Nam đến vai trò định hướng phát triển nội dung đa kênh cho các thương hiệu hàng đầu như Techcombank, Nike, Samsung.",
+        "Chuyên gia tư vấn chiến lược nội dung số & kiến tạo mạng lưới Creators, với 12 năm xây dựng và mở rộng các hệ sinh thái sáng tạo — từ đội hình Highnoy Parkour tiên phong, trực tiếp dẫn dắt anh em nghệ sĩ bước lên sân khấu trong các chiến dịch của Techcombank, Nike, Samsung, đến vai trò định hướng nội dung cho hơn 100 nhà sáng tạo và nghệ sĩ tại METUB.",
       ctaPrimary: "Xem dự án tiêu biểu",
       ctaSecondary: "Trao đổi hợp tác",
       credential: "Director of Communications & Partnerships",
@@ -434,7 +434,7 @@ export const content: Record<"vi" | "en", LangContent> = {
       roleLine1: "Building content ecosystems",
       roleLine2: "from zero to billions of views.",
       pitch:
-        "A content strategy consultant and creator-network architect with 12 years spent founding, monetizing, and scaling digital ecosystems — from Vietnam's largest street-sports community to directing multi-channel content strategy for leading brands like Techcombank, Nike, and Samsung.",
+        "A content strategy consultant and creator-network architect with 12 years spent building and scaling digital ecosystems — from leading the pioneering Highnoy Parkour team through live performances in campaigns for Techcombank, Nike, and Samsung, to directing content strategy for 100+ creators and artists at METUB.",
       ctaPrimary: "View selected work",
       ctaSecondary: "Start a conversation",
       credential: "Director of Communications & Partnerships",
