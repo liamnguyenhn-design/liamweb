@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowDown, ArrowUpRight, Sparkles } from "lucide-react";
 import { useLanguage } from "@/lib/language-context";
@@ -93,26 +94,19 @@ export default function Hero() {
           className="relative mx-auto aspect-[4/5] w-full max-w-sm"
         >
           <div className="animate-float absolute inset-0 rounded-[2rem] bg-gradient-to-br from-violet-600/30 via-violet-500/10 to-magenta/20 blur-2xl" />
-          <div className="glass-card relative flex h-full w-full flex-col items-center justify-center overflow-hidden rounded-[2rem]">
-            <svg viewBox="0 0 200 200" className="h-full w-full opacity-90">
-              <defs>
-                <linearGradient id="portraitGrad" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%" stopColor="#8b5cf6" />
-                  <stop offset="55%" stopColor="#5b2fb3" />
-                  <stop offset="100%" stopColor="#e254c9" />
-                </linearGradient>
-              </defs>
-              <rect width="200" height="200" fill="url(#portraitGrad)" opacity="0.18" />
-              <circle cx="100" cy="78" r="34" fill="url(#portraitGrad)" opacity="0.9" />
-              <path
-                d="M40 190c6-42 34-64 60-64s54 22 60 64"
-                fill="url(#portraitGrad)"
-                opacity="0.9"
-              />
-            </svg>
-            <div className="absolute bottom-5 left-5 right-5 rounded-xl border border-white/10 bg-black/30 px-4 py-2.5 text-center text-[11px] uppercase tracking-[0.2em] text-ink-dim backdrop-blur">
-              Portrait — thay ảnh thật tại <code className="text-violet-300">/public/images/portrait.jpg</code>
-            </div>
+          <div className="glass-card relative h-full w-full overflow-hidden rounded-[2rem]">
+            <Image
+              src="/images/portrait.jpg"
+              alt="Hoàng Nguyễn (Liam)"
+              fill
+              priority
+              sizes="(min-width: 1024px) 384px, 90vw"
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-bg via-bg/10 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-b from-violet-950/50 via-transparent to-transparent" />
+            <div className="absolute inset-0 shadow-[inset_0_0_90px_45px_rgba(7,5,13,0.85)]" />
+            <div className="absolute inset-0 bg-violet-600 mix-blend-color opacity-[0.12]" />
           </div>
 
           <motion.div
