@@ -48,7 +48,7 @@ export type LangContent = {
   summary: {
     label: string;
     heading: string;
-    body: string;
+    body: string[];
     highlights: { title: string; body: string }[];
   };
   moments: {
@@ -112,9 +112,12 @@ export const content: Record<"vi" | "en", LangContent> = {
       { value: "20+", label: "Thương hiệu lớn đã đồng hành" },
     ],
     summary: {
-      label: "Về tôi",
+      label: "About Me",
       heading: "Người biến sự am hiểu công chúng thành đòn bẩy vĩ mô cho thương hiệu",
-      body: "Tôi là chuyên gia điều hành chiến lược với 12 năm kinh nghiệm kiến tạo và mở rộng các hệ sinh thái số — sở hữu năng lực thực chiến phát triển những tổ hợp quy tụ cộng đồng từ con số 0, đồng thời định hướng chiến lược phát triển nội dung đa kênh cho các thương hiệu hàng đầu. Nền tảng lãnh đạo của tôi là ứng dụng khoa học, công nghệ và chuyển đổi số để biến tốc độ thực thi của khối tư nhân thành những giá trị di sản bền vững.",
+      body: [
+        "Nhiều người biết đến tôi qua hành trình đặt những viên gạch đầu tiên kiến tạo Highnoy — nhóm Parkour tiên phong sở hữu kênh YouTube đạt hơn 1,2 triệu người đăng ký, vươn lên top đầu các kênh Parkour lớn nhất tại Việt Nam và có tầm ảnh hưởng trên bản đồ quốc tế. Từ những bước chân đường phố ấy, tôi đã dẫn dắt anh em nghệ sĩ bước lên các sân khấu lớn, trực tiếp tham gia vào những màn biểu diễn và chiến dịch bùng nổ của các tập đoàn hàng đầu như Techcombank, Nike, Samsung hay Biti's. Nhưng đằng sau những khoảnh khắc thăng hoa ấy là một tư duy làm nghề nhất quán: biến nội dung và nghệ thuật vận động thành một hệ sinh thái có thể tự vận hành và sinh lời bền vững.",
+        "Trải qua 12 năm dấn thân trong ngành nội dung số — từ một nhà sáng tạo tự thân cho đến vị trí lãnh đạo chiến lược tại METUB, mạng lưới đa kênh (MCN — Multi-Channel Network) hàng đầu Việt Nam chuyên quản lý, định hướng và bảo chứng thương hiệu cho các nghệ sĩ, KOLs và nhà sáng tạo hàng đầu. Tại đây, tôi trực tiếp gây dựng và phát triển kênh METUB Creators từ con số không, đưa nó trở thành bệ phóng uy tín trong ngành. Từ thực tiễn đó, tôi thấu hiểu trọn vẹn cách một ý tưởng ngách vươn mình thành xu hướng đại chúng, và cách các thương hiệu lớn kiến tạo những điểm chạm chân thành, mạnh mẽ nhất với khách hàng.",
+      ],
       highlights: [
         {
           title: "Zero-to-One",
@@ -437,9 +440,12 @@ export const content: Record<"vi" | "en", LangContent> = {
       { value: "20+", label: "Major brand partners" },
     ],
     summary: {
-      label: "About",
+      label: "About Me",
       heading: "Turning audience insight into a strategic lever for brands",
-      body: "I'm an executive strategist with 12 years spent founding and scaling digital ecosystems — building community-first ventures from zero and directing multi-channel content strategy for leading brands. My leadership is grounded in applying science, technology and digital transformation to turn private-sector execution speed into lasting value.",
+      body: [
+        "Many first came to know me through the early days of building Highnoy — a pioneering Parkour collective whose YouTube channel grew past 1.2 million subscribers to become one of Vietnam's leading Parkour channels, with reach extending onto the international stage. From those street-level beginnings, I went on to bring fellow athletes onto major stages, directly involved in the performances and breakout campaigns of leading corporations like Techcombank, Nike, Samsung, and Biti's. But behind those high points was one consistent philosophy: turning content and movement art into an ecosystem that can run itself and generate sustainable revenue.",
+        "Across 12 years immersed in the digital content industry — from independent creator to strategic leadership at METUB, Vietnam's leading Multi-Channel Network (MCN) managing, directing, and safeguarding the brand of top artists, KOLs, and creators — I built and grew the METUB Creators channel from zero into a trusted launchpad in the industry. That hands-on experience gave me a full understanding of how a niche idea grows into a mainstream trend, and how major brands craft the most genuine, powerful touchpoints with their customers.",
+      ],
       highlights: [
         {
           title: "Zero-to-One",

@@ -16,7 +16,14 @@ export default function Summary() {
     <section id="about" className="relative py-28 md:py-36">
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <Reveal>
-          <SectionHeading label={t.label} heading={t.heading} sub={t.body} />
+          <SectionHeading label={t.label} heading={t.heading} />
+          <div className="mt-6 max-w-2xl space-y-4">
+            {t.body.map((paragraph, i) => (
+              <p key={i} className="text-base leading-relaxed text-ink-dim md:text-lg">
+                {paragraph}
+              </p>
+            ))}
+          </div>
         </Reveal>
 
         <RevealGroup className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-3">

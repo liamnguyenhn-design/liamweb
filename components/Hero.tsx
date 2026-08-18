@@ -93,20 +93,21 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
           className="relative mx-auto aspect-[4/5] w-full max-w-sm"
         >
-          <div className="animate-float absolute inset-0 rounded-[2rem] bg-gradient-to-br from-violet-600/30 via-violet-500/10 to-magenta/20 blur-2xl" />
-          <div className="glass-card relative h-full w-full overflow-hidden rounded-[2rem]">
-            <Image
-              src="/images/portrait.jpg"
-              alt="Hoàng Nguyễn (Liam)"
-              fill
-              priority
-              sizes="(min-width: 1024px) 384px, 90vw"
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-bg via-bg/10 to-transparent" />
-            <div className="absolute inset-0 bg-gradient-to-b from-violet-950/50 via-transparent to-transparent" />
-            <div className="absolute inset-0 shadow-[inset_0_0_90px_45px_rgba(7,5,13,0.85)]" />
-            <div className="absolute inset-0 bg-violet-600 mix-blend-color opacity-[0.12]" />
+          <div className="animate-float absolute -inset-4 rounded-[2.5rem] bg-gradient-to-br from-violet-500/70 via-magenta/50 to-gold/50 blur-3xl" />
+          <div className="relative h-full w-full rounded-[2rem] bg-gradient-to-br from-violet-300 via-magenta to-gold p-[3px] shadow-[0_0_60px_rgba(226,84,201,0.35)]">
+            <div className="relative h-full w-full overflow-hidden rounded-[calc(2rem-3px)] bg-bg">
+              <Image
+                src="/images/portrait.jpg"
+                alt="Hoàng Nguyễn (Liam)"
+                fill
+                priority
+                sizes="(min-width: 1024px) 384px, 90vw"
+                className="object-cover brightness-105 contrast-105 saturate-[1.15]"
+              />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_38%,transparent_32%,rgba(91,47,179,0.5)_78%,rgba(21,10,46,0.72)_100%)]" />
+              <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-bg/75 to-transparent" />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_18%,rgba(232,193,101,0.3),transparent_40%)] mix-blend-screen" />
+            </div>
           </div>
 
           <motion.div
