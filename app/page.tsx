@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Stats from "@/components/Stats";
 import Summary from "@/components/Summary";
+import Services from "@/components/Services";
 import Moments from "@/components/Moments";
 import Timeline from "@/components/Timeline";
 import Awards from "@/components/Awards";
@@ -17,6 +18,7 @@ export default function Home() {
         <Hero />
         <Stats />
         <Summary />
+        <Services />
         <Moments />
         <Timeline />
         <Awards />

@@ -6,14 +6,11 @@ import SectionHeading from "@/components/SectionHeading";
 import { useLanguage } from "@/lib/language-context";
 import { content } from "@/lib/content";
 
-const spanClasses = [
-  "col-span-2 md:col-span-2 md:row-span-1",
-  "col-span-1 md:row-span-2",
-  "col-span-1",
-  "col-span-2 md:col-span-1",
-  "col-span-2 md:col-span-2",
-  "col-span-2 md:col-span-1",
-];
+function spanFor(i: number) {
+  if (i === 0) return "col-span-2 md:col-span-2";
+  if (i === 1) return "col-span-1 md:row-span-2";
+  return "col-span-1";
+}
 
 export default function Moments() {
   const { lang } = useLanguage();
@@ -26,19 +23,19 @@ export default function Moments() {
           <SectionHeading label={t.label} heading={t.heading} sub={t.sub} />
         </Reveal>
 
-        <RevealGroup className="mt-12 grid grid-cols-2 gap-4 md:auto-rows-[220px] md:grid-cols-3">
+        <RevealGroup className="mt-12 grid grid-cols-2 gap-4 md:auto-rows-[190px] md:grid-cols-4">
           {t.items.map((item, i) => (
             <RevealItem
               key={item.src}
-              className={`group relative aspect-[4/3] overflow-hidden rounded-2xl border border-violet-900/50 md:aspect-auto ${
-                spanClasses[i] ?? ""
-              }`}
+              className={`group relative aspect-[4/3] overflow-hidden rounded-2xl border border-violet-900/50 md:aspect-auto ${spanFor(
+                i,
+              )}`}
             >
               <Image
                 src={item.src}
                 alt={item.caption}
                 fill
-                sizes="(min-width: 768px) 33vw, 50vw"
+                sizes="(min-width: 768px) 25vw, 50vw"
                 className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />

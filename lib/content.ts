@@ -2,11 +2,19 @@ export type CaseStudy = {
   id: string;
   brand: string;
   logo?: string;
+  cover?: string;
   title: string;
   tag: string;
   year: string;
   description: string;
   metric: string;
+};
+
+export type Pillar = {
+  number: string;
+  title: string;
+  subtitle: string;
+  body: string;
 };
 
 export type BrandLogo = { name: string; logo: string };
@@ -50,6 +58,14 @@ export type LangContent = {
     heading: string;
     body: string[];
     highlights: { title: string; body: string }[];
+  };
+  services: {
+    label: string;
+    heading: string;
+    sub: string;
+    pillars: Pillar[];
+    philosophyLabel: string;
+    philosophy: string;
   };
   moments: {
     label: string;
@@ -133,6 +149,33 @@ export const content: Record<"vi" | "en", LangContent> = {
         },
       ],
     },
+    services: {
+      label: "Dịch vụ Tư vấn",
+      heading: "3 Trụ cột Chuyên môn",
+      sub: "Ba mảng năng lực cốt lõi tôi trực tiếp tư vấn cho thương hiệu, tổ chức và cá nhân.",
+      pillars: [
+        {
+          number: "01",
+          title: "Chiến lược",
+          subtitle: "Định hướng & Kiến trúc nội dung",
+          body: "Xác định chiến lược, định vị, hệ thống chủ đề, kênh và format phù hợp với mục tiêu thương hiệu và kinh doanh.",
+        },
+        {
+          number: "02",
+          title: "Truyền thông",
+          subtitle: "Media & Nội dung sở hữu",
+          body: "Phát triển series, format, video, podcast và Content IP để xây dựng tài sản truyền thông dài hạn.",
+        },
+        {
+          number: "03",
+          title: "Người Sáng tạo",
+          subtitle: "Năng lực Creator & Phát triển kênh",
+          body: "Xây dựng năng lực sáng tạo nội dung, thương hiệu cá nhân và phát triển các kênh nội dung cho chuyên gia, lãnh đạo và đội ngũ.",
+        },
+      ],
+      philosophyLabel: "Triết lý",
+      philosophy: "Định hướng đúng → Xây tài sản nội dung → Phát triển năng lực sáng tạo.",
+    },
     moments: {
       label: "Khoảnh khắc",
       heading: "Những dấu ấn ngoài đời thực",
@@ -162,6 +205,26 @@ export const content: Record<"vi" | "en", LangContent> = {
           src: "/images/moments/trophy.jpg",
           caption: "Cùng đối tác tại Hội nghị KOL, phối hợp tổ chức cùng VCCorp",
         },
+        {
+          src: "/images/moments/consulting-1.jpg",
+          caption: "Trực tiếp tham mưu định hướng nội dung cho đội ngũ Thăng Long Cars",
+        },
+        {
+          src: "/images/moments/consulting-2.jpg",
+          caption: "Buổi làm việc chiến lược nội dung cùng đội ngũ Thăng Long Cars",
+        },
+        {
+          src: "/images/moments/filmset-1.jpg",
+          caption: "Hậu trường đoàn làm phim \"Đèn Âm Hồn – Bà Đừng Buồn Con\"",
+        },
+        {
+          src: "/images/moments/filmset-2.jpg",
+          caption: "Cùng ê-kíp đoàn làm phim tại phố cổ Hà Nội",
+        },
+        {
+          src: "/images/moments/filmset-3.jpg",
+          caption: "Trên phim trường \"Đèn Âm Hồn – Bà Đừng Buồn Con\"",
+        },
       ],
     },
     timeline: {
@@ -169,6 +232,17 @@ export const content: Record<"vi" | "en", LangContent> = {
       heading: "12 năm, ba hệ sinh thái, một mạch tăng trưởng liên tục",
       sub: "Từ người sáng lập một cộng đồng thể thao đường phố đến vị trí điều hành chiến lược truyền thông cho các dự án trăm tỷ.",
       items: [
+        {
+          period: "Th.01/2025 — Hiện tại",
+          title: "Cố vấn Độc lập — Phát triển Nội dung Đa kênh",
+          org: "Tư vấn Độc lập",
+          tag: "Tư vấn Chiến lược",
+          bullets: [
+            "Sau hành trình gắn bó cùng METUB, bước sang giai đoạn hoạt động độc lập — trực tiếp tư vấn chiến lược và kiến trúc nội dung đa kênh cho các thương hiệu, tổ chức và đội ngũ sáng tạo.",
+            "Tham mưu định hướng nội dung cho Thăng Long Cars, đồng hành đưa hệ thống mở rộng lên 8 kênh, đạt hơn 3 triệu lượt xem/tháng — trực tiếp góp phần nâng tầm nhận diện thương hiệu và thúc đẩy doanh số bán xe.",
+            "Song song đảm nhiệm vai trò Giám đốc Truyền thông Đa kênh cho dự án điện ảnh \"Đèn Âm Hồn – Bà Đừng Buồn Con\" tại Challenge Me Entertainment.",
+          ],
+        },
         {
           period: "Th.02/2025 — Th.02/2026",
           title: "Giám đốc Truyền thông Đa kênh",
@@ -379,6 +453,17 @@ export const content: Record<"vi" | "en", LangContent> = {
             "Trực tiếp thiết kế và lập kế hoạch Tiếp thị Tích hợp, quy hoạch hệ thống nội dung vệ tinh đa nền tảng đạt mức phủ sóng 200 triệu lượt xem/tháng — đóng góp trực tiếp vào hiệu suất phòng vé của dự án.",
           metric: "105 tỷ VNĐ / 10 ngày khởi chiếu",
         },
+        {
+          id: "thanglongcars",
+          brand: "Thăng Long Cars",
+          cover: "/images/portfolio/thang-long-cars.jpg",
+          title: "Tư vấn Tăng trưởng Hệ thống Nội dung",
+          tag: "Tư vấn Độc lập · Đa kênh",
+          year: "2025–Hiện tại",
+          description:
+            "Với vai trò Cố vấn Độc lập, trực tiếp tham mưu định hướng nội dung và kiến trúc kênh cho Thăng Long Cars — đồng hành mở rộng hệ thống lên 8 kênh, đạt hơn 3 triệu lượt xem mỗi tháng, góp phần nâng tầm nhận diện thương hiệu và thúc đẩy trực tiếp doanh số bán xe.",
+          metric: "8 kênh · 3M+ views/tháng",
+        },
       ],
     },
     brands: [
@@ -469,6 +554,33 @@ export const content: Record<"vi" | "en", LangContent> = {
         },
       ],
     },
+    services: {
+      label: "Consulting Services",
+      heading: "3 Pillars of Expertise",
+      sub: "Three core areas I advise brands, organizations, and individuals on directly.",
+      pillars: [
+        {
+          number: "01",
+          title: "Strategy",
+          subtitle: "Content Direction & Architecture",
+          body: "Defining strategy, positioning, topic systems, channels, and formats aligned with brand and business goals.",
+        },
+        {
+          number: "02",
+          title: "Media",
+          subtitle: "Owned Media & Content",
+          body: "Developing series, formats, video, podcasts, and Content IP to build long-term media assets.",
+        },
+        {
+          number: "03",
+          title: "The Creator",
+          subtitle: "Creator Capability & Channel Growth",
+          body: "Building content-creation capability, personal branding, and channel growth for executives, leaders, and teams.",
+        },
+      ],
+      philosophyLabel: "Philosophy",
+      philosophy: "Get the direction right → build content assets → grow creative capability.",
+    },
     moments: {
       label: "Moments",
       heading: "Marks made in the real world",
@@ -498,6 +610,26 @@ export const content: Record<"vi" | "en", LangContent> = {
           src: "/images/moments/trophy.jpg",
           caption: "With partners at the KOL Conference, co-organized with VCCorp",
         },
+        {
+          src: "/images/moments/consulting-1.jpg",
+          caption: "Advising the Thăng Long Cars team on content direction",
+        },
+        {
+          src: "/images/moments/consulting-2.jpg",
+          caption: "A content strategy working session with the Thăng Long Cars team",
+        },
+        {
+          src: "/images/moments/filmset-1.jpg",
+          caption: "Behind the scenes on \"Đèn Âm Hồn – Bà Đừng Buồn Con\"",
+        },
+        {
+          src: "/images/moments/filmset-2.jpg",
+          caption: "With the film crew in Hanoi's Old Quarter",
+        },
+        {
+          src: "/images/moments/filmset-3.jpg",
+          caption: "On set for \"Đèn Âm Hồn – Bà Đừng Buồn Con\"",
+        },
       ],
     },
     timeline: {
@@ -505,6 +637,17 @@ export const content: Record<"vi" | "en", LangContent> = {
       heading: "12 years, three ecosystems, one continuous growth arc",
       sub: "From founding a street-sports community to leading communications strategy for nine-figure entertainment projects.",
       items: [
+        {
+          period: "Jan 2025 — Present",
+          title: "Independent Consultant — Multi-Channel Content Development",
+          org: "Independent Consulting",
+          tag: "Strategic Consulting",
+          bullets: [
+            "After his journey at METUB, moved into independent practice — advising brands, organizations, and creative teams directly on multi-channel content strategy and architecture.",
+            "Advised Thăng Long Cars on content direction, helping the system scale to 8 channels and 3M+ monthly views — directly contributing to stronger brand recognition and vehicle sales.",
+            "Concurrently served as Multi-Channel Communications Director for the feature film \"Đèn Âm Hồn – Bà Đừng Buồn Con\" at Challenge Me Entertainment.",
+          ],
+        },
         {
           period: "Feb 2025 — Feb 2026",
           title: "Multi-Channel Communications Director",
@@ -709,6 +852,17 @@ export const content: Record<"vi" | "en", LangContent> = {
           description:
             "Designed and planned integrated marketing, orchestrating a cross-platform satellite content system reaching 200M views per month — directly contributing to the film's box office performance.",
           metric: "$4.2M+ box office / 10 days",
+        },
+        {
+          id: "thanglongcars",
+          brand: "Thăng Long Cars",
+          cover: "/images/portfolio/thang-long-cars.jpg",
+          title: "Advising Content System Growth",
+          tag: "Independent Consulting · Multi-Channel",
+          year: "2025–Present",
+          description:
+            "As Independent Consultant, directly advised Thăng Long Cars on content direction and channel architecture — helping scale the system to 8 channels and 3M+ monthly views, strengthening brand recognition and directly driving vehicle sales.",
+          metric: "8 channels · 3M+ views/month",
         },
       ],
     },

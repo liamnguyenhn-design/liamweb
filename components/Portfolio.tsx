@@ -39,8 +39,25 @@ export default function Portfolio() {
                 data-cursor-hover
                 className="glass-card group relative flex w-full flex-col overflow-hidden rounded-2xl text-left transition-all hover:-translate-y-1 hover:border-violet-400/40"
               >
-                <div className={`relative h-40 w-full bg-gradient-to-br ${gradients[i % gradients.length]} opacity-90`}>
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.25),transparent_55%)]" />
+                <div
+                  className={`relative h-40 w-full overflow-hidden ${
+                    item.cover ? "" : `bg-gradient-to-br ${gradients[i % gradients.length]} opacity-90`
+                  }`}
+                >
+                  {item.cover ? (
+                    <>
+                      <Image
+                        src={item.cover}
+                        alt={item.brand}
+                        fill
+                        sizes="(min-width: 768px) 50vw, 100vw"
+                        className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-black/10" />
+                    </>
+                  ) : (
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.25),transparent_55%)]" />
+                  )}
                   <span className="absolute right-4 top-4 rounded-full bg-black/25 px-3 py-1 text-xs font-semibold text-white backdrop-blur">
                     {item.year}
                   </span>
@@ -106,11 +123,17 @@ export default function Portfolio() {
             >
               <button
                 onClick={() => setActive(null)}
-                className="absolute right-5 top-5 flex h-9 w-9 items-center justify-center rounded-full border border-violet-700/60 text-ink-dim transition-colors hover:border-violet-400 hover:text-ink"
+                className="absolute right-5 top-5 flex h-9 w-9 items-center justify-center rounded-full border border-violet-700/60 bg-bg-elevated/80 text-ink-dim backdrop-blur transition-colors hover:border-violet-400 hover:text-ink"
                 aria-label="Close"
               >
                 <X size={16} />
               </button>
+              {active.cover ? (
+                <div className="relative -mx-8 -mt-8 mb-6 h-48 w-[calc(100%+4rem)] overflow-hidden md:-mx-10 md:-mt-10 md:h-56 md:w-[calc(100%+5rem)]">
+                  <Image src={active.cover} alt={active.brand} fill sizes="640px" className="object-cover" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-bg-elevated via-transparent to-transparent" />
+                </div>
+              ) : null}
               {active.logo ? (
                 <span className="mb-4 flex h-12 w-24 items-center justify-center rounded-lg bg-white/95 px-3 py-2 shadow-md">
                   <span className="relative h-full w-full">

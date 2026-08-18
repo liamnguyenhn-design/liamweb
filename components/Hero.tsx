@@ -102,11 +102,9 @@ export default function Hero() {
                 fill
                 priority
                 sizes="(min-width: 1024px) 384px, 90vw"
-                className="object-cover brightness-110 contrast-110 saturate-[1.2]"
+                className="object-cover"
               />
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_35%,transparent_55%,rgba(21,10,46,0.4)_100%)]" />
-              <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-bg/55 to-transparent" />
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_82%_15%,rgba(232,193,101,0.22),transparent_35%)] mix-blend-screen" />
+              <div className="absolute inset-x-0 bottom-0 h-14 bg-gradient-to-t from-bg/45 to-transparent" />
             </div>
           </div>
         </motion.div>
