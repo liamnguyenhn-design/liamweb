@@ -7,9 +7,13 @@ export default function Marquee({ items }: { items: BrandLogo[] }) {
     <div className="no-scrollbar relative overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_10%,black_90%,transparent)]">
       <div className="animate-marquee flex w-max items-center gap-6 py-2">
         {doubled.map((item, i) => (
-          <div
+          <a
             key={item.name + i}
+            href="https://www.youtube.com/@hoangng79"
+            target="_blank"
+            rel="noopener noreferrer"
             title={item.name}
+            data-cursor-hover
             className="flex h-16 w-32 shrink-0 items-center justify-center rounded-xl bg-white/95 px-4 py-3 shadow-sm transition-transform hover:scale-105 sm:h-20 sm:w-40"
           >
             <div className="relative h-full w-full">
@@ -21,7 +25,7 @@ export default function Marquee({ items }: { items: BrandLogo[] }) {
                 className="object-contain"
               />
             </div>
-          </div>
+          </a>
         ))}
       </div>
     </div>

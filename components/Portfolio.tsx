@@ -102,6 +102,32 @@ export default function Portfolio() {
             <Marquee items={content[lang].brands} />
           </div>
         </Reveal>
+
+        <Reveal className="mt-16" delay={0.15}>
+          <p className="text-center text-xs font-semibold uppercase tracking-[0.3em] text-ink-faint">
+            {t.highlightsLabel}
+          </p>
+          <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-3">
+            {t.highlights.map((h) => (
+              <div
+                key={h.src}
+                className="group relative aspect-video overflow-hidden rounded-2xl border border-violet-900/50"
+              >
+                <Image
+                  src={h.src}
+                  alt={h.caption}
+                  fill
+                  sizes="(min-width: 640px) 33vw, 100vw"
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
+                <p className="absolute inset-x-0 bottom-0 p-4 text-xs leading-snug text-white/90">
+                  {h.caption}
+                </p>
+              </div>
+            ))}
+          </div>
+        </Reveal>
       </div>
 
       <AnimatePresence>

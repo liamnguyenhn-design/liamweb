@@ -63,6 +63,19 @@ export default function Summary() {
             );
           })}
         </RevealGroup>
+
+        <Reveal delay={0.1} className="mt-16">
+          <div className="relative mx-auto aspect-[975/1400] w-full max-w-[280px] overflow-hidden rounded-[1.75rem] border border-violet-900/50 sm:max-w-xs">
+            <Image
+              src="/images/google-feature.jpg"
+              alt="Hoàng Nguyễn tại trụ sở Google"
+              fill
+              sizes="(min-width: 640px) 320px, 280px"
+              className="object-cover"
+            />
+            <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/55 to-transparent" />
+          </div>
+        </Reveal>
       </div>
     </section>
   );

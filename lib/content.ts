@@ -15,6 +15,7 @@ export type Pillar = {
   title: string;
   subtitle: string;
   body: string;
+  images: string[];
 };
 
 export type BrandLogo = { name: string; logo: string };
@@ -44,12 +45,14 @@ export type LangContent = {
   hero: {
     eyebrow: string;
     name: string;
+    slogan: string;
     roleLine1: string;
     roleLine2: string;
     pitch: string;
     ctaPrimary: string;
     ctaSecondary: string;
     credential: string;
+    subCredentials: string[];
     scrollHint: string;
   };
   stats: Stat[];
@@ -64,6 +67,7 @@ export type LangContent = {
     heading: string;
     sub: string;
     pillars: Pillar[];
+    galleryCta: string;
     philosophyLabel: string;
     philosophy: string;
   };
@@ -76,7 +80,16 @@ export type LangContent = {
   };
   timeline: { label: string; heading: string; sub: string; items: TimelineItem[] };
   awards: { label: string; heading: string; sub: string; items: Award[] };
-  portfolio: { label: string; heading: string; sub: string; items: CaseStudy[]; viewCase: string; brandsLabel: string };
+  portfolio: {
+    label: string;
+    heading: string;
+    sub: string;
+    items: CaseStudy[];
+    viewCase: string;
+    brandsLabel: string;
+    highlightsLabel: string;
+    highlights: { src: string; caption: string }[];
+  };
   brands: BrandLogo[];
   contact: {
     label: string;
@@ -112,20 +125,25 @@ export const content: Record<"vi" | "en", LangContent> = {
     hero: {
       eyebrow: "Content Strategy & Creator Network Consultant",
       name: "HOÀNG NGUYỄN",
+      slogan: "CREATORS BUILD THE FUTURE",
       roleLine1: "Kiến tạo hệ sinh thái nội dung",
       roleLine2: "từ con số 0 đến hàng tỷ lượt xem.",
       pitch:
         "Chuyên gia tư vấn chiến lược nội dung số & kiến tạo mạng lưới Creators, với 12 năm xây dựng và mở rộng các hệ sinh thái sáng tạo — từ vai trò thành viên dẫn dắt đội hình Highnoy Parkour tiên phong, đồng hành cùng Vingroup, Techcombank, Tiger Beer, Nike, Canifa lan tỏa chiến dịch qua những màn trình diễn trên các sân khấu lớn, đến vai trò định hướng nội dung cho hơn 100 nhà sáng tạo và nghệ sĩ tại METUB.",
       ctaPrimary: "Xem dự án tiêu biểu",
       ctaSecondary: "Trao đổi hợp tác",
-      credential: "Director of Communications & Partnerships",
+      credential: "Cố vấn Độc lập — Phát triển Nội dung Đa nền tảng",
+      subCredentials: [
+        "Phó Chủ tịch mạng lưới khởi nghiệp, đổi mới sáng tạo và chuyển đổi số thủ đô - HUB Network",
+        "Co-founder & CEO - Highnoy Group Parkour Việt Nam",
+      ],
       scrollHint: "Cuộn để khám phá",
     },
     stats: [
       { value: "12+", label: "Năm kinh nghiệm điều hành" },
       { value: "3M+", label: "Followers đa nền tảng" },
       { value: "2B+", label: "Lượt xem tích lũy" },
-      { value: "105B+", label: "VNĐ doanh thu phòng vé / 10 ngày" },
+      { value: "200M+", label: "Lượt xem chiến dịch / tháng" },
       { value: "20+", label: "Thương hiệu lớn đã đồng hành" },
     ],
     summary: {
@@ -151,29 +169,50 @@ export const content: Record<"vi" | "en", LangContent> = {
       ],
     },
     services: {
-      label: "Dịch vụ Tư vấn",
-      heading: "3 Trụ cột Chuyên môn",
-      sub: "Ba mảng năng lực cốt lõi tôi trực tiếp tư vấn cho thương hiệu, tổ chức và cá nhân.",
+      label: "Cố vấn Chiến lược",
+      heading: "3 Trụ cột Cố vấn Chiến lược",
+      sub: "Không dừng ở việc cung cấp dịch vụ — tôi đồng hành cùng thương hiệu, tổ chức và cá nhân với vai trò Cố vấn Chiến lược, trực tiếp tham gia hoạch định và triển khai trên ba trụ cột năng lực cốt lõi sau.",
       pillars: [
         {
           number: "01",
           title: "Chiến lược",
           subtitle: "Định hướng & Kiến trúc nội dung",
-          body: "Xác định chiến lược, định vị, hệ thống chủ đề, kênh và format phù hợp với mục tiêu thương hiệu và kinh doanh.",
+          body: "Đồng hành cùng ban lãnh đạo ngay từ giai đoạn hoạch định: xác định định vị thương hiệu, hệ thống chủ đề nội dung, lựa chọn kênh và format phù hợp với mục tiêu kinh doanh — xây dựng lộ trình rõ ràng để mỗi khoản đầu tư nội dung đều tạo ra giá trị đo lường được.",
+          images: [
+            "/images/pillars/1-cover.jpg",
+            "/images/pillars/1-2.jpg",
+            "/images/pillars/1-3.jpg",
+            "/images/pillars/1-4.jpg",
+            "/images/pillars/1-5.jpg",
+          ],
         },
         {
           number: "02",
           title: "Truyền thông",
           subtitle: "Media & Nội dung sở hữu",
-          body: "Phát triển series, format, video, podcast và Content IP để xây dựng tài sản truyền thông dài hạn.",
+          body: "Trực tiếp phát triển series, format, video, podcast và các Content IP sở hữu riêng — từ khâu concept, kịch bản đến sản xuất và phân phối, giúp thương hiệu sở hữu tài sản truyền thông dài hạn thay vì chỉ chạy theo từng chiến dịch ngắn hạn.",
+          images: [
+            "/images/pillars/2-cover.jpg",
+            "/images/pillars/2-2.jpg",
+            "/images/pillars/2-3.jpg",
+            "/images/pillars/2-4.jpg",
+            "/images/pillars/2-5.jpg",
+          ],
         },
         {
           number: "03",
-          title: "Người Sáng tạo",
+          title: "Năng lực Sáng tạo",
           subtitle: "Năng lực Creator & Phát triển kênh",
-          body: "Xây dựng năng lực sáng tạo nội dung, thương hiệu cá nhân và phát triển các kênh nội dung cho chuyên gia, lãnh đạo và đội ngũ.",
+          body: "Huấn luyện và đồng hành cùng chuyên gia, lãnh đạo và đội ngũ xây dựng năng lực sáng tạo nội dung từ gốc — từ cách xuất hiện tự nhiên trước ống kính, xây dựng thương hiệu cá nhân, đến vận hành kênh nội dung riêng, giúp tiếng nói và chuyên môn của họ tạo được ảnh hưởng thực sự.",
+          images: [
+            "/images/pillars/3-cover.jpg",
+            "/images/pillars/3-2.jpg",
+            "/images/pillars/3-3.jpg",
+            "/images/pillars/3-4.jpg",
+          ],
         },
       ],
+      galleryCta: "Xem ảnh thực tế",
       philosophyLabel: "Triết lý",
       philosophy: "Định hướng đúng → Xây tài sản nội dung → Phát triển năng lực sáng tạo.",
     },
@@ -245,7 +284,7 @@ export const content: Record<"vi" | "en", LangContent> = {
           bullets: [
             "Trực tiếp thiết kế chiến lược Tiếp thị Tích hợp cho dự án điện ảnh \"Đèn Âm Hồn – Bà Đừng Buồn Con\".",
             "Quy hoạch hệ thống nội dung vệ tinh đa nền tảng, đạt mức phủ sóng 200 triệu lượt xem/tháng.",
-            "Đóng góp trực tiếp vào doanh thu phòng vé hơn 105 tỷ VNĐ chỉ trong 10 ngày khởi chiếu.",
+            "Đóng góp trực tiếp vào thành tích phòng vé ấn tượng ngay trong 10 ngày đầu công chiếu.",
           ],
         },
         {
@@ -265,7 +304,7 @@ export const content: Record<"vi" | "en", LangContent> = {
           org: "METUB Việt Nam",
           tag: "Quản trị Đối tác",
           bullets: [
-            "Quản trị hiệu suất danh mục gần 200 kênh YouTube đối tác, doanh thu ổn định 35.000 USD/tháng.",
+            "Quản trị hiệu suất danh mục gần 200 kênh YouTube đối tác, duy trì tăng trưởng doanh thu ổn định hàng tháng.",
             "Tư vấn chiến lược cấp cao cho các IP: ca sĩ Trần Tùng Anh, thương hiệu Tailor Veston, kênh Xuân Bắc Official.",
           ],
         },
@@ -275,7 +314,7 @@ export const content: Record<"vi" | "en", LangContent> = {
           org: "METUB Việt Nam",
           tag: "Quản trị Đối tác",
           bullets: [
-            "Định hướng phát triển nội dung đa ngành cho gần 100 nhà sáng tạo đối tác, doanh thu 15.000–20.000 USD/tháng.",
+            "Định hướng phát triển nội dung đa ngành cho gần 100 nhà sáng tạo đối tác, thúc đẩy tăng trưởng doanh thu đều đặn mỗi tháng.",
             "Vinh danh Top 3 nhân sự xuất sắc nhất toàn quốc (2020–2021).",
           ],
         },
@@ -291,13 +330,13 @@ export const content: Record<"vi" | "en", LangContent> = {
         },
         {
           period: "Th.06/2016 — Hiện tại",
-          title: "Trưởng nhóm Phát triển & Thương mại hóa",
+          title: "Trưởng nhóm Phát triển nội dung",
           org: "Challenge Me – \"Hãy Thách Thức Tôi\"",
           tag: "Zero-to-One",
           bullets: [
             "Gia nhập từ mốc 6.000 người đăng ký, định hình kịch bản và chiến lược nội dung cốt lõi.",
             "Đưa hệ sinh thái lên 4,6 triệu subscriber YouTube + 4 triệu follow Facebook, hơn 3,6 tỷ lượt xem toàn hệ thống.",
-            "Doanh thu lũy kế 10 năm đạt xấp xỉ 93 tỷ VNĐ; mảng bán lẻ mang về 300 triệu VNĐ ngay tháng đầu mở bán.",
+            "Đồng hành cùng kênh trong suốt 10 năm phát triển bền vững, mở rộng thành công sang mảng kinh doanh bán lẻ ngay từ tháng đầu ra mắt.",
           ],
         },
         {
@@ -382,6 +421,12 @@ export const content: Record<"vi" | "en", LangContent> = {
       sub: "Chọn lọc các dự án đa nền tảng, quy hoạch nội dung và chiến dịch thương hiệu tiêu biểu nhất.",
       viewCase: "Xem chi tiết",
       brandsLabel: "Thương hiệu đã đồng hành",
+      highlightsLabel: "Khoảnh khắc từ các sản phẩm video",
+      highlights: [
+        { src: "/images/highlights/bitis.jpg", caption: "Chiến dịch cùng Biti's Hunter" },
+        { src: "/images/highlights/adidas.jpg", caption: "Sản xuất nội dung thể thao cùng Adidas" },
+        { src: "/images/highlights/vtv.jpg", caption: "Xuất hiện trên sóng truyền hình quốc gia VTV1" },
+      ],
       items: [
         {
           id: "techcombank",
@@ -445,7 +490,7 @@ export const content: Record<"vi" | "en", LangContent> = {
           year: "2025–2026",
           description:
             "Trực tiếp thiết kế và lập kế hoạch Tiếp thị Tích hợp, quy hoạch hệ thống nội dung vệ tinh đa nền tảng đạt mức phủ sóng 200 triệu lượt xem/tháng — đóng góp trực tiếp vào hiệu suất phòng vé của dự án.",
-          metric: "105 tỷ VNĐ / 10 ngày khởi chiếu",
+          metric: "Top phòng vé / 10 ngày khởi chiếu",
         },
         {
           id: "thanglongcars",
@@ -463,6 +508,7 @@ export const content: Record<"vi" | "en", LangContent> = {
     brands: [
       { name: "Techcombank", logo: "/logos/techcombank.png" },
       { name: "Nike", logo: "/logos/nike.svg" },
+      { name: "Adidas", logo: "/logos/adidas.svg" },
       { name: "Samsung", logo: "/logos/samsung.svg" },
       { name: "Redbull", logo: "/logos/redbull.svg" },
       { name: "Vingroup", logo: "/logos/vingroup.svg" },
@@ -471,6 +517,13 @@ export const content: Record<"vi" | "en", LangContent> = {
       { name: "TH True Milk", logo: "/logos/th-true-milk.svg" },
       { name: "Biti's", logo: "/logos/bitis.svg" },
       { name: "AMD", logo: "/logos/amd.svg" },
+      { name: "Garena", logo: "/logos/garena.png" },
+      { name: "MB Bank", logo: "/logos/mbbank.png" },
+      { name: "Cenhomes", logo: "/logos/cenhomes.svg" },
+      { name: "Pushmax", logo: "/logos/pushmax.svg" },
+      { name: "Audition", logo: "/logos/audition.svg" },
+      { name: "Chương Tailor", logo: "/logos/chuong-tailor.svg" },
+      { name: "MCV Network", logo: "/logos/mcv-network.svg" },
       { name: "Google", logo: "/logos/google.svg" },
       { name: "YouTube", logo: "/logos/youtube.svg" },
       { name: "VTV3", logo: "/logos/vtv3.svg" },
@@ -510,20 +563,25 @@ export const content: Record<"vi" | "en", LangContent> = {
     hero: {
       eyebrow: "Content Strategy & Creator Network Consultant",
       name: "HOANG NGUYEN",
+      slogan: "CREATORS BUILD THE FUTURE",
       roleLine1: "Building content ecosystems",
       roleLine2: "from zero to billions of views.",
       pitch:
         "A content strategy consultant and creator-network architect with 12 years spent building and scaling digital ecosystems — as a leading member of the pioneering Highnoy Parkour team, partnering with Vingroup, Techcombank, Tiger Beer, Nike, and Canifa to spread their campaigns through live performances on major stages, to directing content strategy for 100+ creators and artists at METUB.",
       ctaPrimary: "View selected work",
       ctaSecondary: "Start a conversation",
-      credential: "Director of Communications & Partnerships",
+      credential: "Independent Advisor — Multi-Platform Content Development",
+      subCredentials: [
+        "Vice Chairman, HUB Network — Hanoi's Startup, Innovation & Digital Transformation Network",
+        "Co-founder & CEO — Highnoy Group Parkour Vietnam",
+      ],
       scrollHint: "Scroll to explore",
     },
     stats: [
       { value: "12+", label: "Years in executive strategy" },
       { value: "3M+", label: "Cross-platform followers" },
       { value: "2B+", label: "Cumulative views" },
-      { value: "$4.2M+", label: "Box office in 10 days" },
+      { value: "200M+", label: "Campaign views / month" },
       { value: "20+", label: "Major brand partners" },
     ],
     summary: {
@@ -549,29 +607,50 @@ export const content: Record<"vi" | "en", LangContent> = {
       ],
     },
     services: {
-      label: "Consulting Services",
-      heading: "3 Pillars of Expertise",
-      sub: "Three core areas I advise brands, organizations, and individuals on directly.",
+      label: "Strategic Advisory",
+      heading: "3 Pillars of Strategic Advisory",
+      sub: "Not just a service provider — I work alongside brands, organizations, and individuals as a Strategic Advisor, directly shaping and executing across three core pillars of expertise.",
       pillars: [
         {
           number: "01",
           title: "Strategy",
           subtitle: "Content Direction & Architecture",
-          body: "Defining strategy, positioning, topic systems, channels, and formats aligned with brand and business goals.",
+          body: "Partnering with leadership from the planning stage: defining brand positioning, content topic systems, and the right channels and formats for business goals — building a clear roadmap so every content investment delivers measurable value.",
+          images: [
+            "/images/pillars/1-cover.jpg",
+            "/images/pillars/1-2.jpg",
+            "/images/pillars/1-3.jpg",
+            "/images/pillars/1-4.jpg",
+            "/images/pillars/1-5.jpg",
+          ],
         },
         {
           number: "02",
           title: "Media",
           subtitle: "Owned Media & Content",
-          body: "Developing series, formats, video, podcasts, and Content IP to build long-term media assets.",
+          body: "Directly developing series, formats, video, podcasts, and proprietary Content IP — from concept and scripting through production and distribution, so brands own long-term media assets instead of chasing one-off campaigns.",
+          images: [
+            "/images/pillars/2-cover.jpg",
+            "/images/pillars/2-2.jpg",
+            "/images/pillars/2-3.jpg",
+            "/images/pillars/2-4.jpg",
+            "/images/pillars/2-5.jpg",
+          ],
         },
         {
           number: "03",
-          title: "The Creator",
+          title: "Creative Capability",
           subtitle: "Creator Capability & Channel Growth",
-          body: "Building content-creation capability, personal branding, and channel growth for executives, leaders, and teams.",
+          body: "Coaching executives, leaders, and teams to build content-creation capability from the ground up — from showing up naturally on camera, to personal branding, to running their own content channels — so their voice and expertise create real impact.",
+          images: [
+            "/images/pillars/3-cover.jpg",
+            "/images/pillars/3-2.jpg",
+            "/images/pillars/3-3.jpg",
+            "/images/pillars/3-4.jpg",
+          ],
         },
       ],
+      galleryCta: "View photos",
       philosophyLabel: "Philosophy",
       philosophy: "Get the direction right → build content assets → grow creative capability.",
     },
@@ -643,7 +722,7 @@ export const content: Record<"vi" | "en", LangContent> = {
           bullets: [
             "Designed the integrated marketing strategy for the feature film \"Đèn Âm Hồn – Bà Đừng Buồn Con.\"",
             "Planned a cross-platform satellite content system reaching 200M views per month.",
-            "Directly contributed to a box office result of over 105B VND (~$4.2M) within 10 days of release.",
+            "Directly contributed to a standout box-office opening within the first 10 days of release.",
           ],
         },
         {
@@ -663,7 +742,7 @@ export const content: Record<"vi" | "en", LangContent> = {
           org: "METUB Vietnam",
           tag: "Partner Management",
           bullets: [
-            "Managed performance of a portfolio of ~200 partner YouTube channels, sustaining $35K/month in revenue.",
+            "Managed performance across a portfolio of ~200 partner YouTube channels, sustaining steady monthly revenue growth.",
             "Provided senior strategic consulting for IPs including singer Trần Tùng Anh, Tailor Veston, and Xuân Bắc Official.",
           ],
         },
@@ -673,7 +752,7 @@ export const content: Record<"vi" | "en", LangContent> = {
           org: "METUB Vietnam",
           tag: "Partner Management",
           bullets: [
-            "Directed cross-category content growth for ~100 partner creators, generating $15–20K/month in revenue.",
+            "Directed cross-category content growth for ~100 partner creators, driving steady month-over-month revenue growth.",
             "Recognized as Top 3 nationwide performer (2020–2021).",
           ],
         },
@@ -689,13 +768,13 @@ export const content: Record<"vi" | "en", LangContent> = {
         },
         {
           period: "Jun 2016 — Present",
-          title: "Growth & Commercial Lead",
+          title: "Content Development Lead",
           org: "Challenge Me — \"Challenge Me\"",
           tag: "Zero-to-One",
           bullets: [
             "Joined at 6,000 subscribers, shaping the channel's core content and strategy.",
             "Scaled the ecosystem to 4.6M YouTube subscribers + 4M Facebook followers, 3.6B+ views system-wide.",
-            "10-year cumulative revenue of ~$3.5M; retail line generated 300M VND in its first month alone.",
+            "Grew alongside the channel across a decade of sustained development, successfully expanding into a retail merchandise line from its very first month.",
           ],
         },
         {
@@ -775,6 +854,12 @@ export const content: Record<"vi" | "en", LangContent> = {
       sub: "A curated selection of cross-platform, ecosystem-planning and brand-defining campaigns.",
       viewCase: "View details",
       brandsLabel: "Brands I've worked with",
+      highlightsLabel: "Moments from the video work",
+      highlights: [
+        { src: "/images/highlights/bitis.jpg", caption: "Campaign with Biti's Hunter" },
+        { src: "/images/highlights/adidas.jpg", caption: "Sports content production with Adidas" },
+        { src: "/images/highlights/vtv.jpg", caption: "Featured on national broadcaster VTV1" },
+      ],
       items: [
         {
           id: "techcombank",
@@ -838,7 +923,7 @@ export const content: Record<"vi" | "en", LangContent> = {
           year: "2025–2026",
           description:
             "Designed and planned integrated marketing, orchestrating a cross-platform satellite content system reaching 200M views per month — directly contributing to the film's box office performance.",
-          metric: "$4.2M+ box office / 10 days",
+          metric: "Box-office hit / 10-day opening",
         },
         {
           id: "thanglongcars",
@@ -856,6 +941,7 @@ export const content: Record<"vi" | "en", LangContent> = {
     brands: [
       { name: "Techcombank", logo: "/logos/techcombank.png" },
       { name: "Nike", logo: "/logos/nike.svg" },
+      { name: "Adidas", logo: "/logos/adidas.svg" },
       { name: "Samsung", logo: "/logos/samsung.svg" },
       { name: "Redbull", logo: "/logos/redbull.svg" },
       { name: "Vingroup", logo: "/logos/vingroup.svg" },
@@ -864,6 +950,13 @@ export const content: Record<"vi" | "en", LangContent> = {
       { name: "TH True Milk", logo: "/logos/th-true-milk.svg" },
       { name: "Biti's", logo: "/logos/bitis.svg" },
       { name: "AMD", logo: "/logos/amd.svg" },
+      { name: "Garena", logo: "/logos/garena.png" },
+      { name: "MB Bank", logo: "/logos/mbbank.png" },
+      { name: "Cenhomes", logo: "/logos/cenhomes.svg" },
+      { name: "Pushmax", logo: "/logos/pushmax.svg" },
+      { name: "Audition", logo: "/logos/audition.svg" },
+      { name: "Chương Tailor", logo: "/logos/chuong-tailor.svg" },
+      { name: "MCV Network", logo: "/logos/mcv-network.svg" },
       { name: "Google", logo: "/logos/google.svg" },
       { name: "YouTube", logo: "/logos/youtube.svg" },
       { name: "VTV3", logo: "/logos/vtv3.svg" },

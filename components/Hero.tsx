@@ -27,6 +27,15 @@ export default function Hero() {
             {t.eyebrow}
           </motion.div>
 
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.05 }}
+            className="mt-5 text-sm font-semibold uppercase tracking-[0.3em] text-gold"
+          >
+            {t.slogan}
+          </motion.p>
+
           <motion.h1
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
@@ -107,6 +116,22 @@ export default function Hero() {
               <div className="absolute inset-x-0 bottom-0 h-14 bg-gradient-to-t from-black/45 to-transparent" />
             </div>
           </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.6 }}
+            className="mt-5 flex flex-col items-center gap-1.5 text-center"
+          >
+            {t.subCredentials.map((line) => (
+              <p
+                key={line}
+                className="max-w-xs text-xs leading-relaxed text-ink-dim"
+              >
+                {line}
+              </p>
+            ))}
+          </motion.div>
         </motion.div>
       </div>
 
