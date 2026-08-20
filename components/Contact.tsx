@@ -164,7 +164,7 @@ export default function Contact() {
               </button>
 
               {status === "success" && <p className="text-sm text-accent">{t.formSuccess}</p>}
-              {status === "error" && <p className="text-sm text-red-700">{t.formError}</p>}
+              {status === "error" && <p className="text-sm text-red-400">{t.formError}</p>}
             </form>
           </Reveal>
         </div>

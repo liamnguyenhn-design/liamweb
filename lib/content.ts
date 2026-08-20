@@ -64,6 +64,43 @@ export type BrandCampaign = {
   proof: string;
 };
 
+export type ProcessStage = {
+  number: string;
+  title: string;
+  body: string;
+  bullets?: string[];
+  flow?: string;
+  note?: string;
+};
+
+export type ChuongTailorCase = {
+  eyebrow: string;
+  heading: string;
+  subheading: string;
+  problemLabel: string;
+  problem: string[];
+  roleLabel: string;
+  roleHeading: string;
+  roleFlow: string;
+  roleBody: string;
+  process: ProcessStage[];
+  resultsHeading: string;
+  growth: {
+    start: string;
+    startLabel: string;
+    added: string;
+    addedLabel: string;
+    end: string;
+    endLabel: string;
+  };
+  growthBody: string;
+  metrics: { value: string; label: string; body: string }[];
+  keyResultLabel: string;
+  keyResult: string[];
+  keyMessage: string[];
+  cover: string;
+};
+
 export type LangContent = {
   nav: {
     home: string;
@@ -82,6 +119,7 @@ export type LangContent = {
     capabilityLine: string;
     ctaPrimary: string;
     ctaSecondary: string;
+    subCredentials: string[];
     scrollHint: string;
   };
   stats: Stat[];
@@ -129,13 +167,14 @@ export type LangContent = {
     label: string;
     heading: string;
     sub: string;
-    flagshipLabel: string;
+    otherCasesLabel: string;
     items: CaseStudy[];
     campaignsHeading: string;
     campaigns: BrandCampaign[];
     stageLabel: string;
     viewCase: string;
   };
+  chuongTailor: ChuongTailorCase;
   awards: { label: string; heading: string; sub: string; items: Award[] };
   moments: {
     label: string;
@@ -210,6 +249,10 @@ export const content: Record<"vi" | "en", LangContent> = {
       capabilityLine: "ĐỊNH HƯỚNG · NỘI DUNG · CREATOR · SẢN XUẤT · ĐA NỀN TẢNG · TỐI ƯU",
       ctaPrimary: "Tôi có thể giúp gì?",
       ctaSecondary: "Trao đổi về dự án",
+      subCredentials: [
+        "Phó Chủ tịch mạng lưới khởi nghiệp, đổi mới sáng tạo và chuyển đổi số Thủ Đô - HUB Network",
+        "Co-founder & Admin - Highnoy Group Parkour Việt Nam",
+      ],
       scrollHint: "Cuộn để khám phá",
     },
     stats: [
@@ -382,7 +425,7 @@ export const content: Record<"vi" | "en", LangContent> = {
           org: "Tư vấn Độc lập",
           bullets: [
             "Tham mưu định hướng nội dung và kiến trúc kênh cho Thăng Long Cars — đồng hành mở rộng hệ thống lên 8 kênh, đạt hơn 3 triệu lượt xem/tháng.",
-            "Song song giữ vai trò Giám đốc Truyền thông Đa kênh cho dự án điện ảnh \"Đèn Âm Hồn – Bà Đừng Buồn Con\" tại Challenge Me Entertainment — quy hoạch hệ thống nội dung vệ tinh đa nền tảng đạt 200 triệu lượt xem/tháng.",
+            "Song song đồng hành cùng ê-kíp truyền thông cho dự án điện ảnh \"Đèn Âm Hồn – Bà Đừng Buồn Con\" tại Challenge Me Entertainment — tham gia định hướng và điều phối hệ thống nội dung vệ tinh đa nền tảng đạt 200 triệu lượt xem/tháng.",
           ],
         },
         {
@@ -434,7 +477,7 @@ export const content: Record<"vi" | "en", LangContent> = {
       label: "Case Study",
       heading: "Những bài toán tôi đã đồng hành",
       sub: "Mỗi dự án đều đi qua cùng một cấu trúc: bài toán → góc nhìn → giải pháp → triển khai → kết quả.",
-      flagshipLabel: "Case nổi bật",
+      otherCasesLabel: "Case Study khác",
       stageLabel: "Các mắt xích đã tham gia",
       viewCase: "Xem chi tiết",
       items: [
@@ -450,9 +493,9 @@ export const content: Record<"vi" | "en", LangContent> = {
           perspective:
             "Cần một kiến trúc kênh rõ ràng trước khi mở rộng quy mô — không phải chỉ sản xuất thêm video.",
           solution:
-            "Tư vấn định hướng nội dung và thiết kế kiến trúc kênh phù hợp với hệ sinh thái sản phẩm của Thăng Long Cars.",
+            "Tư vấn định hướng nội dung và đề xuất kiến trúc kênh, nền tảng phù hợp với hệ sinh thái sản phẩm của Thăng Long Cars.",
           execution:
-            "Với vai trò Cố vấn Độc lập, trực tiếp tham mưu định hướng nội dung và đồng hành mở rộng hệ thống, đồng bộ định hướng xuyên suốt các kênh.",
+            "Với vai trò Cố vấn Độc lập, trực tiếp tham mưu xây dựng nội dung đa kênh và tư vấn lựa chọn nền tảng phù hợp; đội ngũ Thăng Long Cars trực tiếp triển khai và vận hành hệ thống.",
           result:
             "8 kênh · hơn 3 triệu lượt xem/tháng — góp phần nâng tầm nhận diện thương hiệu và thúc đẩy trực tiếp doanh số bán xe.",
           stages: ["Định hướng", "Nội dung", "Đa nền tảng", "Theo dõi", "Tối ưu"],
@@ -499,9 +542,9 @@ export const content: Record<"vi" | "en", LangContent> = {
             "Một dự án điện ảnh cần độ phủ truyền thông đa nền tảng để chuyển hóa thành hiệu suất phòng vé thực tế.",
           perspective:
             "Truyền thông phim không dừng ở quảng bá — cần một hệ thống nội dung vệ tinh phối hợp nhịp nhàng giữa các nền tảng.",
-          solution: "Thiết kế chiến lược Tiếp thị Tích hợp và quy hoạch hệ thống nội dung vệ tinh đa nền tảng.",
+          solution: "Tham gia cùng ê-kíp truyền thông, đóng góp định hướng cho chiến lược Tiếp thị Tích hợp và hệ thống nội dung vệ tinh đa nền tảng.",
           execution:
-            "Giữ vai trò Giám đốc Truyền thông Đa kênh, trực tiếp điều phối nội dung xuyên suốt các nền tảng.",
+            "Đồng hành cùng ê-kíp trong việc điều phối và phát triển nội dung xuyên suốt các nền tảng.",
           result:
             "Phủ sóng 200 triệu lượt xem/tháng — đóng góp trực tiếp vào thành tích phòng vé ấn tượng trong 10 ngày đầu công chiếu.",
           stages: ["Nội dung", "Đa nền tảng", "Đăng tải", "Theo dõi"],
@@ -542,6 +585,120 @@ export const content: Record<"vi" | "en", LangContent> = {
           proof: "Giải Xuất sắc Quốc gia",
         },
       ],
+    },
+    chuongTailor: {
+      eyebrow: "Case Study nổi bật",
+      heading: "Chương Tailor",
+      subheading: "Từ 2.000 đến 12.000+ người đăng ký — Xây dựng và tăng trưởng hệ thống nội dung đa nền tảng",
+      problemLabel: "Bài toán",
+      problem: [
+        "Khi bắt đầu đồng hành, kênh YouTube của Chương Tailor có khoảng 2.000 người đăng ký.",
+        "Bài toán không đơn thuần là sản xuất thêm video, mà là tìm ra hướng nội dung phù hợp để thương hiệu có thể xây dựng sự hiện diện mạnh hơn trên môi trường số.",
+        "Hoàng Nguyễn tham gia tư vấn và đồng hành trong việc định hướng nội dung, sản xuất, quay, đăng tải, theo dõi và tối ưu hiệu quả.",
+      ],
+      roleLabel: "Vai trò",
+      roleHeading: "Từ chiến lược đến triển khai",
+      roleFlow: "Định hướng nội dung → Phát triển ý tưởng → Sản xuất & quay → Hậu kỳ → Đăng tải → Đa nền tảng → Theo dõi → Tối ưu",
+      roleBody: "Không chỉ đưa ra chiến lược, mà trực tiếp đồng hành trong quá trình biến chiến lược thành nội dung thực tế.",
+      process: [
+        {
+          number: "01",
+          title: "Định hướng",
+          body: "Phân tích hiện trạng của kênh và xác định hướng nội dung phù hợp với thương hiệu Chương Tailor. Tập trung vào việc tìm ra:",
+          bullets: [
+            "Chủ đề phù hợp",
+            "Cách kể chuyện",
+            "Format",
+            "Hướng phát triển nội dung",
+            "Cách thể hiện thương hiệu trên nền tảng số",
+          ],
+        },
+        {
+          number: "02",
+          title: "Phát triển nội dung",
+          body: "Tư vấn và phát triển hệ thống nội dung thay vì sản xuất từng video riêng lẻ.",
+          flow: "Ý tưởng → Format → Series → Kịch bản → Sản xuất",
+          note: "Mục tiêu là tạo ra những nội dung vừa thể hiện được giá trị thương hiệu, vừa phù hợp với hành vi người xem.",
+        },
+        {
+          number: "03",
+          title: "Sản xuất & Quay",
+          body: "Đồng hành trong quá trình đưa ý tưởng vào thực tế:",
+          bullets: [
+            "Định hướng nội dung trước khi quay",
+            "Phát triển concept",
+            "Quay video",
+            "Phối hợp ekip",
+            "Điều phối quá trình sản xuất",
+            "Đảm bảo nội dung bám đúng định hướng",
+          ],
+        },
+        {
+          number: "04",
+          title: "Hậu kỳ & Đóng gói",
+          body: "Từ footage ban đầu, phát triển thành nội dung hoàn chỉnh để phát hành. Tối ưu:",
+          bullets: [
+            "Hook",
+            "Nhịp video",
+            "Cách kể chuyện",
+            "Caption",
+            "Thumbnail",
+            "Short-form",
+            "Long-form",
+            "Phiên bản cho từng nền tảng",
+          ],
+        },
+        {
+          number: "05",
+          title: "Đăng tải & Phát triển Đa nền tảng",
+          body: "Không chỉ tập trung vào YouTube. Nội dung được phát triển và phân phối trên nhiều nền tảng nhằm mở rộng điểm chạm với khán giả.",
+          flow: "YouTube · Facebook · TikTok · Instagram",
+          note: "Mỗi nền tảng được điều chỉnh cách đóng gói nội dung phù hợp với hành vi người dùng.",
+        },
+        {
+          number: "06",
+          title: "Theo dõi & Tối ưu",
+          body: "Sau khi nội dung được đăng tải, tiếp tục theo dõi hiệu quả để xác định:",
+          bullets: [
+            "Nội dung nào đang hiệu quả",
+            "Format nào có tiềm năng",
+            "Chủ đề nào thu hút khán giả",
+            "Cách triển khai nào cần điều chỉnh",
+          ],
+          flow: "Theo dõi → Phân tích → Tối ưu → Thử nghiệm → Phát triển",
+        },
+      ],
+      resultsHeading: "Kết quả sau 3 tháng",
+      growth: {
+        start: "2.000+",
+        startLabel: "Người đăng ký ban đầu",
+        added: "+10.000",
+        addedLabel: "Người đăng ký mới",
+        end: "12.000+",
+        endLabel: "Người đăng ký",
+      },
+      growthBody:
+        "Sau 3 tháng đồng hành tư vấn nội dung, kênh YouTube tăng thêm khoảng 10.000 người đăng ký, từ khoảng 2.000 lên hơn 12.000 người đăng ký.",
+      metrics: [
+        {
+          value: "500.000+",
+          label: "Lượt xem trên YouTube",
+          body: "Các nội dung được tư vấn và phát triển đạt tổng cộng hơn 500.000 lượt xem trên YouTube trong giai đoạn này.",
+        },
+        {
+          value: "1.000.000+",
+          label: "Người được tiếp cận / tương tác trên đa nền tảng",
+          body: "Khi mở rộng nội dung sang nhiều nền tảng, hệ thống nội dung của Chương Tailor tạo ra hơn 1 triệu lượt tương tác/tiếp cận trên hệ sinh thái đa nền tảng.",
+        },
+      ],
+      keyResultLabel: "Key Result",
+      keyResult: [
+        "+10.000 người đăng ký trong 3 tháng.",
+        "Từ một kênh 2.000 người đăng ký",
+        "→ xây dựng đà tăng trưởng mới cho hệ thống nội dung.",
+      ],
+      keyMessage: ["Không chỉ làm video.", "Tìm ra cách để nội dung tăng trưởng."],
+      cover: "/images/case-studies/chuong-tailor-cover.jpg",
     },
     awards: {
       label: "Thành tựu & Giải thưởng",
@@ -640,6 +797,18 @@ export const content: Record<"vi" | "en", LangContent> = {
         {
           src: "/images/moments/filmset-3.jpg",
           caption: "Trên phim trường \"Đèn Âm Hồn – Bà Đừng Buồn Con\"",
+        },
+        {
+          src: "/images/moments/denamhon-hoangnam.jpg",
+          caption: "Cùng đạo diễn Hoàng Nam trong quá trình thực hiện \"Đèn Âm Hồn – Bà Đừng Buồn Con\"",
+        },
+        {
+          src: "/images/moments/google-arts-group.jpg",
+          caption: "Cùng đoàn đại diện tại sự kiện Google Arts & Culture — Kỳ quan Việt Nam",
+        },
+        {
+          src: "/images/moments/google-arts-solo.jpg",
+          caption: "Tại không gian trưng bày Google Arts & Culture",
         },
       ],
     },
@@ -769,6 +938,10 @@ export const content: Record<"vi" | "en", LangContent> = {
       capabilityLine: "DIRECTION · CONTENT · CREATOR · PRODUCTION · MULTI-PLATFORM · OPTIMIZATION",
       ctaPrimary: "How I can help",
       ctaSecondary: "Talk about your project",
+      subCredentials: [
+        "Vice Chairman, HUB Network — Hanoi's Startup, Innovation & Digital Transformation Network",
+        "Co-founder & Admin — Highnoy Group Parkour Vietnam",
+      ],
       scrollHint: "Scroll to explore",
     },
     stats: [
@@ -941,7 +1114,7 @@ export const content: Record<"vi" | "en", LangContent> = {
           org: "Independent Consulting",
           bullets: [
             "Advised Thăng Long Cars on content direction and channel architecture — helping the system scale to 8 channels and 3M+ monthly views.",
-            "Concurrently served as Multi-Channel Communications Director for the feature film \"Đèn Âm Hồn – Bà Đừng Buồn Con\" at Challenge Me Entertainment — planning a cross-platform satellite content system reaching 200M views/month.",
+            "Concurrently joined the communications crew for the feature film \"Đèn Âm Hồn – Bà Đừng Buồn Con\" at Challenge Me Entertainment — helping direct and coordinate a cross-platform satellite content system reaching 200M views/month.",
           ],
         },
         {
@@ -993,7 +1166,7 @@ export const content: Record<"vi" | "en", LangContent> = {
       label: "Case Study",
       heading: "Problems I've worked through",
       sub: "Every project follows the same structure: problem → perspective → solution → execution → result.",
-      flagshipLabel: "Featured case",
+      otherCasesLabel: "Other Case Studies",
       stageLabel: "Links involved",
       viewCase: "View details",
       items: [
@@ -1006,8 +1179,8 @@ export const content: Record<"vi" | "en", LangContent> = {
           year: "2025 — Present",
           problem: "Content was already being published, but with no clear channel architecture or long-term multi-channel direction.",
           perspective: "A clear channel architecture is needed before scaling — not just more video output.",
-          solution: "Advise on content direction and design a channel architecture fit for Thăng Long Cars' product ecosystem.",
-          execution: "As Independent Consultant, directly advised on content direction and helped scale the system, keeping direction consistent across channels.",
+          solution: "Advise on content direction and propose a channel architecture and platform mix fit for Thăng Long Cars' product ecosystem.",
+          execution: "As Independent Consultant, directly advised on multi-channel content development and platform selection; the Thăng Long Cars team directly executed and operated the system.",
           result: "8 channels · 3M+ views/month — strengthening brand recognition and directly driving vehicle sales.",
           stages: ["Direction", "Content", "Multi-Platform", "Tracking", "Optimization"],
         },
@@ -1045,8 +1218,8 @@ export const content: Record<"vi" | "en", LangContent> = {
           year: "2025 — 2026",
           problem: "A feature film needed multi-platform communications reach that would translate into real box-office performance.",
           perspective: "Film communications don't stop at promotion — they need a satellite content system working in sync across platforms.",
-          solution: "Designed the integrated marketing strategy and planned a cross-platform satellite content system.",
-          execution: "Served as Multi-Channel Communications Director, directly coordinating content across platforms.",
+          solution: "Joined the communications crew, contributing to the integrated marketing strategy and the cross-platform satellite content system.",
+          execution: "Worked alongside the crew, coordinating and developing content across platforms.",
           result: "200M views/month reach — directly contributing to a standout box-office opening within the first 10 days.",
           stages: ["Content", "Multi-Platform", "Publishing", "Tracking"],
         },
@@ -1086,6 +1259,120 @@ export const content: Record<"vi" | "en", LangContent> = {
           proof: "National Excellence Award",
         },
       ],
+    },
+    chuongTailor: {
+      eyebrow: "Featured Case Study",
+      heading: "Chương Tailor",
+      subheading: "From 2,000 to 12,000+ subscribers — Building and growing a multi-platform content system",
+      problemLabel: "Problem",
+      problem: [
+        "When the engagement began, Chương Tailor's YouTube channel had around 2,000 subscribers.",
+        "The problem wasn't simply producing more videos — it was finding the right content direction so the brand could build a stronger presence in the digital space.",
+        "Hoàng Nguyễn advised and worked alongside the team on content direction, production, filming, publishing, tracking, and optimization.",
+      ],
+      roleLabel: "Role",
+      roleHeading: "From strategy to execution",
+      roleFlow: "Content direction → Idea development → Production & filming → Post-production → Publishing → Multi-platform → Tracking → Optimization",
+      roleBody: "Not just providing strategy, but directly involved in turning that strategy into real content.",
+      process: [
+        {
+          number: "01",
+          title: "Direction",
+          body: "Analyzed the channel's current state and defined a content direction fit for the Chương Tailor brand. Focused on finding:",
+          bullets: [
+            "The right topics",
+            "A way of storytelling",
+            "Format",
+            "A content growth direction",
+            "How the brand shows up in the digital space",
+          ],
+        },
+        {
+          number: "02",
+          title: "Content Development",
+          body: "Advised on and developed a content system instead of producing standalone videos.",
+          flow: "Idea → Format → Series → Script → Production",
+          note: "The goal was content that expressed the brand's values while fitting viewer behavior.",
+        },
+        {
+          number: "03",
+          title: "Production & Filming",
+          body: "Worked alongside the team turning ideas into reality:",
+          bullets: [
+            "Direction set before filming",
+            "Concept development",
+            "Filming",
+            "Crew coordination",
+            "Production coordination",
+            "Keeping content aligned with direction",
+          ],
+        },
+        {
+          number: "04",
+          title: "Post-Production & Packaging",
+          body: "Turned raw footage into publish-ready content. Optimized:",
+          bullets: [
+            "Hook",
+            "Pacing",
+            "Storytelling",
+            "Captions",
+            "Thumbnails",
+            "Short-form",
+            "Long-form",
+            "Platform-specific versions",
+          ],
+        },
+        {
+          number: "05",
+          title: "Publishing & Multi-Platform Growth",
+          body: "Not just YouTube. Content was developed and distributed across multiple platforms to expand touchpoints with the audience.",
+          flow: "YouTube · Facebook · TikTok · Instagram",
+          note: "Each platform's packaging was adjusted to fit its own user behavior.",
+        },
+        {
+          number: "06",
+          title: "Tracking & Optimization",
+          body: "After publishing, kept tracking performance to identify:",
+          bullets: [
+            "Which content was working",
+            "Which formats had potential",
+            "Which topics engaged the audience",
+            "What needed adjusting",
+          ],
+          flow: "Track → Analyze → Optimize → Test → Grow",
+        },
+      ],
+      resultsHeading: "Results after 3 months",
+      growth: {
+        start: "2,000+",
+        startLabel: "Starting subscribers",
+        added: "+10,000",
+        addedLabel: "New subscribers",
+        end: "12,000+",
+        endLabel: "Subscribers",
+      },
+      growthBody:
+        "After 3 months of content advisory, the YouTube channel gained roughly 10,000 subscribers, growing from around 2,000 to over 12,000.",
+      metrics: [
+        {
+          value: "500,000+",
+          label: "YouTube views",
+          body: "The advised and developed content reached over 500,000 views on YouTube during this period.",
+        },
+        {
+          value: "1,000,000+",
+          label: "Reach / engagement across platforms",
+          body: "Once expanded across platforms, Chương Tailor's content system generated over 1 million interactions/reach across the multi-platform ecosystem.",
+        },
+      ],
+      keyResultLabel: "Key Result",
+      keyResult: [
+        "+10,000 subscribers in 3 months.",
+        "From a 2,000-subscriber channel",
+        "→ built new growth momentum for the content system.",
+      ],
+      keyMessage: ["Not just making videos.", "Finding how content grows."],
+      cover: "/images/case-studies/chuong-tailor-cover.jpg",
     },
     awards: {
       label: "Achievements & Awards",
@@ -1183,6 +1470,18 @@ export const content: Record<"vi" | "en", LangContent> = {
         {
           src: "/images/moments/filmset-3.jpg",
           caption: "On set for \"Đèn Âm Hồn – Bà Đừng Buồn Con\"",
+        },
+        {
+          src: "/images/moments/denamhon-hoangnam.jpg",
+          caption: "With director Hoàng Nam during production of \"Đèn Âm Hồn – Bà Đừng Buồn Con\"",
+        },
+        {
+          src: "/images/moments/google-arts-group.jpg",
+          caption: "With the delegation at the Google Arts & Culture — Wonders of Vietnam event",
+        },
+        {
+          src: "/images/moments/google-arts-solo.jpg",
+          caption: "At the Google Arts & Culture exhibition space",
         },
       ],
     },

@@ -6,6 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { X } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
+import ChuongTailorCase from "@/components/ChuongTailorCase";
 import { useLanguage } from "@/lib/language-context";
 import { content, type CaseStudy } from "@/lib/content";
 
@@ -21,7 +22,6 @@ export default function CaseStudies() {
   const { lang } = useLanguage();
   const t = content[lang].caseStudies;
   const [active, setActive] = useState<CaseStudy | null>(null);
-  const [flagship, ...rest] = t.items;
 
   return (
     <section id="work" className="relative py-24 md:py-32">
@@ -30,61 +30,12 @@ export default function CaseStudies() {
           <SectionHeading label={t.label} heading={t.heading} sub={t.sub} />
         </Reveal>
 
-        {/* Flagship */}
-        <Reveal delay={0.05} className="mt-16">
-          <p className="eyebrow mb-6">{t.flagshipLabel}</p>
-          <div className="grid grid-cols-1 gap-10 border-y border-line py-10 lg:grid-cols-[0.85fr_1.15fr]">
-            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-sm border border-line lg:aspect-auto">
-              {flagship.cover ? (
-                <Image
-                  src={flagship.cover}
-                  alt={flagship.brand}
-                  fill
-                  sizes="(min-width: 1024px) 520px, 100vw"
-                  className="object-cover"
-                />
-              ) : (
-                <div className="flex h-full min-h-64 w-full items-center justify-center bg-bg-elevated">
-                  <span className="font-display text-2xl text-ink-faint">{flagship.brand}</span>
-                </div>
-              )}
-            </div>
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-ink-faint">
-                {flagship.tag} · {flagship.year}
-              </p>
-              <h3 className="font-display mt-2 text-2xl text-ink md:text-3xl">
-                {flagship.brand} — {flagship.title}
-              </h3>
-
-              <div className="mt-6 space-y-5">
-                {ROWS.map((r) => (
-                  <div key={r.key} className="flex flex-col gap-1 sm:flex-row sm:gap-6">
-                    <span className="text-xs font-semibold uppercase tracking-[0.14em] text-accent sm:w-28 sm:shrink-0">
-                      {r.label[lang]}
-                    </span>
-                    <p className="text-sm leading-relaxed text-ink-dim">{flagship[r.key] as string}</p>
-                  </div>
-                ))}
-              </div>
-
-              <div className="mt-6 flex flex-wrap gap-2">
-                {flagship.stages.map((s) => (
-                  <span
-                    key={s}
-                    className="rounded-full border border-line px-3 py-1 text-[11px] font-medium text-ink-dim"
-                  >
-                    {s}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-        </Reveal>
+        <ChuongTailorCase />
 
         {/* Other case studies */}
-        <div className="mt-4 border-b border-line">
-          {rest.map((c, i) => (
+        <div className="mt-16 border-t border-line">
+          <p className="eyebrow mb-2 pt-8">{t.otherCasesLabel}</p>
+          {t.items.map((c, i) => (
             <Reveal key={c.id} delay={Math.min(0.04 * i, 0.16)}>
               <button
                 onClick={() => setActive(c)}
