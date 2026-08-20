@@ -262,7 +262,6 @@ export const content: Record<"vi" | "en", LangContent> = {
           number: "01",
           title: "Định hướng",
           body: "Xác định đang xây kênh gì, cho ai, và định vị ra sao trước khi sản xuất.",
-          images: ["/images/capabilities/direction-1.jpg", "/images/capabilities/direction-2.jpg"],
         },
         {
           number: "02",
@@ -273,13 +272,11 @@ export const content: Record<"vi" | "en", LangContent> = {
           number: "03",
           title: "Creator",
           body: "Kết nối đúng Creator, KOL, KOC để khuếch đại đúng thông điệp.",
-          image: "/images/capabilities/creator.jpg",
         },
         {
           number: "04",
           title: "Sản xuất",
           body: "Đưa ý tưởng vào thực tế: quay, dựng, đóng gói đúng định hướng.",
-          image: "/images/capabilities/production.jpg",
         },
         {
           number: "05",
@@ -525,7 +522,7 @@ export const content: Record<"vi" | "en", LangContent> = {
         ],
         keyLabel: "Key Takeaway",
         keyMessage: "Không chỉ sản xuất video — xây dựng một hệ thống nội dung có khả năng tăng trưởng.",
-        cover: "/images/case-studies/chuong-tailor-cover.jpg",
+        avatar: "/images/case-studies/chuong-tailor-avatar.jpg",
       },
       {
         eyebrow: "Case Study 02",
@@ -618,8 +615,8 @@ export const content: Record<"vi" | "en", LangContent> = {
     },
     moments: {
       label: "Khoảnh khắc",
-      heading: "Những khoảnh khắc ngoài đời thực",
-      sub: "Thành tựu là những cơ hội được đồng hành và sát cánh cùng rất nhiều đối tác, Creator, KOL và tổ chức.",
+      heading: "Những khoảnh khắc cùng Nghệ sĩ, Content Creators, KOLs, KOCs...",
+      sub: "Trong các sự kiện và chiến dịch đã đồng hành.",
       items: [
         "/images/moments/google.jpg",
         "/images/moments/candid.jpg",
@@ -809,7 +806,6 @@ export const content: Record<"vi" | "en", LangContent> = {
           number: "01",
           title: "Direction",
           body: "Define what the channel is built for, its audience, and its positioning before production.",
-          images: ["/images/capabilities/direction-1.jpg", "/images/capabilities/direction-2.jpg"],
         },
         {
           number: "02",
@@ -820,13 +816,11 @@ export const content: Record<"vi" | "en", LangContent> = {
           number: "03",
           title: "Creator",
           body: "Connect with the right Creators, KOLs, and KOCs to amplify the right message.",
-          image: "/images/capabilities/creator.jpg",
         },
         {
           number: "04",
           title: "Production",
           body: "Turn ideas into reality: filming, editing, packaging true to the direction.",
-          image: "/images/capabilities/production.jpg",
         },
         {
           number: "05",
@@ -1057,7 +1051,7 @@ export const content: Record<"vi" | "en", LangContent> = {
         ],
         keyLabel: "Key Takeaway",
         keyMessage: "Not just producing video — building a content system capable of growth.",
-        cover: "/images/case-studies/chuong-tailor-cover.jpg",
+        avatar: "/images/case-studies/chuong-tailor-avatar.jpg",
       },
       {
         eyebrow: "Case Study 02",
@@ -1149,8 +1143,8 @@ export const content: Record<"vi" | "en", LangContent> = {
     },
     moments: {
       label: "Moments",
-      heading: "Marks made in the real world",
-      sub: "Achievements are the chance to stand alongside many partners, Creators, KOLs, and organizations.",
+      heading: "Moments with Artists, Content Creators, KOLs, KOCs...",
+      sub: "From the events and campaigns along the way.",
       items: [
         "/images/moments/google.jpg",
         "/images/moments/candid.jpg",

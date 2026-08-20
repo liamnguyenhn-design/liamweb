@@ -44,7 +44,7 @@ export default function WhyMe() {
             </Reveal>
           </div>
 
-          <Reveal delay={0.1} className="flex flex-col gap-6">
+          <Reveal delay={0.1} className="flex flex-col gap-4">
             <div className="relative aspect-[1155/1400] w-full overflow-hidden rounded-sm border border-line">
               <Image
                 src="/images/moments/google-arts-solo.jpg"
@@ -54,14 +54,25 @@ export default function WhyMe() {
                 className="object-cover"
               />
             </div>
-            <div className="relative mx-auto aspect-[975/1400] w-2/3 overflow-hidden rounded-sm border border-line lg:w-1/2">
-              <Image
-                src="/images/google-feature.jpg"
-                alt="Hoàng Nguyễn tại trụ sở Google"
-                fill
-                sizes="240px"
-                className="object-cover"
-              />
+            <div className="grid grid-cols-2 gap-4">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-sm border border-line">
+                <Image
+                  src="/images/google-feature.jpg"
+                  alt="Hoàng Nguyễn tại trụ sở Google"
+                  fill
+                  sizes="200px"
+                  className="object-cover"
+                />
+              </div>
+              <div className="relative aspect-[4/5] overflow-hidden rounded-sm border border-line">
+                <Image
+                  src="/images/moments/google-hq-walk.jpg"
+                  alt="Hoàng Nguyễn tại trụ sở Google"
+                  fill
+                  sizes="200px"
+                  className="object-cover"
+                />
+              </div>
             </div>
           </Reveal>
         </div>

@@ -38,8 +38,11 @@ export default function Navbar() {
       <nav className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-4 md:px-10">
         <a href="#top" className="flex items-center gap-2.5 text-ink" aria-label="Hoàng Nguyễn — hoangcreators">
           <BrandMark className="h-7 w-7 shrink-0 text-accent" />
-          <span className="font-display text-lg tracking-tight">
-            Hoàng Nguyễn<span className="text-accent">.</span>
+          <span className="flex flex-col leading-none">
+            <span className="font-display text-lg tracking-tight">
+              Hoàng Nguyễn<span className="text-accent">.</span>
+            </span>
+            <span className="mt-0.5 text-[10px] tracking-wide text-ink-faint">@hoangcreators</span>
           </span>
         </a>
 

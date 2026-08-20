@@ -19,7 +19,7 @@
   --color-accent-deep: var(--accent-deep);
 
   --animate-marquee: marquee 36s linear infinite;
-  --animate-moments-marquee: marquee 55s linear infinite;
+  --animate-moments-marquee: marquee 110s linear infinite;
   --animate-pulse-slow: pulse-slow 4s ease-in-out infinite;
 }
 

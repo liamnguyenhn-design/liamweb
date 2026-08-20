@@ -23,6 +23,7 @@ export default function Home() {
         <Hero />
         <Stats />
         <TrustedBy />
+        <Moments />
         <Problem />
         <Capabilities />
         <WhoIWorkWith />
@@ -31,7 +32,6 @@ export default function Home() {
         <Timeline />
         <CaseStudies />
         <Awards />
-        <Moments />
         <FinalCta />
         <Contact />
       </main>
