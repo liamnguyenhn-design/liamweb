@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowDown, ArrowUpRight, Sparkles } from "lucide-react";
+import { ArrowRight, ArrowDown } from "lucide-react";
 import { useLanguage } from "@/lib/language-context";
 import { content } from "@/lib/content";
 
@@ -11,139 +11,96 @@ export default function Hero() {
   const t = content[lang].hero;
 
   return (
-    <section id="top" className="relative flex min-h-[100svh] items-center overflow-hidden pt-28 pb-20">
-      <div className="aurora" />
-      <div className="dot-grid pointer-events-none absolute inset-0 opacity-[0.15] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_0%,black,transparent)]" />
-
-      <div className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-16 px-6 md:px-10 lg:grid-cols-[1.15fr_0.85fr]">
+    <section id="top" className="relative flex min-h-[100svh] items-center overflow-hidden pt-32 pb-16">
+      <div className="relative z-10 mx-auto grid w-full max-w-[1400px] grid-cols-1 items-center gap-16 px-6 md:px-10 lg:grid-cols-[1.2fr_0.8fr]">
         <div>
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 rounded-full border border-violet-700/60 bg-violet-950/40 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-violet-300"
-          >
-            <Sparkles size={13} className="text-gold" />
-            {t.eyebrow}
-          </motion.div>
-
           <motion.p
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.05 }}
-            className="mt-5 text-sm font-semibold uppercase tracking-[0.3em] text-gold"
+            transition={{ duration: 0.6 }}
+            className="eyebrow"
           >
-            {t.slogan}
+            {t.eyebrow}
           </motion.p>
 
           <motion.h1
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            className="font-display mt-7 text-[13vw] leading-[0.95] font-semibold tracking-tight text-ink sm:text-7xl md:text-8xl lg:text-[6.4rem]"
+            transition={{ duration: 0.7, delay: 0.08 }}
+            className="font-display mt-6 max-w-3xl text-[2.6rem] leading-[1.06] font-medium tracking-tight text-ink sm:text-6xl md:text-[4.2rem]"
           >
-            <span className="block text-gradient">{t.name}</span>
+            {t.headline}
           </motion.h1>
 
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="font-display mt-5 max-w-xl text-2xl leading-snug font-medium text-ink/90 md:text-3xl"
+            transition={{ duration: 0.7, delay: 0.16 }}
+            className="mt-7 max-w-xl text-base leading-relaxed text-ink-dim md:text-lg"
           >
-            {t.roleLine1}
-            <br />
-            {t.roleLine2}
+            {t.subheadline}
           </motion.p>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.3 }}
-            className="mt-6 max-w-xl text-base leading-relaxed text-ink-dim md:text-lg"
-          >
-            {t.pitch}
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.4 }}
-            className="mt-10 flex flex-wrap items-center gap-4"
-          >
-            <a
-              href="#work"
-              className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-violet-500 via-violet-400 to-magenta px-6 py-3.5 text-sm font-semibold text-white shadow-[0_0_32px_rgba(139,92,246,0.4)] transition-transform hover:scale-[1.03]"
-            >
-              {t.ctaPrimary}
-              <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </a>
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-2 rounded-full border border-violet-700/60 px-6 py-3.5 text-sm font-semibold text-ink transition-colors hover:border-violet-400 hover:bg-violet-950/40"
-            >
-              {t.ctaSecondary}
-            </a>
-          </motion.div>
 
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.7, delay: 0.55 }}
-            className="mt-8 text-xs uppercase tracking-[0.25em] text-ink-faint"
+            transition={{ duration: 0.7, delay: 0.24 }}
+            className="mt-6 text-[11px] font-semibold uppercase tracking-[0.22em] text-ink-faint"
           >
-            {t.credential}
+            {t.capabilityLine}
           </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.32 }}
+            className="mt-10 flex flex-wrap items-center gap-5"
+          >
+            <a
+              href="#capabilities"
+              className="inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3.5 text-sm font-medium text-bg transition-colors hover:bg-accent"
+            >
+              {t.ctaPrimary}
+              <ArrowRight size={15} />
+            </a>
+            <a
+              href="#contact"
+              data-cursor-hover
+              className="inline-flex items-center gap-2 border-b border-ink/30 pb-0.5 text-sm font-medium text-ink transition-colors hover:border-accent hover:text-accent"
+            >
+              {t.ctaSecondary}
+            </a>
+          </motion.div>
         </div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.92 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           className="relative mx-auto aspect-[4/5] w-full max-w-sm"
         >
-          <div className="animate-float absolute -inset-4 rounded-[2.5rem] bg-gradient-to-br from-violet-500/70 via-magenta/50 to-gold/50 blur-3xl" />
-          <div className="animate-float-soft relative h-full w-full rounded-[2rem] bg-gradient-to-br from-violet-300 via-magenta to-gold p-[3px] shadow-[0_0_60px_rgba(226,84,201,0.35)]">
-            <div className="relative h-full w-full overflow-hidden rounded-[calc(2rem-3px)] bg-bg">
-              <Image
-                src="/images/portrait.jpg"
-                alt="Hoàng Nguyễn (Liam)"
-                fill
-                priority
-                sizes="(min-width: 1024px) 384px, 90vw"
-                className="object-cover"
-              />
-              <div className="absolute inset-x-0 bottom-0 h-14 bg-gradient-to-t from-black/45 to-transparent" />
-            </div>
+          <div className="relative h-full w-full overflow-hidden rounded-sm border border-line bg-bg-card">
+            <Image
+              src="/images/portrait.jpg"
+              alt="Hoàng Nguyễn"
+              fill
+              priority
+              sizes="(min-width: 1024px) 384px, 90vw"
+              className="object-cover"
+            />
           </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.6 }}
-            className="mt-5 flex flex-col items-center gap-1.5 text-center"
-          >
-            {t.subCredentials.map((line) => (
-              <p
-                key={line}
-                className="max-w-xs text-xs leading-relaxed text-ink-dim"
-              >
-                {line}
-              </p>
-            ))}
-          </motion.div>
         </motion.div>
       </div>
 
       <motion.a
-        href="#about"
+        href="#who"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.6, delay: 1 }}
-        className="absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2 text-ink-faint"
+        transition={{ duration: 0.6, delay: 0.8 }}
+        className="absolute bottom-6 left-1/2 z-10 hidden -translate-x-1/2 flex-col items-center gap-2 text-ink-faint md:flex"
       >
         <span className="text-[10px] uppercase tracking-[0.25em]">{t.scrollHint}</span>
-        <ArrowDown size={16} className="animate-pulse-slow" />
+        <ArrowDown size={14} className="animate-pulse-slow" />
       </motion.a>
     </section>
   );

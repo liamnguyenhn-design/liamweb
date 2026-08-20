@@ -54,11 +54,11 @@ export default function CustomCursor() {
     <div className="cursor-layer pointer-events-none fixed inset-0 z-[70]">
       <div
         ref={dotRef}
-        className="fixed left-0 top-0 h-1.5 w-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-violet-300"
+        className="fixed left-0 top-0 h-1 w-1 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent"
       />
       <div
         ref={ringRef}
-        className="fixed left-0 top-0 h-8 w-8 -translate-x-1/2 -translate-y-1/2 rounded-full border border-violet-400/60 opacity-40 transition-[transform,opacity] duration-150 ease-out"
+        className="fixed left-0 top-0 h-7 w-7 -translate-x-1/2 -translate-y-1/2 rounded-full border border-accent/50 opacity-30 transition-[transform,opacity] duration-150 ease-out"
       />
     </div>
   );

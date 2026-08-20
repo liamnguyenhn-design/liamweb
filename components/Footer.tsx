@@ -10,10 +10,10 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="relative border-t border-violet-900/60 py-10">
-      <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 md:flex-row md:px-10">
+    <footer className="relative border-t border-line py-10">
+      <div className="mx-auto flex max-w-[1400px] flex-col items-center justify-between gap-4 px-6 md:flex-row md:px-10">
         <p className="text-sm text-ink-faint">
-          © {year} Hoàng Nguyễn (Liam). {t.footer.rights}
+          © {year} Hoàng Nguyễn. {t.footer.rights}
         </p>
         <a
           href="#top"

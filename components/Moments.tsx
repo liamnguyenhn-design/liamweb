@@ -35,7 +35,7 @@ export default function Moments() {
 
   return (
     <section className="relative py-20 md:py-28">
-      <div className="mx-auto max-w-7xl px-6 md:px-10">
+      <div className="mx-auto max-w-[1400px] px-6 md:px-10">
         <Reveal>
           <SectionHeading label={t.label} heading={t.heading} sub={t.sub} />
         </Reveal>
@@ -46,7 +46,7 @@ export default function Moments() {
             return (
               <RevealItem
                 key={item.src}
-                className={`group relative aspect-[4/3] overflow-hidden rounded-2xl border border-violet-900/50 md:aspect-auto ${
+                className={`group relative aspect-[4/3] overflow-hidden rounded-sm border border-line md:aspect-auto ${
                   spanClasses[i] ?? "col-span-1"
                 }`}
               >

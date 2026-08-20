@@ -5,10 +5,12 @@ export const runtime = "nodejs";
 
 type ContactPayload = {
   name?: string;
-  email?: string;
-  subject?: string;
-  message?: string;
-  company?: string; // honeypot field, must stay empty
+  company?: string;
+  projectType?: string;
+  problem?: string;
+  timeline?: string;
+  contactInfo?: string;
+  website?: string; // honeypot field, must stay empty
 };
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -39,20 +41,22 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
   }
 
-  const { name, email, subject, message, company } = body;
+  const { name, company, projectType, problem, timeline, contactInfo, website } = body;
 
   // Honeypot: bots fill every field, humans never see/fill this one.
-  if (company) {
+  if (website) {
     return NextResponse.json({ ok: true });
   }
 
-  if (!name?.trim() || !email?.trim() || !message?.trim()) {
+  if (!name?.trim() || !problem?.trim() || !contactInfo?.trim()) {
     return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
   }
-  if (!EMAIL_RE.test(email)) {
-    return NextResponse.json({ error: "Invalid email" }, { status: 400 });
-  }
-  if (name.length > 200 || email.length > 200 || message.length > 5000) {
+  if (
+    name.length > 200 ||
+    (company?.length ?? 0) > 200 ||
+    contactInfo.length > 200 ||
+    problem.length > 5000
+  ) {
     return NextResponse.json({ error: "Field too long" }, { status: 400 });
   }
 
@@ -80,21 +84,25 @@ export async function POST(req: NextRequest) {
       auth: { user: SMTP_USER, pass: SMTP_PASS },
     });
 
-    const escapedMessage = escapeHtml(message).replace(/\n/g, "<br/>");
+    const replyTo = EMAIL_RE.test(contactInfo.trim()) ? contactInfo.trim() : undefined;
+    const escapedProblem = escapeHtml(problem).replace(/\n/g, "<br/>");
 
     await transporter.sendMail({
       from: `"Portfolio Website" <${SMTP_USER}>`,
       to: CONTACT_TO_EMAIL,
-      replyTo: email,
-      subject: `[Portfolio] ${subject?.trim() || "Lời nhắn mới từ website"}`,
-      text: `Tên: ${name}\nEmail: ${email}\nChủ đề: ${subject ?? "-"}\n\n${message}`,
+      replyTo,
+      subject: `[Website] ${projectType?.trim() || "Trao đổi hợp tác"} — ${company?.trim() || name}`,
+      text: `Họ và tên: ${name}\nDoanh nghiệp/Thương hiệu: ${company ?? "-"}\nMuốn xây dựng: ${projectType ?? "-"}\nThời gian dự kiến: ${timeline ?? "-"}\nEmail/SĐT: ${contactInfo}\n\nBài toán hiện tại:\n${problem}`,
       html: `
         <div style="font-family:sans-serif;line-height:1.6">
-          <p><strong>Tên:</strong> ${escapeHtml(name)}</p>
-          <p><strong>Email:</strong> ${escapeHtml(email)}</p>
-          <p><strong>Chủ đề:</strong> ${escapeHtml(subject ?? "-")}</p>
+          <p><strong>Họ và tên:</strong> ${escapeHtml(name)}</p>
+          <p><strong>Doanh nghiệp/Thương hiệu:</strong> ${escapeHtml(company ?? "-")}</p>
+          <p><strong>Muốn xây dựng:</strong> ${escapeHtml(projectType ?? "-")}</p>
+          <p><strong>Thời gian dự kiến:</strong> ${escapeHtml(timeline ?? "-")}</p>
+          <p><strong>Email/SĐT:</strong> ${escapeHtml(contactInfo)}</p>
           <hr/>
-          <p>${escapedMessage}</p>
+          <p><strong>Bài toán hiện tại:</strong></p>
+          <p>${escapedProblem}</p>
         </div>
       `,
     });

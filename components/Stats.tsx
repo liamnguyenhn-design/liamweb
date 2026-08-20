@@ -9,15 +9,12 @@ export default function Stats() {
   const stats = content[lang].stats;
 
   return (
-    <section className="relative border-y border-violet-900/50 bg-bg-elevated/60">
-      <div className="hairline absolute inset-x-0 top-0" />
-      <RevealGroup className="mx-auto grid max-w-7xl grid-cols-2 gap-y-10 px-6 py-14 md:grid-cols-5 md:px-10">
+    <section className="relative border-y border-line">
+      <RevealGroup className="mx-auto grid max-w-[1400px] grid-cols-2 gap-y-10 px-6 py-12 md:grid-cols-5 md:px-10">
         {stats.map((s) => (
           <RevealItem key={s.label} className="text-center md:text-left">
-            <p className="font-display text-gradient text-3xl font-bold sm:text-4xl md:text-[2.6rem]">
-              {s.value}
-            </p>
-            <p className="mt-2 text-xs leading-snug text-ink-dim md:text-sm">{s.label}</p>
+            <p className="font-display text-3xl font-medium text-ink sm:text-4xl">{s.value}</p>
+            <p className="mt-1.5 text-xs leading-snug text-ink-faint md:text-sm">{s.label}</p>
           </RevealItem>
         ))}
       </RevealGroup>
