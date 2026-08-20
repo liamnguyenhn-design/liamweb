@@ -15,44 +15,38 @@ export default function Capabilities() {
       <div className="mx-auto max-w-[1400px] px-6 md:px-10">
         <Reveal>
           <SectionHeading label={t.label} heading={t.heading} sub={t.sub} />
+          <p className="mt-6 text-sm font-medium leading-relaxed text-accent md:text-base">{t.flow}</p>
         </Reveal>
 
-        <div className="mt-16 border-t border-line">
-          {t.items.map((c, i) => (
-            <Reveal key={c.number} delay={Math.min(i * 0.03, 0.15)}>
-              <div
-                className={`grid grid-cols-1 gap-8 border-b border-line py-12 ${
-                  c.image ? "lg:grid-cols-[0.9fr_1.1fr]" : "lg:grid-cols-[0.55fr_1.1fr]"
-                }`}
-              >
-                <div className="flex items-start gap-5">
-                  <span className="numeral text-2xl">{c.number}</span>
-                  <h3 className="font-display max-w-xs text-xl leading-snug text-ink md:text-2xl">
-                    {c.title}
-                  </h3>
-                </div>
-
-                <div className={c.image ? "grid grid-cols-1 gap-8 md:grid-cols-[1.2fr_1fr]" : ""}>
-                  <div className="max-w-2xl">
-                    <p className="font-display text-lg leading-snug text-ink md:text-xl">{c.headline}</p>
-                    <p className="mt-4 text-base leading-relaxed text-ink-dim">{c.body}</p>
-                    <p className="mt-4 text-sm font-medium text-accent">{c.result}</p>
+        <div className="mt-14 border-t border-line">
+          {t.items.map((c, i) => {
+            const images = c.images ?? (c.image ? [c.image] : []);
+            return (
+              <Reveal key={c.number} delay={Math.min(i * 0.02, 0.12)}>
+                <div className="flex flex-col gap-6 border-b border-line py-7 sm:flex-row sm:items-center sm:gap-8">
+                  <div className="flex items-start gap-4 sm:w-72 sm:shrink-0">
+                    <span className="numeral text-xl">{c.number}</span>
+                    <div>
+                      <h3 className="font-display text-lg text-ink md:text-xl">{c.title}</h3>
+                      <p className="mt-1.5 text-sm leading-relaxed text-ink-dim">{c.body}</p>
+                    </div>
                   </div>
-                  {c.image ? (
-                    <div className="relative aspect-[4/3] w-full overflow-hidden rounded-sm border border-line md:aspect-auto">
-                      <Image
-                        src={c.image}
-                        alt={c.title}
-                        fill
-                        sizes="(min-width: 1024px) 420px, 100vw"
-                        className="object-cover"
-                      />
+                  {images.length > 0 ? (
+                    <div className="flex gap-3 sm:ml-auto">
+                      {images.map((src) => (
+                        <div
+                          key={src}
+                          className="relative h-20 w-28 shrink-0 overflow-hidden rounded-sm border border-line sm:h-24 sm:w-36"
+                        >
+                          <Image src={src} alt={c.title} fill sizes="144px" className="object-cover" />
+                        </div>
+                      ))}
                     </div>
                   ) : null}
                 </div>
-              </div>
-            </Reveal>
-          ))}
+              </Reveal>
+            );
+          })}
         </div>
       </div>
     </section>

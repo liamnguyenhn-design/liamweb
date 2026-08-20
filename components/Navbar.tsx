@@ -26,7 +26,6 @@ export default function Navbar() {
     { href: "#who", label: t.nav.whoAmI },
     { href: "#capabilities", label: t.nav.capabilities },
     { href: "#work", label: t.nav.work },
-    { href: "#insights", label: t.nav.insights },
     { href: "#contact", label: t.nav.contact },
   ];
 
@@ -37,8 +36,11 @@ export default function Navbar() {
       }`}
     >
       <nav className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-4 md:px-10">
-        <a href="#top" className="font-display text-lg tracking-tight text-ink">
-          Hoàng Nguyễn<span className="text-accent">.</span>
+        <a href="#top" className="flex items-center gap-2.5 text-ink" aria-label="Hoàng Nguyễn — hoangcreators">
+          <BrandMark className="h-7 w-7 shrink-0 text-accent" />
+          <span className="font-display text-lg tracking-tight">
+            Hoàng Nguyễn<span className="text-accent">.</span>
+          </span>
         </a>
 
         <div className="hidden items-center gap-8 lg:flex">
@@ -132,5 +134,16 @@ export default function Navbar() {
         )}
       </AnimatePresence>
     </header>
+  );
+}
+
+function BrandMark({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 32 32" fill="none" className={className} aria-hidden="true">
+      <circle cx="16" cy="16" r="14.5" stroke="currentColor" strokeWidth="1.4" />
+      <rect x="9.5" y="17" width="2.6" height="6.5" rx="0.4" fill="currentColor" />
+      <rect x="14.7" y="13" width="2.6" height="10.5" rx="0.4" fill="currentColor" />
+      <rect x="19.9" y="8.5" width="2.6" height="15" rx="0.4" fill="currentColor" />
+    </svg>
   );
 }

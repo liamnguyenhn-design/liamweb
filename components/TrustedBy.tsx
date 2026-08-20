@@ -8,25 +8,36 @@ import { content } from "@/lib/content";
 export default function TrustedBy() {
   const { lang } = useLanguage();
   const t = content[lang].trustedBy;
+  const doubled = [...t.items, ...t.items];
 
   return (
     <section className="relative border-b border-line py-16 md:py-20">
       <div className="mx-auto max-w-[1400px] px-6 md:px-10">
         <Reveal>
           <p className="eyebrow text-center">{t.label}</p>
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-x-12 gap-y-8 md:gap-x-16">
-            {t.items.map((item) => (
+        </Reveal>
+      </div>
+
+      <Reveal delay={0.05} className="mt-10">
+        <div className="no-scrollbar relative overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_8%,black_92%,transparent)]">
+          <div className="animate-marquee flex w-max items-center gap-14 py-1 md:gap-16">
+            {doubled.map((item, i) => (
               <div
-                key={item.name}
+                key={item.name + i}
                 title={item.name}
-                className="relative h-7 w-24 shrink-0 grayscale transition-all duration-300 hover:grayscale-0 md:h-8 md:w-28"
+                className="flex h-16 w-32 shrink-0 items-center justify-center rounded-xl bg-white/95 px-4 py-3 shadow-sm transition-transform duration-300 hover:scale-110"
               >
-                <Image src={item.logo} alt={item.name} fill sizes="112px" className="object-contain" />
+                <div className="relative h-full w-full">
+                  <Image src={item.logo} alt={item.name} fill sizes="128px" className="object-contain" />
+                </div>
               </div>
             ))}
           </div>
-          <p className="mt-10 text-center text-xs text-ink-faint">{t.note}</p>
-        </Reveal>
+        </div>
+      </Reveal>
+
+      <div className="mx-auto max-w-[1400px] px-6 md:px-10">
+        <p className="mt-10 text-center text-xs text-ink-faint">{t.note}</p>
       </div>
     </section>
   );

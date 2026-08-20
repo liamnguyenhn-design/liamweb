@@ -19,6 +19,7 @@
   --color-accent-deep: var(--accent-deep);
 
   --animate-marquee: marquee 36s linear infinite;
+  --animate-moments-marquee: marquee 55s linear infinite;
   --animate-pulse-slow: pulse-slow 4s ease-in-out infinite;
 }
 
@@ -39,19 +40,19 @@
 }
 
 :root[data-theme="light"] {
-  --ink: #17130f;
-  --ink-dim: #524a3d;
-  --ink-faint: #948a76;
+  --ink: #17161d;
+  --ink-dim: #55525c;
+  --ink-faint: #8a8790;
 
-  --bg: #f5f1e7;
-  --bg-elevated: #efe9da;
+  --bg: #f7f6f2;
+  --bg-elevated: #f0eee8;
   --bg-card: #ffffff;
 
-  --line: #ddd0b4;
+  --line: #e1ded6;
 
-  --accent: #7c4a1e;
-  --accent-dim: #a97a3e;
-  --accent-deep: #4a2c10;
+  --accent: #6d28d9;
+  --accent-dim: #8b5cf6;
+  --accent-deep: #4c1d95;
 }
 
 * {

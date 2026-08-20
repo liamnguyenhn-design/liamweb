@@ -6,7 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { X } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
-import ChuongTailorCase from "@/components/ChuongTailorCase";
+import FeaturedCases from "@/components/FeaturedCases";
 import { useLanguage } from "@/lib/language-context";
 import { content, type CaseStudy } from "@/lib/content";
 
@@ -30,7 +30,7 @@ export default function CaseStudies() {
           <SectionHeading label={t.label} heading={t.heading} sub={t.sub} />
         </Reveal>
 
-        <ChuongTailorCase />
+        <FeaturedCases />
 
         {/* Other case studies */}
         <div className="mt-16 border-t border-line">
@@ -66,8 +66,10 @@ export default function CaseStudies() {
             {t.campaigns.map((c) => (
               <div key={c.id}>
                 {c.logo ? (
-                  <div className="relative h-7 w-24 grayscale">
-                    <Image src={c.logo} alt={c.brand} fill sizes="96px" className="object-contain object-left" />
+                  <div className="flex h-11 w-24 items-center justify-start rounded-lg bg-white/95 px-2.5 py-1.5 shadow-sm">
+                    <div className="relative h-full w-full">
+                      <Image src={c.logo} alt={c.brand} fill sizes="96px" className="object-contain object-left" />
+                    </div>
                   </div>
                 ) : (
                   <p className="font-display text-lg text-ink">{c.brand}</p>

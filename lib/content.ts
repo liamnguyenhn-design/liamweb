@@ -3,15 +3,9 @@ export type BrandLogo = { name: string; logo: string };
 export type Capability = {
   number: string;
   title: string;
-  headline: string;
   body: string;
-  result: string;
   image?: string;
-};
-
-export type FrameworkStage = {
-  key: string;
-  question: string;
+  images?: string[];
 };
 
 export type WhyMeFacet = {
@@ -64,41 +58,23 @@ export type BrandCampaign = {
   proof: string;
 };
 
-export type ProcessStage = {
-  number: string;
-  title: string;
-  body: string;
-  bullets?: string[];
-  flow?: string;
-  note?: string;
-};
-
-export type ChuongTailorCase = {
+export type FeaturedCase = {
   eyebrow: string;
-  heading: string;
-  subheading: string;
-  problemLabel: string;
-  problem: string[];
+  brand: string;
+  title: string;
+  metric: string;
+  intro: string[];
   roleLabel: string;
-  roleHeading: string;
-  roleFlow: string;
-  roleBody: string;
-  process: ProcessStage[];
-  resultsHeading: string;
-  growth: {
-    start: string;
-    startLabel: string;
-    added: string;
-    addedLabel: string;
-    end: string;
-    endLabel: string;
-  };
-  growthBody: string;
-  metrics: { value: string; label: string; body: string }[];
-  keyResultLabel: string;
-  keyResult: string[];
-  keyMessage: string[];
-  cover: string;
+  roles: { title: string; body: string }[];
+  resultsLabel: string;
+  results: { value: string; label: string }[];
+  scaleLabel?: string;
+  scaleIntro?: string;
+  scale?: { value: string; label: string }[];
+  keyLabel?: string;
+  keyMessage?: string;
+  cover?: string;
+  avatar?: string;
 };
 
 export type LangContent = {
@@ -131,24 +107,12 @@ export type LangContent = {
     points: string[];
     keyMessage: string[];
   };
-  ecosystem: {
-    label: string;
-    heading: string;
-    sub: string;
-    stages: { number: string; label: string }[];
-  };
   capabilities: {
     label: string;
     heading: string;
     sub: string;
+    flow: string;
     items: Capability[];
-  };
-  framework: {
-    label: string;
-    heading: string;
-    sub: string;
-    stages: FrameworkStage[];
-    center: string;
   };
   whyMe: {
     label: string;
@@ -174,20 +138,13 @@ export type LangContent = {
     stageLabel: string;
     viewCase: string;
   };
-  chuongTailor: ChuongTailorCase;
+  featuredCases: FeaturedCase[];
   awards: { label: string; heading: string; sub: string; items: Award[] };
   moments: {
     label: string;
     heading: string;
     sub: string;
-    viewAll: string;
-    items: { src: string; caption: string }[];
-  };
-  insights: {
-    label: string;
-    heading: string;
-    sub: string;
-    items: { quote: string; body: string }[];
+    items: string[];
   };
   whoIWorkWith: {
     label: string;
@@ -241,11 +198,11 @@ export const content: Record<"vi" | "en", LangContent> = {
       cta: "Trao đổi với tôi",
     },
     hero: {
-      eyebrow: "Cố vấn & Đối tác Phát triển Hệ sinh thái Nội dung",
+      eyebrow: "Cố vấn & Đối tác Phát triển Nội dung Đa nền tảng",
       name: "HOÀNG NGUYỄN",
-      headline: "Từ ý tưởng đến hệ sinh thái nội dung.",
+      headline: "Giúp doanh nghiệp xây dựng, vận hành và phát triển kênh nội dung từ con số 0.",
       subheadline:
-        "Tôi giúp doanh nghiệp xây dựng và phát triển kênh nội dung đa nền tảng — từ định hướng thương hiệu, chiến lược nội dung, kết nối Creators, tổ chức sản xuất, hậu kỳ, đăng tải đến theo dõi và tối ưu tăng trưởng.",
+        "Từ định hướng thương hiệu, chiến lược nội dung, kết nối nguồn lực cần thiết để biến một ý tưởng nội dung thành kênh truyền thông thực tế, có định hướng rõ ràng và khả năng phát triển lâu dài.",
       capabilityLine: "ĐỊNH HƯỚNG · NỘI DUNG · CREATOR · SẢN XUẤT · ĐA NỀN TẢNG · TỐI ƯU",
       ctaPrimary: "Tôi có thể giúp gì?",
       ctaSecondary: "Trao đổi về dự án",
@@ -263,7 +220,7 @@ export const content: Record<"vi" | "en", LangContent> = {
       { value: "20+", label: "Thương hiệu lớn" },
     ],
     trustedBy: {
-      label: "Được tin tưởng bởi",
+      label: "Đối tác đã đồng hành",
       note: "Cùng nhiều thương hiệu và tổ chức khác",
       items: [
         { name: "Techcombank", logo: "/logos/techcombank.png" },
@@ -276,6 +233,7 @@ export const content: Record<"vi" | "en", LangContent> = {
         { name: "Biti's", logo: "/logos/bitis.svg" },
         { name: "Google", logo: "/logos/google.svg" },
         { name: "Adidas", logo: "/logos/adidas.svg" },
+        { name: "Thăng Long Cars", logo: "/logos/thang-long-cars.svg" },
       ],
     },
     problem: {
@@ -294,96 +252,51 @@ export const content: Record<"vi" | "en", LangContent> = {
       ],
       keyMessage: ["Bạn không nhất thiết cần thêm content.", "Bạn cần một hệ thống."],
     },
-    ecosystem: {
-      label: "Cách tôi đồng hành",
-      heading: "Tôi có thể đồng hành xuyên suốt toàn bộ quá trình.",
-      sub: "Không phải một mắt xích đơn lẻ — mà toàn bộ chuỗi giá trị của một hệ sinh thái nội dung.",
-      stages: [
-        { number: "01", label: "Định hướng" },
-        { number: "02", label: "Nội dung" },
-        { number: "03", label: "Creator" },
-        { number: "04", label: "Sản xuất" },
-        { number: "05", label: "Hậu kỳ" },
-        { number: "06", label: "Đa nền tảng" },
-        { number: "07", label: "Đăng tải" },
-        { number: "08", label: "Theo dõi" },
-        { number: "09", label: "Tối ưu" },
-        { number: "10", label: "Phát triển" },
-      ],
-    },
     capabilities: {
       label: "Năng lực cốt lõi",
-      heading: "Bảy mắt xích, một người đứng giữa.",
-      sub: "Mỗi năng lực dưới đây tôi đều đã trực tiếp làm — không chỉ tư vấn trên giấy.",
+      heading: "Từ định hướng đến tăng trưởng",
+      sub: "Một kênh nội dung tốt không bắt đầu từ việc đăng video. Nó bắt đầu từ việc biết mình đang xây gì, cho ai và vì sao.",
+      flow: "01 Định hướng → 02 Nội dung → 03 Creator → 04 Sản xuất → 05 Hậu kỳ → 06 Phân phối → 07 Tối ưu",
       items: [
         {
           number: "01",
-          title: "Định hướng & Xây dựng kênh",
-          headline: "Một định hướng rõ ràng trước khi đầu tư vào sản xuất.",
-          body: "Tôi giúp doanh nghiệp xác định kênh được xây để làm gì, đối tượng khán giả, định vị, Brand Direction, Content Direction, nền tảng phù hợp, vai trò của từng nền tảng, format và hướng phát triển dài hạn.",
-          result: "Kết quả: một định hướng rõ ràng trước khi đầu tư vào sản xuất.",
-          image: "/images/pillars/1-cover.jpg",
+          title: "Định hướng",
+          body: "Xác định đang xây kênh gì, cho ai, và định vị ra sao trước khi sản xuất.",
+          images: ["/images/capabilities/direction-1.jpg", "/images/capabilities/direction-2.jpg"],
         },
         {
           number: "02",
-          title: "Chiến lược & Phát triển Nội dung",
-          headline: "Biến những ý tưởng rời rạc thành một hệ thống có cấu trúc.",
-          body: "Tôi hỗ trợ Content Strategy, Content Pillar, Content Architecture, format, series, kịch bản, Content Calendar, Content IP và Creative Direction.",
-          result: "Kết quả: biến những ý tưởng rời rạc thành một hệ thống nội dung có cấu trúc.",
+          title: "Nội dung",
+          body: "Biến định hướng thành chủ đề, format, series và kịch bản cụ thể.",
         },
         {
           number: "03",
-          title: "Creator / KOL / KOC / Influencer",
-          headline: "Kết nối đúng người để khuếch đại nội dung.",
-          body: "Tôi có khả năng kết nối với Creators, KOLs, KOCs, Influencers, Hosts, Experts và Communities — xác định Creator phù hợp, kết nối, điều phối và phát triển quan hệ hợp tác dài hạn. Creator không chỉ là người đăng quảng cáo — có thể trở thành nhân vật, người tạo nội dung, host, cộng tác viên, kênh phân phối, một phần của hệ sinh thái thương hiệu.",
-          result: "Kết quả: một mạng lưới cộng tác thay vì các hợp đồng rời rạc.",
-          image: "/images/moments/candid.jpg",
+          title: "Creator",
+          body: "Kết nối đúng Creator, KOL, KOC để khuếch đại đúng thông điệp.",
+          image: "/images/capabilities/creator.jpg",
         },
         {
           number: "04",
-          title: "Sản xuất Nội dung",
-          headline: "Biến ý tưởng thành nội dung thực tế.",
-          body: "Tôi có thể đồng hành trong pre-production, production, Creative Direction, quay, điều phối Creator/Talent, điều phối ekip, kiểm soát nội dung và kiểm soát chất lượng đầu ra. Giá trị của tôi là hiểu toàn bộ quy trình, biết dự án cần gì và có khả năng kết nối đúng nguồn lực để triển khai.",
-          result: "Kết quả: ý tưởng được triển khai đúng với định hướng ban đầu.",
-          image: "/images/pillars/2-cover.jpg",
+          title: "Sản xuất",
+          body: "Đưa ý tưởng vào thực tế: quay, dựng, đóng gói đúng định hướng.",
+          image: "/images/capabilities/production.jpg",
         },
         {
           number: "05",
-          title: "Hậu kỳ & Đóng gói",
-          headline: "Từ raw material đến content có thể phát hành.",
-          body: "Tôi có thể định hướng và phối hợp Video Editing, short-form, long-form, Reels, Shorts, motion, thumbnail, caption, subtitle, versioning và adaptation.",
-          result: "Kết quả: một nội dung gốc phát triển thành nhiều phiên bản phù hợp với nhiều nền tảng.",
+          title: "Hậu kỳ",
+          body: "Hoàn thiện nội dung, tối ưu hook, nhịp và phiên bản cho từng nền tảng.",
         },
         {
           number: "06",
-          title: "Phân phối Đa nền tảng",
-          headline: "Một ý tưởng — nhiều điểm chạm.",
-          body: "TikTok, YouTube, Facebook, Instagram, Reels, Shorts — không copy nguyên một nội dung lên mọi nền tảng. Mỗi nền tảng cần được điều chỉnh theo hook, format, độ dài, caption, thumbnail và hành vi người dùng.",
-          result: "Kết quả: mỗi nền tảng nhận đúng phiên bản nội dung phù hợp với nó.",
+          title: "Phân phối",
+          body: "Đưa đúng nội dung đến đúng nền tảng, đúng khán giả.",
         },
         {
           number: "07",
-          title: "Theo dõi & Tối ưu",
-          headline: "Đăng tải không phải là điểm kết thúc.",
-          body: "Theo dõi views, watch time, retention, engagement, format, chủ đề, Creator và platform — theo quy trình phân tích, điều chỉnh, thử nghiệm, tối ưu và phát triển.",
-          result: "Kết quả: không chỉ vài video tốt, mà một format có thể phát triển lâu dài.",
+          title: "Tối ưu",
+          body: "Theo dõi hiệu quả và liên tục điều chỉnh để tăng trưởng bền vững.",
         },
       ],
-    },
-    framework: {
-      label: "Khung năng lực",
-      heading: "Hoàng Nguyễn Content Ecosystem",
-      sub: "Bảy câu hỏi tôi luôn đặt ra khi bắt đầu một dự án nội dung.",
-      stages: [
-        { key: "STRATEGY", question: "Ta đang xây gì?" },
-        { key: "CONTENT", question: "Ta nói gì?" },
-        { key: "CREATOR", question: "Ai sẽ tạo và khuếch đại?" },
-        { key: "PRODUCTION", question: "Làm thế nào để biến ý tưởng thành sản phẩm?" },
-        { key: "DISTRIBUTION", question: "Đưa nó đến đâu?" },
-        { key: "OPTIMIZATION", question: "Điều gì đang hiệu quả?" },
-        { key: "GROWTH", question: "Làm thế nào để phát triển tiếp?" },
-      ],
-      center: "CONTENT ECOSYSTEM",
     },
     whyMe: {
       label: "Tại sao là tôi",
@@ -586,120 +499,67 @@ export const content: Record<"vi" | "en", LangContent> = {
         },
       ],
     },
-    chuongTailor: {
-      eyebrow: "Case Study nổi bật",
-      heading: "Chương Tailor",
-      subheading: "Từ 2.000 đến 12.000+ người đăng ký — Xây dựng và tăng trưởng hệ thống nội dung đa nền tảng",
-      problemLabel: "Bài toán",
-      problem: [
-        "Khi bắt đầu đồng hành, kênh YouTube của Chương Tailor có khoảng 2.000 người đăng ký.",
-        "Bài toán không đơn thuần là sản xuất thêm video, mà là tìm ra hướng nội dung phù hợp để thương hiệu có thể xây dựng sự hiện diện mạnh hơn trên môi trường số.",
-        "Hoàng Nguyễn tham gia tư vấn và đồng hành trong việc định hướng nội dung, sản xuất, quay, đăng tải, theo dõi và tối ưu hiệu quả.",
-      ],
-      roleLabel: "Vai trò",
-      roleHeading: "Từ chiến lược đến triển khai",
-      roleFlow: "Định hướng nội dung → Phát triển ý tưởng → Sản xuất & quay → Hậu kỳ → Đăng tải → Đa nền tảng → Theo dõi → Tối ưu",
-      roleBody: "Không chỉ đưa ra chiến lược, mà trực tiếp đồng hành trong quá trình biến chiến lược thành nội dung thực tế.",
-      process: [
-        {
-          number: "01",
-          title: "Định hướng",
-          body: "Phân tích hiện trạng của kênh và xác định hướng nội dung phù hợp với thương hiệu Chương Tailor. Tập trung vào việc tìm ra:",
-          bullets: [
-            "Chủ đề phù hợp",
-            "Cách kể chuyện",
-            "Format",
-            "Hướng phát triển nội dung",
-            "Cách thể hiện thương hiệu trên nền tảng số",
-          ],
-        },
-        {
-          number: "02",
-          title: "Phát triển nội dung",
-          body: "Tư vấn và phát triển hệ thống nội dung thay vì sản xuất từng video riêng lẻ.",
-          flow: "Ý tưởng → Format → Series → Kịch bản → Sản xuất",
-          note: "Mục tiêu là tạo ra những nội dung vừa thể hiện được giá trị thương hiệu, vừa phù hợp với hành vi người xem.",
-        },
-        {
-          number: "03",
-          title: "Sản xuất & Quay",
-          body: "Đồng hành trong quá trình đưa ý tưởng vào thực tế:",
-          bullets: [
-            "Định hướng nội dung trước khi quay",
-            "Phát triển concept",
-            "Quay video",
-            "Phối hợp ekip",
-            "Điều phối quá trình sản xuất",
-            "Đảm bảo nội dung bám đúng định hướng",
-          ],
-        },
-        {
-          number: "04",
-          title: "Hậu kỳ & Đóng gói",
-          body: "Từ footage ban đầu, phát triển thành nội dung hoàn chỉnh để phát hành. Tối ưu:",
-          bullets: [
-            "Hook",
-            "Nhịp video",
-            "Cách kể chuyện",
-            "Caption",
-            "Thumbnail",
-            "Short-form",
-            "Long-form",
-            "Phiên bản cho từng nền tảng",
-          ],
-        },
-        {
-          number: "05",
-          title: "Đăng tải & Phát triển Đa nền tảng",
-          body: "Không chỉ tập trung vào YouTube. Nội dung được phát triển và phân phối trên nhiều nền tảng nhằm mở rộng điểm chạm với khán giả.",
-          flow: "YouTube · Facebook · TikTok · Instagram",
-          note: "Mỗi nền tảng được điều chỉnh cách đóng gói nội dung phù hợp với hành vi người dùng.",
-        },
-        {
-          number: "06",
-          title: "Theo dõi & Tối ưu",
-          body: "Sau khi nội dung được đăng tải, tiếp tục theo dõi hiệu quả để xác định:",
-          bullets: [
-            "Nội dung nào đang hiệu quả",
-            "Format nào có tiềm năng",
-            "Chủ đề nào thu hút khán giả",
-            "Cách triển khai nào cần điều chỉnh",
-          ],
-          flow: "Theo dõi → Phân tích → Tối ưu → Thử nghiệm → Phát triển",
-        },
-      ],
-      resultsHeading: "Kết quả sau 3 tháng",
-      growth: {
-        start: "2.000+",
-        startLabel: "Người đăng ký ban đầu",
-        added: "+10.000",
-        addedLabel: "Người đăng ký mới",
-        end: "12.000+",
-        endLabel: "Người đăng ký",
+    featuredCases: [
+      {
+        eyebrow: "Case Study 01",
+        brand: "Chương Tailor",
+        title: "Xây dựng & Tăng trưởng Kênh Nội dung Đa nền tảng",
+        metric: "Từ 2.000 → 12.000+ người đăng ký YouTube trong 3 tháng",
+        intro: [
+          "Chương Tailor có nền tảng thương hiệu tốt nhưng cần một hướng phát triển nội dung rõ ràng hơn trên môi trường số.",
+          "Tôi đồng hành trong toàn bộ quá trình từ định hướng → nội dung → sản xuất → quay → hậu kỳ → đăng tải → theo dõi → tối ưu.",
+        ],
+        roleLabel: "Vai trò",
+        roles: [
+          { title: "Content Direction", body: "Xác định hướng nội dung, chủ đề và format phù hợp với thương hiệu." },
+          { title: "Content Development", body: "Phát triển ý tưởng, series, kịch bản và hệ thống nội dung." },
+          { title: "Production", body: "Định hướng và phối hợp quá trình quay, ekip và sản xuất." },
+          { title: "Distribution", body: "Phát triển nội dung trên YouTube và các nền tảng khác." },
+          { title: "Optimization", body: "Theo dõi dữ liệu, phản hồi và liên tục điều chỉnh nội dung." },
+        ],
+        resultsLabel: "Kết quả sau 3 tháng",
+        results: [
+          { value: "+10.000", label: "người đăng ký mới trên YouTube" },
+          { value: "500.000+", label: "lượt xem trên YouTube" },
+          { value: "1.000.000+", label: "lượt tương tác / tiếp cận trên đa nền tảng" },
+        ],
+        keyLabel: "Key Takeaway",
+        keyMessage: "Không chỉ sản xuất video — xây dựng một hệ thống nội dung có khả năng tăng trưởng.",
+        cover: "/images/case-studies/chuong-tailor-cover.jpg",
       },
-      growthBody:
-        "Sau 3 tháng đồng hành tư vấn nội dung, kênh YouTube tăng thêm khoảng 10.000 người đăng ký, từ khoảng 2.000 lên hơn 12.000 người đăng ký.",
-      metrics: [
-        {
-          value: "500.000+",
-          label: "Lượt xem trên YouTube",
-          body: "Các nội dung được tư vấn và phát triển đạt tổng cộng hơn 500.000 lượt xem trên YouTube trong giai đoạn này.",
-        },
-        {
-          value: "1.000.000+",
-          label: "Người được tiếp cận / tương tác trên đa nền tảng",
-          body: "Khi mở rộng nội dung sang nhiều nền tảng, hệ thống nội dung của Chương Tailor tạo ra hơn 1 triệu lượt tương tác/tiếp cận trên hệ sinh thái đa nền tảng.",
-        },
-      ],
-      keyResultLabel: "Key Result",
-      keyResult: [
-        "+10.000 người đăng ký trong 3 tháng.",
-        "Từ một kênh 2.000 người đăng ký",
-        "→ xây dựng đà tăng trưởng mới cho hệ thống nội dung.",
-      ],
-      keyMessage: ["Không chỉ làm video.", "Tìm ra cách để nội dung tăng trưởng."],
-      cover: "/images/case-studies/chuong-tailor-cover.jpg",
-    },
+      {
+        eyebrow: "Case Study 02",
+        brand: "Việt Phương Thoa",
+        title: "Tư vấn & Phát triển Short-form Content",
+        metric: "80 video · 20M+ lượt xem · 3 tháng",
+        intro: [
+          "Năm 2021, khi TikTok và short-form video bắt đầu phát triển mạnh tại Việt Nam, tôi đồng hành cùng Việt Phương Thoa trong việc định hướng và phát triển nội dung video ngắn trên nền tảng mới.",
+          "Bài toán không chỉ là sản xuất video, mà là tìm ra format, cách kể chuyện và nhịp nội dung phù hợp với hành vi người dùng trên một nền tảng mới.",
+        ],
+        roleLabel: "Vai trò",
+        roles: [
+          { title: "Content Direction", body: "Định hướng cách tiếp cận short-form phù hợp với Creator và nền tảng." },
+          { title: "Format Development", body: "Thử nghiệm và phát triển các format có khả năng thu hút người xem." },
+          { title: "Production", body: "Đồng hành trong quá trình biến ý tưởng thành video thực tế." },
+          { title: "Distribution", body: "Xây dựng nhịp đăng tải và phát triển nội dung trên nền tảng." },
+          { title: "Optimization", body: "Theo dõi phản hồi và hiệu quả để liên tục điều chỉnh." },
+        ],
+        resultsLabel: "Kết quả sau 3 tháng",
+        results: [
+          { value: "80", label: "video short-form được phát triển và đăng tải" },
+          { value: "20M+", label: "lượt xem trên TikTok" },
+          { value: "3 tháng", label: "thử nghiệm, đo lường và tối ưu" },
+        ],
+        scaleLabel: "Quy mô hiện tại",
+        scaleIntro: "Hành trình phát triển sau đó tiếp tục đưa Việt Phương Thoa trở thành một Creator có quy mô lớn trên nhiều nền tảng.",
+        scale: [
+          { value: "16M+", label: "followers trên TikTok" },
+          { value: "3M+", label: "subscribers trên YouTube" },
+          { value: "3M+", label: "lượt thích trên Facebook" },
+        ],
+        avatar: "/images/case-studies/vpt-avatar.jpg",
+      },
+    ],
     awards: {
       label: "Thành tựu & Giải thưởng",
       heading: "Những dấu ấn được ghi nhận",
@@ -731,10 +591,10 @@ export const content: Record<"vi" | "en", LangContent> = {
           description: "Hơn 200.000 lượt xem tự nhiên — vượt qua hàng loạt nhà sáng tạo khác để dẫn đầu bình chọn.",
         },
         {
-          title: "Video Truyền thông Xuất sắc nhất",
+          title: "Video Xuất sắc nhất",
           org: "AMD Global",
           year: "2019",
-          description: "Giữ vai trò Giám đốc Sáng tạo cho chiến dịch ra mắt dòng sản phẩm PC/Chipset thế hệ mới.",
+          description: "Tham gia chương trình của AMD cho dòng sản phẩm PC/Chipset thế hệ mới và giành giải Video Xuất sắc nhất.",
         },
         {
           title: "Đại diện Nền tảng Toàn cầu",
@@ -759,88 +619,43 @@ export const content: Record<"vi" | "en", LangContent> = {
     moments: {
       label: "Khoảnh khắc",
       heading: "Những khoảnh khắc ngoài đời thực",
-      sub: "Từ trụ sở các nền tảng toàn cầu đến các diễn đàn KOL và hiện trường sản xuất.",
-      viewAll: "Xem tất cả",
+      sub: "Thành tựu là những cơ hội được đồng hành và sát cánh cùng rất nhiều đối tác, Creator, KOL và tổ chức.",
       items: [
-        {
-          src: "/images/moments/google.jpg",
-          caption: "Tại trụ sở Google — gắn với hành trình đại diện Việt Nam trong chương trình Google Adventure",
-        },
-        {
-          src: "/images/moments/candid.jpg",
-          caption: "Hội nghị KOL — Ra mắt CLB Niềm tin số Thủ đô, phối hợp Công an TP Hà Nội & VCCorp",
-        },
-        {
-          src: "/images/moments/award-event.jpg",
-          caption: "Vinh danh tại các diễn đàn KOL & chuyển đổi số",
-        },
-        {
-          src: "/images/moments/ballroom.jpg",
-          caption: "Không gian Hội nghị KOL — Ra mắt CLB Niềm tin số Thủ đô",
-        },
-        {
-          src: "/images/moments/trophy.jpg",
-          caption: "Cùng đối tác tại Hội nghị KOL, phối hợp tổ chức cùng VCCorp",
-        },
-        {
-          src: "/images/moments/consulting-2.jpg",
-          caption: "Buổi làm việc chiến lược nội dung cùng đội ngũ Thăng Long Cars",
-        },
-        {
-          src: "/images/moments/filmset-1.jpg",
-          caption: "Hậu trường đoàn làm phim \"Đèn Âm Hồn – Bà Đừng Buồn Con\"",
-        },
-        {
-          src: "/images/moments/filmset-2.jpg",
-          caption: "Cùng ê-kíp đoàn làm phim tại phố cổ Hà Nội",
-        },
-        {
-          src: "/images/moments/filmset-3.jpg",
-          caption: "Trên phim trường \"Đèn Âm Hồn – Bà Đừng Buồn Con\"",
-        },
-        {
-          src: "/images/moments/denamhon-hoangnam.jpg",
-          caption: "Cùng đạo diễn Hoàng Nam trong quá trình thực hiện \"Đèn Âm Hồn – Bà Đừng Buồn Con\"",
-        },
-        {
-          src: "/images/moments/google-arts-group.jpg",
-          caption: "Cùng đoàn đại diện tại sự kiện Google Arts & Culture — Kỳ quan Việt Nam",
-        },
-        {
-          src: "/images/moments/google-arts-solo.jpg",
-          caption: "Tại không gian trưng bày Google Arts & Culture",
-        },
-      ],
-    },
-    insights: {
-      label: "Góc nhìn",
-      heading: "Góc nhìn về Content, Creator & Growth",
-      sub: "Vài quan điểm định hình cách tôi tiếp cận mỗi dự án.",
-      items: [
-        {
-          quote: "Doanh nghiệp không thiếu content. Doanh nghiệp thiếu hệ thống.",
-          body: "Rất nhiều thương hiệu đã có video, đã có bài đăng — nhưng chưa có một kiến trúc nội dung xuyên suốt để những mảnh ghép đó cộng hưởng với nhau.",
-        },
-        {
-          quote: "Creator không chỉ là người đăng bài.",
-          body: "Một Creator phù hợp có thể trở thành nhân vật, host, cộng tác viên sản xuất và một phần trong hệ sinh thái thương hiệu — không chỉ là một điểm phân phối một lần.",
-        },
-        {
-          quote: "Chiến lược nội dung chỉ có giá trị khi có thể biến thành sản phẩm thực tế.",
-          body: "Một bản định hướng hay vẫn cần được chuyển hóa qua sản xuất, hậu kỳ và phân phối thì mới tạo ra kết quả.",
-        },
-        {
-          quote: "Một nội dung không nên được copy nguyên vẹn lên mọi nền tảng.",
-          body: "Mỗi nền tảng có hành vi người xem riêng — cùng một câu chuyện cần được điều chỉnh hook, định dạng và độ dài khác nhau.",
-        },
-        {
-          quote: "Làm thế nào để biến một ý tưởng thành một tài sản nội dung?",
-          body: "Một ý tưởng chỉ trở thành tài sản khi được lặp lại có hệ thống — qua series, format và một Content IP có thể phát triển lâu dài.",
-        },
-        {
-          quote: "Founder có thể biến chuyên môn thành một hệ thống nội dung như thế nào?",
-          body: "Bắt đầu từ việc xác định điều Founder thực sự hiểu rõ nhất, sau đó xây dựng kiến trúc nội dung và kênh xoay quanh đúng chuyên môn đó.",
-        },
+        "/images/moments/google.jpg",
+        "/images/moments/candid.jpg",
+        "/images/moments/award-event.jpg",
+        "/images/moments/ballroom.jpg",
+        "/images/moments/trophy.jpg",
+        "/images/moments/consulting-2.jpg",
+        "/images/moments/filmset-1.jpg",
+        "/images/moments/filmset-2.jpg",
+        "/images/moments/filmset-3.jpg",
+        "/images/moments/denamhon-hoangnam.jpg",
+        "/images/moments/google-arts-group.jpg",
+        "/images/moments/google-arts-solo.jpg",
+        "/images/moments/wall/wall-01.jpg",
+        "/images/moments/wall/wall-02.jpg",
+        "/images/moments/wall/wall-03.jpg",
+        "/images/moments/wall/wall-04.jpg",
+        "/images/moments/wall/wall-05.jpg",
+        "/images/moments/wall/wall-06.jpg",
+        "/images/moments/wall/wall-07.jpg",
+        "/images/moments/wall/wall-08.jpg",
+        "/images/moments/wall/wall-09.jpg",
+        "/images/moments/wall/wall-10.jpg",
+        "/images/moments/wall/wall-11.jpg",
+        "/images/moments/wall/wall-12.jpg",
+        "/images/moments/wall/wall-13.jpg",
+        "/images/moments/wall/wall-14.jpg",
+        "/images/moments/wall/wall-16.jpg",
+        "/images/moments/wall/wall-18.jpg",
+        "/images/moments/wall/wall-20.jpg",
+        "/images/moments/wall/wall-21.jpg",
+        "/images/moments/wall/wall-22.jpg",
+        "/images/moments/wall/wall-23.jpg",
+        "/images/moments/wall/wall-24.jpg",
+        "/images/moments/wall/wall-25.jpg",
+        "/images/moments/wall/wall-26.jpg",
       ],
     },
     whoIWorkWith: {
@@ -932,9 +747,9 @@ export const content: Record<"vi" | "en", LangContent> = {
     hero: {
       eyebrow: "Content Ecosystem Advisor & Partner",
       name: "HOANG NGUYEN",
-      headline: "From idea to content ecosystem.",
+      headline: "Helping businesses build, run, and grow content channels from zero.",
       subheadline:
-        "I help businesses build and grow multi-platform content channels — from brand direction, content strategy, and creator connections, to production, post-production, publishing, tracking, and growth optimization.",
+        "From brand direction and content strategy, to connecting the resources needed to turn a content idea into a real media channel — with clear direction and the ability to grow for the long run.",
       capabilityLine: "DIRECTION · CONTENT · CREATOR · PRODUCTION · MULTI-PLATFORM · OPTIMIZATION",
       ctaPrimary: "How I can help",
       ctaSecondary: "Talk about your project",
@@ -952,7 +767,7 @@ export const content: Record<"vi" | "en", LangContent> = {
       { value: "20+", label: "Major brand partners" },
     ],
     trustedBy: {
-      label: "Trusted by",
+      label: "Partners who've come along",
       note: "Along with many other brands and organizations",
       items: [
         { name: "Techcombank", logo: "/logos/techcombank.png" },
@@ -965,6 +780,7 @@ export const content: Record<"vi" | "en", LangContent> = {
         { name: "Biti's", logo: "/logos/bitis.svg" },
         { name: "Google", logo: "/logos/google.svg" },
         { name: "Adidas", logo: "/logos/adidas.svg" },
+        { name: "Thăng Long Cars", logo: "/logos/thang-long-cars.svg" },
       ],
     },
     problem: {
@@ -983,96 +799,51 @@ export const content: Record<"vi" | "en", LangContent> = {
       ],
       keyMessage: ["You don't necessarily need more content.", "You need a system."],
     },
-    ecosystem: {
-      label: "How I work",
-      heading: "I can be with you through the entire process.",
-      sub: "Not one single link — the full value chain of a content ecosystem.",
-      stages: [
-        { number: "01", label: "Direction" },
-        { number: "02", label: "Content" },
-        { number: "03", label: "Creator" },
-        { number: "04", label: "Production" },
-        { number: "05", label: "Post-Production" },
-        { number: "06", label: "Multi-Platform" },
-        { number: "07", label: "Publishing" },
-        { number: "08", label: "Tracking" },
-        { number: "09", label: "Optimization" },
-        { number: "10", label: "Growth" },
-      ],
-    },
     capabilities: {
       label: "Core capabilities",
-      heading: "Seven links, one person standing between them.",
-      sub: "Every capability below is one I've done directly — not just advised on paper.",
+      heading: "From direction to growth",
+      sub: "A good content channel doesn't start with posting a video. It starts with knowing what you're building, for whom, and why.",
+      flow: "01 Direction → 02 Content → 03 Creator → 04 Production → 05 Post-Production → 06 Distribution → 07 Optimization",
       items: [
         {
           number: "01",
-          title: "Direction & Channel Building",
-          headline: "A clear direction before investing in production.",
-          body: "I help businesses define what a channel is built for, its audience, positioning, brand direction, content direction, the right platforms, the role of each platform, format, and long-term growth path.",
-          result: "Result: a clear direction before investing in production.",
-          image: "/images/pillars/1-cover.jpg",
+          title: "Direction",
+          body: "Define what the channel is built for, its audience, and its positioning before production.",
+          images: ["/images/capabilities/direction-1.jpg", "/images/capabilities/direction-2.jpg"],
         },
         {
           number: "02",
-          title: "Content Strategy & Development",
-          headline: "Turning scattered ideas into a structured system.",
-          body: "I support content strategy, content pillars, content architecture, formats, series, scripts, content calendars, content IP, and creative direction.",
-          result: "Result: scattered ideas turned into a structured content system.",
+          title: "Content",
+          body: "Turn direction into concrete topics, formats, series, and scripts.",
         },
         {
           number: "03",
-          title: "Creator / KOL / KOC / Influencer",
-          headline: "Connecting the right people to amplify content.",
-          body: "I can connect with Creators, KOLs, KOCs, Influencers, hosts, experts, and communities — identifying the right fit, connecting, coordinating, and developing long-term collaborations. A Creator isn't just someone who posts an ad — they can become a character, a content maker, a host, a production collaborator, a distribution channel, part of a brand's ecosystem.",
-          result: "Result: a collaboration network instead of one-off contracts.",
-          image: "/images/moments/candid.jpg",
+          title: "Creator",
+          body: "Connect with the right Creators, KOLs, and KOCs to amplify the right message.",
+          image: "/images/capabilities/creator.jpg",
         },
         {
           number: "04",
-          title: "Content Production",
-          headline: "Turning ideas into real content.",
-          body: "I can be involved in pre-production, production, creative direction, filming, coordinating Creators/talent, coordinating crews, content control, and output quality control. My value is understanding the whole process, knowing what a project needs, and connecting the right resources to execute it.",
-          result: "Result: ideas executed true to the original direction.",
-          image: "/images/pillars/2-cover.jpg",
+          title: "Production",
+          body: "Turn ideas into reality: filming, editing, packaging true to the direction.",
+          image: "/images/capabilities/production.jpg",
         },
         {
           number: "05",
-          title: "Post-Production & Packaging",
-          headline: "From raw material to publish-ready content.",
-          body: "I can direct and coordinate video editing, short-form, long-form, Reels, Shorts, motion, thumbnails, captions, subtitles, versioning, and adaptation.",
-          result: "Result: one original piece of content adapted into multiple platform-ready versions.",
+          title: "Post-Production",
+          body: "Refine content, optimizing hook, pacing, and versions for each platform.",
         },
         {
           number: "06",
-          title: "Multi-Platform Distribution",
-          headline: "One idea — many touchpoints.",
-          body: "TikTok, YouTube, Facebook, Instagram, Reels, Shorts — never the same content copied onto every platform. Each platform needs its own hook, format, length, caption, thumbnail, and behavior fit.",
-          result: "Result: every platform gets the version of content built for it.",
+          title: "Distribution",
+          body: "Deliver the right content to the right platform and the right audience.",
         },
         {
           number: "07",
-          title: "Tracking & Optimization",
-          headline: "Publishing isn't the finish line.",
-          body: "Tracking views, watch time, retention, engagement, format, topic, Creator, and platform — through a cycle of analyze, adjust, test, optimize, and grow.",
-          result: "Result: not just a few good videos, but a format that can grow long-term.",
+          title: "Optimization",
+          body: "Track performance and keep adjusting for sustainable growth.",
         },
       ],
-    },
-    framework: {
-      label: "Capability framework",
-      heading: "Hoang Nguyen Content Ecosystem",
-      sub: "Seven questions I always ask at the start of a content project.",
-      stages: [
-        { key: "STRATEGY", question: "What are we building?" },
-        { key: "CONTENT", question: "What are we saying?" },
-        { key: "CREATOR", question: "Who will create and amplify it?" },
-        { key: "PRODUCTION", question: "How do we turn the idea into a product?" },
-        { key: "DISTRIBUTION", question: "Where does it go?" },
-        { key: "OPTIMIZATION", question: "What's working?" },
-        { key: "GROWTH", question: "How do we keep growing it?" },
-      ],
-      center: "CONTENT ECOSYSTEM",
     },
     whyMe: {
       label: "Why me",
@@ -1260,120 +1031,67 @@ export const content: Record<"vi" | "en", LangContent> = {
         },
       ],
     },
-    chuongTailor: {
-      eyebrow: "Featured Case Study",
-      heading: "Chương Tailor",
-      subheading: "From 2,000 to 12,000+ subscribers — Building and growing a multi-platform content system",
-      problemLabel: "Problem",
-      problem: [
-        "When the engagement began, Chương Tailor's YouTube channel had around 2,000 subscribers.",
-        "The problem wasn't simply producing more videos — it was finding the right content direction so the brand could build a stronger presence in the digital space.",
-        "Hoàng Nguyễn advised and worked alongside the team on content direction, production, filming, publishing, tracking, and optimization.",
-      ],
-      roleLabel: "Role",
-      roleHeading: "From strategy to execution",
-      roleFlow: "Content direction → Idea development → Production & filming → Post-production → Publishing → Multi-platform → Tracking → Optimization",
-      roleBody: "Not just providing strategy, but directly involved in turning that strategy into real content.",
-      process: [
-        {
-          number: "01",
-          title: "Direction",
-          body: "Analyzed the channel's current state and defined a content direction fit for the Chương Tailor brand. Focused on finding:",
-          bullets: [
-            "The right topics",
-            "A way of storytelling",
-            "Format",
-            "A content growth direction",
-            "How the brand shows up in the digital space",
-          ],
-        },
-        {
-          number: "02",
-          title: "Content Development",
-          body: "Advised on and developed a content system instead of producing standalone videos.",
-          flow: "Idea → Format → Series → Script → Production",
-          note: "The goal was content that expressed the brand's values while fitting viewer behavior.",
-        },
-        {
-          number: "03",
-          title: "Production & Filming",
-          body: "Worked alongside the team turning ideas into reality:",
-          bullets: [
-            "Direction set before filming",
-            "Concept development",
-            "Filming",
-            "Crew coordination",
-            "Production coordination",
-            "Keeping content aligned with direction",
-          ],
-        },
-        {
-          number: "04",
-          title: "Post-Production & Packaging",
-          body: "Turned raw footage into publish-ready content. Optimized:",
-          bullets: [
-            "Hook",
-            "Pacing",
-            "Storytelling",
-            "Captions",
-            "Thumbnails",
-            "Short-form",
-            "Long-form",
-            "Platform-specific versions",
-          ],
-        },
-        {
-          number: "05",
-          title: "Publishing & Multi-Platform Growth",
-          body: "Not just YouTube. Content was developed and distributed across multiple platforms to expand touchpoints with the audience.",
-          flow: "YouTube · Facebook · TikTok · Instagram",
-          note: "Each platform's packaging was adjusted to fit its own user behavior.",
-        },
-        {
-          number: "06",
-          title: "Tracking & Optimization",
-          body: "After publishing, kept tracking performance to identify:",
-          bullets: [
-            "Which content was working",
-            "Which formats had potential",
-            "Which topics engaged the audience",
-            "What needed adjusting",
-          ],
-          flow: "Track → Analyze → Optimize → Test → Grow",
-        },
-      ],
-      resultsHeading: "Results after 3 months",
-      growth: {
-        start: "2,000+",
-        startLabel: "Starting subscribers",
-        added: "+10,000",
-        addedLabel: "New subscribers",
-        end: "12,000+",
-        endLabel: "Subscribers",
+    featuredCases: [
+      {
+        eyebrow: "Case Study 01",
+        brand: "Chương Tailor",
+        title: "Building & Growing a Multi-Platform Content Channel",
+        metric: "From 2,000 → 12,000+ YouTube subscribers in 3 months",
+        intro: [
+          "Chương Tailor had a strong brand foundation but needed a clearer content direction for the digital space.",
+          "I was involved throughout the entire process — direction → content → production → filming → post-production → publishing → tracking → optimization.",
+        ],
+        roleLabel: "Role",
+        roles: [
+          { title: "Content Direction", body: "Defined content direction, topics, and format fit for the brand." },
+          { title: "Content Development", body: "Developed ideas, series, scripts, and a content system." },
+          { title: "Production", body: "Directed and coordinated filming, crew, and production." },
+          { title: "Distribution", body: "Grew content on YouTube and other platforms." },
+          { title: "Optimization", body: "Tracked data and feedback, continuously adjusting content." },
+        ],
+        resultsLabel: "Results after 3 months",
+        results: [
+          { value: "+10,000", label: "new YouTube subscribers" },
+          { value: "500,000+", label: "YouTube views" },
+          { value: "1,000,000+", label: "reach / engagement across platforms" },
+        ],
+        keyLabel: "Key Takeaway",
+        keyMessage: "Not just producing video — building a content system capable of growth.",
+        cover: "/images/case-studies/chuong-tailor-cover.jpg",
       },
-      growthBody:
-        "After 3 months of content advisory, the YouTube channel gained roughly 10,000 subscribers, growing from around 2,000 to over 12,000.",
-      metrics: [
-        {
-          value: "500,000+",
-          label: "YouTube views",
-          body: "The advised and developed content reached over 500,000 views on YouTube during this period.",
-        },
-        {
-          value: "1,000,000+",
-          label: "Reach / engagement across platforms",
-          body: "Once expanded across platforms, Chương Tailor's content system generated over 1 million interactions/reach across the multi-platform ecosystem.",
-        },
-      ],
-      keyResultLabel: "Key Result",
-      keyResult: [
-        "+10,000 subscribers in 3 months.",
-        "From a 2,000-subscriber channel",
-        "→ built new growth momentum for the content system.",
-      ],
-      keyMessage: ["Not just making videos.", "Finding how content grows."],
-      cover: "/images/case-studies/chuong-tailor-cover.jpg",
-    },
+      {
+        eyebrow: "Case Study 02",
+        brand: "Việt Phương Thoa",
+        title: "Advising & Developing Short-Form Content",
+        metric: "80 videos · 20M+ views · 3 months",
+        intro: [
+          "In 2021, as TikTok and short-form video began taking off in Vietnam, I worked with Việt Phương Thoa on directing and developing short-form content for the new platform.",
+          "The problem wasn't just producing video — it was finding the format, storytelling style, and content rhythm fit for viewer behavior on a new platform.",
+        ],
+        roleLabel: "Role",
+        roles: [
+          { title: "Content Direction", body: "Directed a short-form approach fit for the Creator and the platform." },
+          { title: "Format Development", body: "Tested and developed formats capable of engaging viewers." },
+          { title: "Production", body: "Worked alongside turning ideas into real video." },
+          { title: "Distribution", body: "Built a publishing rhythm and grew content on the platform." },
+          { title: "Optimization", body: "Tracked feedback and performance, continuously adjusting." },
+        ],
+        resultsLabel: "Results after 3 months",
+        results: [
+          { value: "80", label: "short-form videos developed and published" },
+          { value: "20M+", label: "views on TikTok" },
+          { value: "3 months", label: "of testing, measuring, and optimizing" },
+        ],
+        scaleLabel: "Current scale",
+        scaleIntro: "That growth trajectory later took Việt Phương Thoa to become a large-scale Creator across multiple platforms.",
+        scale: [
+          { value: "16M+", label: "TikTok followers" },
+          { value: "3M+", label: "YouTube subscribers" },
+          { value: "3M+", label: "Facebook likes" },
+        ],
+        avatar: "/images/case-studies/vpt-avatar.jpg",
+      },
+    ],
     awards: {
       label: "Achievements & Awards",
       heading: "Recognized milestones",
@@ -1404,10 +1122,10 @@ export const content: Record<"vi" | "en", LangContent> = {
           description: "200,000+ organic views — outperformed a large field of creators to top the voting.",
         },
         {
-          title: "Best Communications Video",
+          title: "Best Video Award",
           org: "AMD Global",
           year: "2019",
-          description: "Served as Creative Director for the launch campaign of AMD's next-gen PC/chipset line.",
+          description: "Entered AMD's program for its next-gen PC/chipset line and won the Best Video award.",
         },
         {
           title: "Global Platform Representative",
@@ -1432,88 +1150,43 @@ export const content: Record<"vi" | "en", LangContent> = {
     moments: {
       label: "Moments",
       heading: "Marks made in the real world",
-      sub: "From global platform headquarters to KOL forums and production sets.",
-      viewAll: "View all",
+      sub: "Achievements are the chance to stand alongside many partners, Creators, KOLs, and organizations.",
       items: [
-        {
-          src: "/images/moments/google.jpg",
-          caption: "At Google's headquarters — part of representing Vietnam in the Google Adventure program",
-        },
-        {
-          src: "/images/moments/candid.jpg",
-          caption: "KOL Conference — launch of the Hanoi Digital Trust Club, with Hanoi Police & VCCorp",
-        },
-        {
-          src: "/images/moments/award-event.jpg",
-          caption: "Recognized at national KOL & digital-transformation forums",
-        },
-        {
-          src: "/images/moments/ballroom.jpg",
-          caption: "The venue for the KOL Conference — launch of the Hanoi Digital Trust Club",
-        },
-        {
-          src: "/images/moments/trophy.jpg",
-          caption: "With partners at the KOL Conference, co-organized with VCCorp",
-        },
-        {
-          src: "/images/moments/consulting-2.jpg",
-          caption: "A content strategy working session with the Thăng Long Cars team",
-        },
-        {
-          src: "/images/moments/filmset-1.jpg",
-          caption: "Behind the scenes on \"Đèn Âm Hồn – Bà Đừng Buồn Con\"",
-        },
-        {
-          src: "/images/moments/filmset-2.jpg",
-          caption: "With the film crew in Hanoi's Old Quarter",
-        },
-        {
-          src: "/images/moments/filmset-3.jpg",
-          caption: "On set for \"Đèn Âm Hồn – Bà Đừng Buồn Con\"",
-        },
-        {
-          src: "/images/moments/denamhon-hoangnam.jpg",
-          caption: "With director Hoàng Nam during production of \"Đèn Âm Hồn – Bà Đừng Buồn Con\"",
-        },
-        {
-          src: "/images/moments/google-arts-group.jpg",
-          caption: "With the delegation at the Google Arts & Culture — Wonders of Vietnam event",
-        },
-        {
-          src: "/images/moments/google-arts-solo.jpg",
-          caption: "At the Google Arts & Culture exhibition space",
-        },
-      ],
-    },
-    insights: {
-      label: "Insights",
-      heading: "Perspective on Content, Creators & Growth",
-      sub: "A few beliefs that shape how I approach every project.",
-      items: [
-        {
-          quote: "Businesses don't lack content. They lack a system.",
-          body: "Many brands already have videos and posts — what's missing is a content architecture that lets those pieces reinforce each other.",
-        },
-        {
-          quote: "A Creator isn't just someone who posts.",
-          body: "The right Creator can become a character, a host, a production collaborator, and part of a brand's ecosystem — not just a one-off distribution point.",
-        },
-        {
-          quote: "A content strategy is only worth something once it becomes a real product.",
-          body: "A great direction still has to move through production, post-production, and distribution before it produces a result.",
-        },
-        {
-          quote: "The same content shouldn't be copied onto every platform.",
-          body: "Every platform has its own viewer behavior — the same story needs a different hook, format, and length on each one.",
-        },
-        {
-          quote: "How do you turn an idea into a content asset?",
-          body: "An idea only becomes an asset once it's repeated systematically — through a series, a format, and a Content IP that can keep growing.",
-        },
-        {
-          quote: "How can a Founder turn their expertise into a content system?",
-          body: "Start by identifying what the Founder genuinely understands best, then build the content architecture and channels around that exact expertise.",
-        },
+        "/images/moments/google.jpg",
+        "/images/moments/candid.jpg",
+        "/images/moments/award-event.jpg",
+        "/images/moments/ballroom.jpg",
+        "/images/moments/trophy.jpg",
+        "/images/moments/consulting-2.jpg",
+        "/images/moments/filmset-1.jpg",
+        "/images/moments/filmset-2.jpg",
+        "/images/moments/filmset-3.jpg",
+        "/images/moments/denamhon-hoangnam.jpg",
+        "/images/moments/google-arts-group.jpg",
+        "/images/moments/google-arts-solo.jpg",
+        "/images/moments/wall/wall-01.jpg",
+        "/images/moments/wall/wall-02.jpg",
+        "/images/moments/wall/wall-03.jpg",
+        "/images/moments/wall/wall-04.jpg",
+        "/images/moments/wall/wall-05.jpg",
+        "/images/moments/wall/wall-06.jpg",
+        "/images/moments/wall/wall-07.jpg",
+        "/images/moments/wall/wall-08.jpg",
+        "/images/moments/wall/wall-09.jpg",
+        "/images/moments/wall/wall-10.jpg",
+        "/images/moments/wall/wall-11.jpg",
+        "/images/moments/wall/wall-12.jpg",
+        "/images/moments/wall/wall-13.jpg",
+        "/images/moments/wall/wall-14.jpg",
+        "/images/moments/wall/wall-16.jpg",
+        "/images/moments/wall/wall-18.jpg",
+        "/images/moments/wall/wall-20.jpg",
+        "/images/moments/wall/wall-21.jpg",
+        "/images/moments/wall/wall-22.jpg",
+        "/images/moments/wall/wall-23.jpg",
+        "/images/moments/wall/wall-24.jpg",
+        "/images/moments/wall/wall-25.jpg",
+        "/images/moments/wall/wall-26.jpg",
       ],
     },
     whoIWorkWith: {

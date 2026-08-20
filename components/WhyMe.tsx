@@ -45,10 +45,10 @@ export default function WhyMe() {
           </div>
 
           <Reveal delay={0.1} className="flex flex-col gap-6">
-            <div className="relative aspect-[1110/1200] w-full overflow-hidden rounded-sm border border-line">
+            <div className="relative aspect-[1155/1400] w-full overflow-hidden rounded-sm border border-line">
               <Image
-                src="/images/about-accent.jpg"
-                alt="Hoàng Nguyễn tại sự kiện Kỷ nguyên vươn mình của dân tộc"
+                src="/images/moments/google-arts-solo.jpg"
+                alt="Hoàng Nguyễn tại sự kiện Google Arts & Culture"
                 fill
                 sizes="(min-width: 1024px) 420px, 90vw"
                 className="object-cover"
