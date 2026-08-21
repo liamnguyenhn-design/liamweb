@@ -100,7 +100,16 @@ export type LangContent = {
   };
   stats: Stat[];
   trustedBy: { label: string; note: string; items: BrandLogo[] };
-  showreel: { label: string; title: string; tag: string };
+  showreel: {
+    label: string;
+    title: string;
+    tag: string;
+    description: string;
+    creditsLabel: string;
+    credits: { role: string; names: string }[];
+    hashtags: string;
+    play: string;
+  };
   problem: {
     label: string;
     heading: string;
@@ -241,6 +250,18 @@ export const content: Record<"vi" | "en", LangContent> = {
       label: "Showreel",
       title: "Biti's Hunter × Highnoy",
       tag: "Run Your Way",
+      description:
+        "Đảm nhiệm vai trò Production Manager cho chiến dịch Biti's Hunter Core x Highnoy — nơi tinh thần bứt phá của thương hiệu giày Việt gặp nhịp chuyển động tự do của văn hóa đường phố. Be Cool. Be Hunter.",
+      creditsLabel: "Credits",
+      credits: [
+        { role: "Production Manager", names: "Hoàng Nguyễn" },
+        { role: "Athletes", names: "Phạm Xuân Lâm, Chương Nguyễn, Huy Văn, Tài Hiếu" },
+        { role: "Camera Operators", names: "Lê Minh, Trần Ngọc Minh" },
+        { role: "Drone Operator", names: "Nguyễn Quang Thành" },
+        { role: "Production Crew", names: "Lưu Trung Hiếu, Đào Đức Hiếu, Tút Sờ Tích" },
+      ],
+      hashtags: "#BitisHunter #Highnoy #BeCoolBeHunter",
+      play: "Xem video",
     },
     problem: {
       label: "Bài toán thường gặp",
@@ -790,6 +811,18 @@ export const content: Record<"vi" | "en", LangContent> = {
       label: "Showreel",
       title: "Biti's Hunter × Highnoy",
       tag: "Run Your Way",
+      description:
+        "Served as Production Manager for the Biti's Hunter Core x Highnoy campaign — where the Vietnamese footwear brand's breakthrough spirit meets the free-flowing rhythm of street culture. Be Cool. Be Hunter.",
+      creditsLabel: "Credits",
+      credits: [
+        { role: "Production Manager", names: "Hoàng Nguyễn" },
+        { role: "Athletes", names: "Phạm Xuân Lâm, Chương Nguyễn, Huy Văn, Tài Hiếu" },
+        { role: "Camera Operators", names: "Lê Minh, Trần Ngọc Minh" },
+        { role: "Drone Operator", names: "Nguyễn Quang Thành" },
+        { role: "Production Crew", names: "Lưu Trung Hiếu, Đào Đức Hiếu, Tút Sờ Tích" },
+      ],
+      hashtags: "#BitisHunter #Highnoy #BeCoolBeHunter",
+      play: "Watch video",
     },
     problem: {
       label: "A common problem",
