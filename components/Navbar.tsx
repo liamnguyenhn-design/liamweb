@@ -29,14 +29,6 @@ export default function Navbar() {
     { href: "#contact", label: t.nav.contact },
   ];
 
-  // The Hero behind the navbar is always a dark video, regardless of theme —
-  // force light text/borders until scrolled past it onto the themed page bg.
-  const onVideo = !scrolled;
-  const textMain = onVideo ? "text-white" : "text-ink";
-  const textDim = onVideo ? "text-white/70" : "text-ink-dim";
-  const textFaint = onVideo ? "text-white/50" : "text-ink-faint";
-  const lineColor = onVideo ? "border-white/25" : "border-line";
-
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
@@ -44,13 +36,13 @@ export default function Navbar() {
       }`}
     >
       <nav className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-4 md:px-10">
-        <a href="#top" className={`flex items-center gap-2.5 ${textMain}`} aria-label="Hoàng Nguyễn — hoangcreators">
+        <a href="#top" className="flex items-center gap-2.5 text-ink" aria-label="Hoàng Nguyễn — hoangcreators">
           <BrandMark className="h-7 w-7 shrink-0 text-accent" />
           <span className="flex flex-col leading-none">
             <span className="font-display text-lg tracking-tight">
               Hoàng Nguyễn<span className="text-accent">.</span>
             </span>
-            <span className={`mt-0.5 text-[10px] tracking-wide ${textFaint}`}>@hoangcreators</span>
+            <span className="mt-0.5 text-[10px] tracking-wide text-ink-faint">@hoangcreators</span>
           </span>
         </a>
 
@@ -59,9 +51,7 @@ export default function Navbar() {
             <a
               key={l.href}
               href={l.href}
-              className={`text-[13px] font-medium uppercase tracking-[0.08em] transition-colors hover:${
-                onVideo ? "text-white" : "text-ink"
-              } ${textDim}`}
+              className="text-[13px] font-medium uppercase tracking-[0.08em] text-ink-dim transition-colors hover:text-ink"
             >
               {l.label}
             </a>
@@ -71,34 +61,28 @@ export default function Navbar() {
         <div className="hidden items-center gap-3 lg:flex">
           <button
             onClick={toggleTheme}
-            className={`flex h-8 w-8 items-center justify-center rounded-full border ${lineColor} ${textDim} transition-colors hover:border-accent/60 hover:${
-              onVideo ? "text-white" : "text-ink"
-            }`}
+            className="flex h-8 w-8 items-center justify-center rounded-full border border-line text-ink-dim transition-colors hover:border-accent/60 hover:text-ink"
             aria-label="Toggle light/dark mode"
           >
             {theme === "dark" ? <Sun size={14} /> : <Moon size={14} />}
           </button>
           <button
             onClick={toggle}
-            className={`rounded-full border ${lineColor} px-3 py-1.5 text-xs font-semibold tracking-wide ${textDim} transition-colors hover:border-accent/60 hover:${
-              onVideo ? "text-white" : "text-ink"
-            }`}
+            className="rounded-full border border-line px-3 py-1.5 text-xs font-semibold tracking-wide text-ink-dim transition-colors hover:border-accent/60 hover:text-ink"
             aria-label="Toggle language"
           >
             {lang === "vi" ? "VI / EN" : "EN / VI"}
           </button>
           <a
             href="#contact"
-            className={`rounded-full px-5 py-2 text-sm font-medium transition-colors hover:bg-accent ${
-              onVideo ? "bg-white text-black hover:text-white" : "bg-ink text-bg"
-            }`}
+            className="rounded-full bg-ink px-5 py-2 text-sm font-medium text-bg transition-colors hover:bg-accent"
           >
             {t.nav.cta}
           </a>
         </div>
 
         <button
-          className={`${textMain} lg:hidden`}
+          className="text-ink lg:hidden"
           onClick={() => setOpen((o) => !o)}
           aria-label="Toggle menu"
         >

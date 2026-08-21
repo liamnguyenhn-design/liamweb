@@ -100,6 +100,7 @@ export type LangContent = {
   };
   stats: Stat[];
   trustedBy: { label: string; note: string; items: BrandLogo[] };
+  showreel: { label: string; title: string; tag: string };
   problem: {
     label: string;
     heading: string;
@@ -235,6 +236,11 @@ export const content: Record<"vi" | "en", LangContent> = {
         { name: "Adidas", logo: "/logos/adidas.svg" },
         { name: "Thăng Long Cars", logo: "/logos/thang-long-cars.svg" },
       ],
+    },
+    showreel: {
+      label: "Showreel",
+      title: "Biti's Hunter × Highnoy",
+      tag: "Run Your Way",
     },
     problem: {
       label: "Bài toán thường gặp",
@@ -779,6 +785,11 @@ export const content: Record<"vi" | "en", LangContent> = {
         { name: "Adidas", logo: "/logos/adidas.svg" },
         { name: "Thăng Long Cars", logo: "/logos/thang-long-cars.svg" },
       ],
+    },
+    showreel: {
+      label: "Showreel",
+      title: "Biti's Hunter × Highnoy",
+      tag: "Run Your Way",
     },
     problem: {
       label: "A common problem",

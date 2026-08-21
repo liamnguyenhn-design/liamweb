@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Stats from "@/components/Stats";
 import TrustedBy from "@/components/TrustedBy";
+import Showreel from "@/components/Showreel";
 import Problem from "@/components/Problem";
 import Capabilities from "@/components/Capabilities";
 import WhoIWorkWith from "@/components/WhoIWorkWith";
@@ -23,6 +24,7 @@ export default function Home() {
         <Hero />
         <Stats />
         <TrustedBy />
+        <Showreel />
         <Moments />
         <Problem />
         <Capabilities />
