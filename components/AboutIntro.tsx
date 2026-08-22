@@ -34,8 +34,8 @@ function AboutGallery({ images }: { images: string[] }) {
         >
           <motion.div
             initial={{ scale: 1 }}
-            animate={{ scale: 1.08 }}
-            transition={{ duration: 4.5, ease: "linear" }}
+            animate={{ scale: 1.06 }}
+            transition={{ duration: 10, ease: "easeInOut", repeat: Infinity, repeatType: "mirror" }}
             className="absolute inset-0"
           >
             <Image

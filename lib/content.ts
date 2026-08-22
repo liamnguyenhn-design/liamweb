@@ -227,8 +227,8 @@ export const content: Record<"vi" | "en", LangContent> = {
       ctaPrimary: "Tôi có thể giúp gì?",
       ctaSecondary: "Trao đổi về dự án",
       subCredentials: [
-        "Co-founder & Admin - Highnoy Group Parkour Việt Nam",
         "Phó Chủ tịch mạng lưới khởi nghiệp, đổi mới sáng tạo và chuyển đổi số Thủ Đô - HUB Network",
+        "Co-founder & Admin - Highnoy Group Parkour Việt Nam",
       ],
       scrollHint: "Cuộn để khám phá",
     },
@@ -836,8 +836,8 @@ export const content: Record<"vi" | "en", LangContent> = {
       ctaPrimary: "How I can help",
       ctaSecondary: "Talk about your project",
       subCredentials: [
-        "Co-founder & Admin — Highnoy Group Parkour Vietnam",
         "Vice Chairman, HUB Network — Hanoi's Startup, Innovation & Digital Transformation Network",
+        "Co-founder & Admin — Highnoy Group Parkour Vietnam",
       ],
       scrollHint: "Scroll to explore",
     },

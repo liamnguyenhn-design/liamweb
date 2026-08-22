@@ -80,14 +80,21 @@ export default function Hero() {
           className="relative mx-auto aspect-[4/5] w-full max-w-sm"
         >
           <div className="relative h-full w-full overflow-hidden rounded-sm border border-line bg-bg-card">
-            <Image
-              src="/images/portrait.jpg"
-              alt="Hoàng Nguyễn"
-              fill
-              priority
-              sizes="(min-width: 1024px) 384px, 90vw"
-              className="object-cover"
-            />
+            <motion.div
+              className="absolute inset-0"
+              initial={{ scale: 1 }}
+              animate={{ scale: 1.06 }}
+              transition={{ duration: 10, ease: "easeInOut", repeat: Infinity, repeatType: "mirror" }}
+            >
+              <Image
+                src="/images/portrait.jpg"
+                alt="Hoàng Nguyễn"
+                fill
+                priority
+                sizes="(min-width: 1024px) 384px, 90vw"
+                className="object-cover"
+              />
+            </motion.div>
           </div>
 
           <div className="mt-5 flex flex-col items-center gap-1.5 text-center">
