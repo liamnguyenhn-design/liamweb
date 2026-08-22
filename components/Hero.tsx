@@ -77,9 +77,9 @@ export default function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="relative mx-auto aspect-[4/5] w-full max-w-sm"
+          className="mx-auto w-full max-w-sm"
         >
-          <div className="relative h-full w-full overflow-hidden rounded-sm border border-line bg-bg-card">
+          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-sm border border-line bg-bg-card">
             <motion.div
               className="absolute inset-0"
               initial={{ scale: 1 }}
