@@ -124,6 +124,20 @@ export default function AboutIntro() {
 
           <Reveal delay={0.15}>
             <AboutGallery images={t.images} />
+            <p className="mt-4 text-sm leading-relaxed text-ink-dim">{t.imageCaption}</p>
+            <a
+              href={t.imageCaptionUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-cursor-hover
+              className="group mt-2 inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-[0.1em] text-accent transition-colors hover:text-ink"
+            >
+              {t.imageCaptionLinkLabel}
+              <ArrowUpRight
+                size={12}
+                className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+              />
+            </a>
           </Reveal>
         </div>
       </div>

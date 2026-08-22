@@ -107,6 +107,9 @@ export type LangContent = {
     pressLabel: string;
     press: { outlet: string; title: string; url: string }[];
     images: string[];
+    imageCaption: string;
+    imageCaptionUrl: string;
+    imageCaptionLinkLabel: string;
   };
   stats: Stat[];
   trustedBy: { label: string; note: string; items: BrandLogo[] };
@@ -279,6 +282,10 @@ export const content: Record<"vi" | "en", LangContent> = {
         },
       ],
       images: ["/images/about/about-01.png"],
+      imageCaption:
+        "Khoảnh khắc tôi trực tiếp host series \"Metub Creators — Podcast\" — kênh YouTube do chính tôi sáng lập.",
+      imageCaptionUrl: "https://www.youtube.com/watch?v=hnC7XVQsOPU",
+      imageCaptionLinkLabel: "Xem podcast",
     },
     stats: [
       { value: "12+", label: "Năm kinh nghiệm" },
@@ -888,6 +895,10 @@ export const content: Record<"vi" | "en", LangContent> = {
         },
       ],
       images: ["/images/about/about-01.png"],
+      imageCaption:
+        "The moment I hosted the \"Metub Creators — Podcast\" series — the YouTube channel I founded myself.",
+      imageCaptionUrl: "https://www.youtube.com/watch?v=hnC7XVQsOPU",
+      imageCaptionLinkLabel: "Watch podcast",
     },
     stats: [
       { value: "12+", label: "Years of experience" },
