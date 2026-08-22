@@ -227,8 +227,8 @@ export const content: Record<"vi" | "en", LangContent> = {
       ctaPrimary: "Tôi có thể giúp gì?",
       ctaSecondary: "Trao đổi về dự án",
       subCredentials: [
-        "Phó Chủ tịch mạng lưới khởi nghiệp, đổi mới sáng tạo và chuyển đổi số Thủ Đô - HUB Network",
         "Co-founder & Admin - Highnoy Group Parkour Việt Nam",
+        "Phó Chủ tịch mạng lưới khởi nghiệp, đổi mới sáng tạo và chuyển đổi số Thủ Đô - HUB Network",
       ],
       scrollHint: "Cuộn để khám phá",
     },
@@ -278,12 +278,7 @@ export const content: Record<"vi" | "en", LangContent> = {
           url: "https://vietnamnews.vn/sports/749187/parkour-a-global-sport-deeply-rooted-in-viet-nam.html",
         },
       ],
-      images: [
-        "/images/about/about-01.jpg",
-        "/images/about/about-02.jpg",
-        "/images/about/about-03.jpg",
-        "/images/about/about-04.jpg",
-      ],
+      images: ["/images/about/about-01.png"],
     },
     stats: [
       { value: "12+", label: "Năm kinh nghiệm" },
@@ -841,8 +836,8 @@ export const content: Record<"vi" | "en", LangContent> = {
       ctaPrimary: "How I can help",
       ctaSecondary: "Talk about your project",
       subCredentials: [
-        "Vice Chairman, HUB Network — Hanoi's Startup, Innovation & Digital Transformation Network",
         "Co-founder & Admin — Highnoy Group Parkour Vietnam",
+        "Vice Chairman, HUB Network — Hanoi's Startup, Innovation & Digital Transformation Network",
       ],
       scrollHint: "Scroll to explore",
     },
@@ -892,12 +887,7 @@ export const content: Record<"vi" | "en", LangContent> = {
           url: "https://vietnamnews.vn/sports/749187/parkour-a-global-sport-deeply-rooted-in-viet-nam.html",
         },
       ],
-      images: [
-        "/images/about/about-01.jpg",
-        "/images/about/about-02.jpg",
-        "/images/about/about-03.jpg",
-        "/images/about/about-04.jpg",
-      ],
+      images: ["/images/about/about-01.png"],
     },
     stats: [
       { value: "12+", label: "Years of experience" },
