@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import AboutIntro from "@/components/AboutIntro";
 import Stats from "@/components/Stats";
 import TrustedBy from "@/components/TrustedBy";
 import Showreel from "@/components/Showreel";
@@ -22,6 +23,7 @@ export default function Home() {
       <Navbar />
       <main className="flex-1">
         <Hero />
+        <AboutIntro />
         <Stats />
         <TrustedBy />
         <Showreel />

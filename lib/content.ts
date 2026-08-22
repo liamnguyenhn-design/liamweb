@@ -98,6 +98,12 @@ export type LangContent = {
     subCredentials: string[];
     scrollHint: string;
   };
+  aboutIntro: {
+    label: string;
+    paragraph: string;
+    pressLabel: string;
+    press: { outlet: string; title: string; url: string }[];
+  };
   stats: Stat[];
   trustedBy: { label: string; note: string; items: BrandLogo[] };
   showreel: {
@@ -221,6 +227,39 @@ export const content: Record<"vi" | "en", LangContent> = {
         "Co-founder & Admin - Highnoy Group Parkour Việt Nam",
       ],
       scrollHint: "Cuộn để khám phá",
+    },
+    aboutIntro: {
+      label: "Về tôi",
+      paragraph:
+        "Từ một cậu sinh viên Bách Khoa mê Parkour trên đường phố Hà Nội, tôi dành hơn một thập kỷ rèn luyện, dẫn dắt Highnoy trở thành cộng đồng Parkour lớn nhất Việt Nam, rồi bước sang một hành trình khác: định hướng nội dung số cho hơn 100 nhà sáng tạo tại METUB. 12 năm sau, tôi là Cố vấn Độc lập đồng hành cùng các thương hiệu và kênh nội dung — hành trình đã được Thanh Niên, Đẹp, VTV và nhiều báo đài ghi nhận.",
+      pressLabel: "Xuất hiện trên báo chí",
+      press: [
+        {
+          outlet: "Thanh Niên",
+          title: "9X điển trai từ mê Parkour đến định hướng nội dung sáng tạo YouTube",
+          url: "https://thanhnien.vn/9x-dien-trai-tu-me-parkour-den-dinh-huong-noi-dung-sang-tao-youtube-1851032573.htm",
+        },
+        {
+          outlet: "Đẹp",
+          title: "Gen Z nên bắt đầu từ đâu nếu muốn sáng tạo nội dung trên YouTube?",
+          url: "https://dep.com.vn/gen-z-nen-bat-dau-tu-dau-neu-muon-sang-tao-noi-dung-tren-youtube/",
+        },
+        {
+          outlet: "Hà Nội Online",
+          title: "Rèn luyện khả năng tính toán, logic với Parkour",
+          url: "https://hanoionline.vn/ren-luyen-kha-nang-tinh-toan-logic-voi-parkour-232635.htm",
+        },
+        {
+          outlet: "VTV",
+          title: "S-Việt Nam: Parkour — Bước nhảy đường phố",
+          url: "https://vtv.vn/video/s-viet-nam-parkour-buoc-nhay-duong-pho-253641.htm",
+        },
+        {
+          outlet: "Red Bull Vietnam",
+          title: "Cộng đồng Parkour Highnoy lan tỏa năng lượng tích cực",
+          url: "https://www.redbullvietnam.com/a/nhieu-nghe-si-viet-va-cong-dong-the-thao-thi-nhau-tham-gia-thu-thach-lan-toa-nang-luong-tich-cuc-126",
+        },
+      ],
     },
     stats: [
       { value: "12+", label: "Năm kinh nghiệm" },
@@ -782,6 +821,39 @@ export const content: Record<"vi" | "en", LangContent> = {
         "Co-founder & Admin — Highnoy Group Parkour Vietnam",
       ],
       scrollHint: "Scroll to explore",
+    },
+    aboutIntro: {
+      label: "About Me",
+      paragraph:
+        "From a Bách Khoa University student who fell in love with Parkour on the streets of Hanoi, I spent over a decade training and building Highnoy into Vietnam's largest Parkour community — before stepping into an entirely different journey: directing content strategy for 100+ creators at METUB. 12 years later, I'm an Independent Advisor working alongside brands and content channels — a journey covered by Thanh Niên, Đẹp, VTV, and other national press.",
+      pressLabel: "Featured in",
+      press: [
+        {
+          outlet: "Thanh Niên",
+          title: "The handsome 9X who went from a Parkour obsession to directing YouTube content",
+          url: "https://thanhnien.vn/9x-dien-trai-tu-me-parkour-den-dinh-huong-noi-dung-sang-tao-youtube-1851032573.htm",
+        },
+        {
+          outlet: "Đẹp",
+          title: "Where should Gen Z start if they want to create content on YouTube?",
+          url: "https://dep.com.vn/gen-z-nen-bat-dau-tu-dau-neu-muon-sang-tao-noi-dung-tren-youtube/",
+        },
+        {
+          outlet: "Hà Nội Online",
+          title: "Training logical, calculated thinking through Parkour",
+          url: "https://hanoionline.vn/ren-luyen-kha-nang-tinh-toan-logic-voi-parkour-232635.htm",
+        },
+        {
+          outlet: "VTV",
+          title: "S-Việt Nam: Parkour — Street Jumping",
+          url: "https://vtv.vn/video/s-viet-nam-parkour-buoc-nhay-duong-pho-253641.htm",
+        },
+        {
+          outlet: "Red Bull Vietnam",
+          title: "The Highnoy Parkour community spreading positive energy",
+          url: "https://www.redbullvietnam.com/a/nhieu-nghe-si-viet-va-cong-dong-the-thao-thi-nhau-tham-gia-thu-thach-lan-toa-nang-luong-tich-cuc-126",
+        },
+      ],
     },
     stats: [
       { value: "12+", label: "Years of experience" },
