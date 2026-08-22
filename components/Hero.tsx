@@ -36,7 +36,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.16 }}
-            className="mt-7 max-w-xl text-base leading-relaxed text-ink-dim md:text-lg"
+            className="mt-7 max-w-2xl text-base leading-relaxed text-ink-dim md:text-lg"
           >
             {t.subheadline}
           </motion.p>

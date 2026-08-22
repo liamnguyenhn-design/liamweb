@@ -218,11 +218,11 @@ export const content: Record<"vi" | "en", LangContent> = {
       cta: "Trao đổi với tôi",
     },
     hero: {
-      eyebrow: "Cố vấn & Đối tác Phát triển Nội dung Đa nền tảng",
+      eyebrow: "Chuyên gia Tư vấn & Đối tác Chiến lược Phát triển Nội dung Đa nền tảng",
       name: "HOÀNG NGUYỄN",
-      headline: "Giúp doanh nghiệp xây dựng, vận hành và phát triển kênh nội dung từ con số 0.",
+      headline: "Kiến tạo và chuẩn hóa hệ sinh thái nội dung đa kênh cho doanh nghiệp từ giai đoạn khởi tạo.",
       subheadline:
-        "Từ định hướng thương hiệu, chiến lược nội dung, kết nối nguồn lực cần thiết để biến một ý tưởng nội dung thành kênh truyền thông thực tế, có định hướng rõ ràng và khả năng phát triển lâu dài.",
+        "Tôi trực tiếp đồng hành cùng doanh nghiệp định hình bản sắc thương hiệu, hoạch định chiến lược nội dung dài hạn và tối ưu hóa nguồn lực thực thi. Với lộ trình bài bản, tôi chuyển hóa mọi ý tưởng sơ khởi thành các kênh truyền thông có định vị sắc nét, vận hành bền vững và sở hữu năng lực tăng trưởng vượt trội trên mọi nền tảng số.",
       capabilityLine: "ĐỊNH HƯỚNG · NỘI DUNG · CREATOR · SẢN XUẤT · ĐA NỀN TẢNG · TỐI ƯU",
       ctaPrimary: "Tôi có thể giúp gì?",
       ctaSecondary: "Trao đổi về dự án",
@@ -827,11 +827,11 @@ export const content: Record<"vi" | "en", LangContent> = {
       cta: "Let's talk",
     },
     hero: {
-      eyebrow: "Content Ecosystem Advisor & Partner",
+      eyebrow: "Strategic Consultant & Partner for Multi-Platform Content Development",
       name: "HOANG NGUYEN",
-      headline: "Helping businesses build, run, and grow content channels from zero.",
+      headline: "Building and standardizing multi-channel content ecosystems for businesses from the ground up.",
       subheadline:
-        "From brand direction and content strategy, to connecting the resources needed to turn a content idea into a real media channel — with clear direction and the ability to grow for the long run.",
+        "I work directly alongside businesses to shape brand identity, plan long-term content strategy, and optimize the resources needed to execute it. With a structured roadmap, I turn early-stage ideas into media channels with sharp positioning, sustainable operations, and standout growth capability across every digital platform.",
       capabilityLine: "DIRECTION · CONTENT · CREATOR · PRODUCTION · MULTI-PLATFORM · OPTIMIZATION",
       ctaPrimary: "How I can help",
       ctaSecondary: "Talk about your project",
