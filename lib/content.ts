@@ -101,8 +101,12 @@ export type LangContent = {
   aboutIntro: {
     label: string;
     paragraph: string;
+    paragraphMore: string;
+    readMore: string;
+    readLess: string;
     pressLabel: string;
     press: { outlet: string; title: string; url: string }[];
+    images: string[];
   };
   stats: Stat[];
   trustedBy: { label: string; note: string; items: BrandLogo[] };
@@ -231,7 +235,11 @@ export const content: Record<"vi" | "en", LangContent> = {
     aboutIntro: {
       label: "Về tôi",
       paragraph:
-        "Từ một cậu sinh viên Bách Khoa mê Parkour trên đường phố Hà Nội, tôi cùng xây dựng Highnoy — nhóm Parkour tại Hà Nội có sức ảnh hưởng trên khắp cả nước, sở hữu kênh YouTube hơn 1,2 triệu người theo dõi và hệ thống kênh thành viên đạt hơn 4 triệu người theo dõi, hơn 2 tỷ lượt xem. Tôi bước sang một hành trình khác tại METUB Network — mạng lưới gần 200 đối tác sáng tạo nội dung, nơi tôi định hướng phát triển cho hàng trăm nhà sáng tạo. Là một đại diện của thế hệ content creator Gen Z luôn cháy hết mình với đam mê, tôi sáng lập kênh YouTube Metub Creators — nền tảng lưu trữ kiến thức từ cơ bản đến nâng cao, giúp các nhà sáng tạo \"ôn bài\" và thực hành bất cứ lúc nào. 12 năm sau, tôi là Cố vấn Độc lập đồng hành cùng các thương hiệu và kênh nội dung — hành trình đã được Thanh Niên, Đẹp, VTV và nhiều báo đài ghi nhận.",
+        "Từ một cậu sinh viên Bách Khoa mê Parkour trên đường phố Hà Nội đến Cố vấn Độc lập đồng hành cùng các thương hiệu và kênh nội dung — hành trình 12 năm của tôi đi qua Highnoy, METUB Network và Metub Creators, được Thanh Niên, Đẹp, VTV và nhiều báo đài ghi nhận.",
+      paragraphMore:
+        "Tôi cùng xây dựng Highnoy — nhóm Parkour tại Hà Nội có sức ảnh hưởng trên khắp cả nước, sở hữu kênh YouTube hơn 1,2 triệu người theo dõi và hệ thống kênh thành viên đạt hơn 4 triệu người theo dõi, hơn 2 tỷ lượt xem. Tôi bước sang một hành trình khác tại METUB Network — nơi tôi tiếp tục sự nghiệp định hướng và sáng tạo nội dung, trực tiếp quản lý kênh và định hướng cho gần 200 creator, KOL, KOC, nghệ sĩ... METUB là một trong những công ty dẫn đầu về mảng giải trí và truyền thông số tại Việt Nam, khởi nguồn từ một đơn vị trực thuộc Mạng lưới đa kênh của YouTube (YouTube MCN), hỗ trợ các cá nhân và tổ chức sản xuất, phát hành, tối ưu và thương mại hóa nội dung — hiện sở hữu hàng ngàn kênh với hàng trăm triệu người theo dõi. Là một đại diện của thế hệ content creator Gen Z luôn cháy hết mình với đam mê, tôi sáng lập kênh YouTube Metub Creators — nền tảng lưu trữ kiến thức từ cơ bản đến nâng cao, giúp các nhà sáng tạo \"ôn bài\" và thực hành bất cứ lúc nào.",
+      readMore: "Xem thêm",
+      readLess: "Thu gọn",
       pressLabel: "Xuất hiện trên báo chí",
       press: [
         {
@@ -269,6 +277,12 @@ export const content: Record<"vi" | "en", LangContent> = {
           title: "Parkour: Bộ môn thể thao toàn cầu bắt nguồn sâu sắc từ Việt Nam",
           url: "https://vietnamnews.vn/sports/749187/parkour-a-global-sport-deeply-rooted-in-viet-nam.html",
         },
+      ],
+      images: [
+        "/images/about/about-01.jpg",
+        "/images/about/about-02.jpg",
+        "/images/about/about-03.jpg",
+        "/images/about/about-04.jpg",
       ],
     },
     stats: [
@@ -835,7 +849,11 @@ export const content: Record<"vi" | "en", LangContent> = {
     aboutIntro: {
       label: "About Me",
       paragraph:
-        "From a Bách Khoa University student who fell in love with Parkour on the streets of Hanoi, I helped build Highnoy — a Hanoi-based Parkour group with nationwide influence, running a YouTube channel with 1.2M+ subscribers and a network of member channels reaching 4M+ followers and 2B+ views combined. I then stepped into a different journey at METUB Network — a network of nearly 200 creator partners, where I directed content growth for hundreds of creators. As a member of the Gen Z content-creator generation who pours everything into the craft, I founded the YouTube channel Metub Creators — a platform storing knowledge from the basics to advanced, so creators can review and practice anytime. 12 years on, I'm an Independent Advisor working alongside brands and content channels — a journey covered by Thanh Niên, Đẹp, VTV, and other national press.",
+        "From a Bách Khoa University student who fell for Parkour on the streets of Hanoi to an Independent Advisor working with brands and content channels — my 12-year journey ran through Highnoy, METUB Network, and Metub Creators, covered by Thanh Niên, Đẹp, VTV, and other national press.",
+      paragraphMore:
+        "I helped build Highnoy — a Hanoi-based Parkour group with nationwide influence, running a YouTube channel with 1.2M+ subscribers and a network of member channels reaching 4M+ followers and 2B+ views combined. I then moved into a different chapter at METUB Network — where I continued directing and creating content, directly managing channels and guiding nearly 200 creators, KOLs, KOCs, and artists. METUB is one of Vietnam's leading digital entertainment and media companies, originally built as a unit under YouTube's Multi-Channel Network (MCN); it helps individuals and organizations produce, distribute, optimize, and monetize the content they create — today it owns thousands of channels reaching hundreds of millions of followers. As part of the Gen Z content-creator generation who pours everything into the craft, I founded the YouTube channel Metub Creators — a platform storing knowledge from the basics to advanced, so creators can review and practice anytime.",
+      readMore: "Read more",
+      readLess: "Show less",
       pressLabel: "Featured in",
       press: [
         {
@@ -873,6 +891,12 @@ export const content: Record<"vi" | "en", LangContent> = {
           title: "Parkour: A Global Sport Deeply Rooted in Viet Nam",
           url: "https://vietnamnews.vn/sports/749187/parkour-a-global-sport-deeply-rooted-in-viet-nam.html",
         },
+      ],
+      images: [
+        "/images/about/about-01.jpg",
+        "/images/about/about-02.jpg",
+        "/images/about/about-03.jpg",
+        "/images/about/about-04.jpg",
       ],
     },
     stats: [
