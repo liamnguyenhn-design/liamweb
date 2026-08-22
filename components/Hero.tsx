@@ -90,18 +90,13 @@ export default function Hero() {
             />
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.55 }}
-            className="mt-5 flex flex-col items-center gap-1.5 text-center"
-          >
+          <div className="mt-5 flex flex-col items-center gap-1.5 text-center">
             {t.subCredentials.map((line) => (
               <p key={line} className="max-w-xs text-xs leading-relaxed text-ink-faint">
                 {line}
               </p>
             ))}
-          </motion.div>
+          </div>
         </motion.div>
       </div>
 
