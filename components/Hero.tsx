@@ -11,7 +11,7 @@ export default function Hero() {
   const t = content[lang].hero;
 
   return (
-    <section id="top" className="relative flex min-h-[100svh] items-center overflow-hidden pt-32 pb-16">
+    <section id="top" className="relative flex min-h-[100svh] items-start overflow-hidden pt-28 pb-16 md:items-center md:pt-32">
       <div className="relative z-10 mx-auto grid w-full max-w-[1400px] grid-cols-1 items-center gap-16 px-6 md:px-10 lg:grid-cols-[1.2fr_0.8fr]">
         <div>
           <motion.p

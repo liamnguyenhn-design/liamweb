@@ -231,7 +231,7 @@ export const content: Record<"vi" | "en", LangContent> = {
     aboutIntro: {
       label: "Về tôi",
       paragraph:
-        "Từ một cậu sinh viên Bách Khoa mê Parkour trên đường phố Hà Nội, tôi dành hơn một thập kỷ rèn luyện, dẫn dắt Highnoy trở thành cộng đồng Parkour lớn nhất Việt Nam, rồi bước sang một hành trình khác: định hướng nội dung số cho hơn 100 nhà sáng tạo tại METUB. 12 năm sau, tôi là Cố vấn Độc lập đồng hành cùng các thương hiệu và kênh nội dung — hành trình đã được Thanh Niên, Đẹp, VTV và nhiều báo đài ghi nhận.",
+        "Từ một cậu sinh viên Bách Khoa mê Parkour trên đường phố Hà Nội, tôi cùng xây dựng Highnoy — nhóm Parkour tại Hà Nội có sức ảnh hưởng trên khắp cả nước, sở hữu kênh YouTube hơn 1,2 triệu người theo dõi và hệ thống kênh thành viên đạt hơn 4 triệu người theo dõi, hơn 2 tỷ lượt xem. Tôi bước sang một hành trình khác tại METUB Network — mạng lưới gần 200 đối tác sáng tạo nội dung, nơi tôi định hướng phát triển cho hàng trăm nhà sáng tạo. Là một đại diện của thế hệ content creator Gen Z luôn cháy hết mình với đam mê, tôi sáng lập kênh YouTube Metub Creators — nền tảng lưu trữ kiến thức từ cơ bản đến nâng cao, giúp các nhà sáng tạo \"ôn bài\" và thực hành bất cứ lúc nào. 12 năm sau, tôi là Cố vấn Độc lập đồng hành cùng các thương hiệu và kênh nội dung — hành trình đã được Thanh Niên, Đẹp, VTV và nhiều báo đài ghi nhận.",
       pressLabel: "Xuất hiện trên báo chí",
       press: [
         {
@@ -258,6 +258,16 @@ export const content: Record<"vi" | "en", LangContent> = {
           outlet: "Red Bull Vietnam",
           title: "Cộng đồng Parkour Highnoy lan tỏa năng lượng tích cực",
           url: "https://www.redbullvietnam.com/a/nhieu-nghe-si-viet-va-cong-dong-the-thao-thi-nhau-tham-gia-thu-thach-lan-toa-nang-luong-tich-cuc-126",
+        },
+        {
+          outlet: "VietNamNet",
+          title: "Parkour: Bộ môn thể thao toàn cầu bắt nguồn sâu sắc từ Việt Nam",
+          url: "https://vietnamnet.vn/en/parkour-a-global-sport-deeply-rooted-in-vietnam-654427.html",
+        },
+        {
+          outlet: "Vietnam News",
+          title: "Parkour: Bộ môn thể thao toàn cầu bắt nguồn sâu sắc từ Việt Nam",
+          url: "https://vietnamnews.vn/sports/749187/parkour-a-global-sport-deeply-rooted-in-viet-nam.html",
         },
       ],
     },
@@ -825,7 +835,7 @@ export const content: Record<"vi" | "en", LangContent> = {
     aboutIntro: {
       label: "About Me",
       paragraph:
-        "From a Bách Khoa University student who fell in love with Parkour on the streets of Hanoi, I spent over a decade training and building Highnoy into Vietnam's largest Parkour community — before stepping into an entirely different journey: directing content strategy for 100+ creators at METUB. 12 years later, I'm an Independent Advisor working alongside brands and content channels — a journey covered by Thanh Niên, Đẹp, VTV, and other national press.",
+        "From a Bách Khoa University student who fell in love with Parkour on the streets of Hanoi, I helped build Highnoy — a Hanoi-based Parkour group with nationwide influence, running a YouTube channel with 1.2M+ subscribers and a network of member channels reaching 4M+ followers and 2B+ views combined. I then stepped into a different journey at METUB Network — a network of nearly 200 creator partners, where I directed content growth for hundreds of creators. As a member of the Gen Z content-creator generation who pours everything into the craft, I founded the YouTube channel Metub Creators — a platform storing knowledge from the basics to advanced, so creators can review and practice anytime. 12 years on, I'm an Independent Advisor working alongside brands and content channels — a journey covered by Thanh Niên, Đẹp, VTV, and other national press.",
       pressLabel: "Featured in",
       press: [
         {
@@ -852,6 +862,16 @@ export const content: Record<"vi" | "en", LangContent> = {
           outlet: "Red Bull Vietnam",
           title: "The Highnoy Parkour community spreading positive energy",
           url: "https://www.redbullvietnam.com/a/nhieu-nghe-si-viet-va-cong-dong-the-thao-thi-nhau-tham-gia-thu-thach-lan-toa-nang-luong-tich-cuc-126",
+        },
+        {
+          outlet: "VietNamNet",
+          title: "Parkour: A Global Sport Deeply Rooted in Vietnam",
+          url: "https://vietnamnet.vn/en/parkour-a-global-sport-deeply-rooted-in-vietnam-654427.html",
+        },
+        {
+          outlet: "Vietnam News",
+          title: "Parkour: A Global Sport Deeply Rooted in Viet Nam",
+          url: "https://vietnamnews.vn/sports/749187/parkour-a-global-sport-deeply-rooted-in-viet-nam.html",
         },
       ],
     },
